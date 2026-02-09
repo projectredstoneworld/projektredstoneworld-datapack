@@ -1,0 +1,27 @@
+name: Datapack Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JSON
+        run: |
+          set -euo pipefail
+          find . -name "*.json" -print0 | xargs -0 -n1 jq empty
+
+      - name: Datapack Lint (language-server based)
+        uses: ChenCMD/datapack-linter@v2
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          lintDirectory: "."
+          # If you want it to actually fail the workflow when lint finds problems:
+          forcePass: false
