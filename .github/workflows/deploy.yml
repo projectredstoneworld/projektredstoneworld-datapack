@@ -3,6 +3,7 @@ name: Deploy Datapack
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   deploy:
