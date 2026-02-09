@@ -7,29 +7,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node (cached)
-        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: "20"
-          cache: "npm"
-
-      - name: Install Spyglass (cached)
-        run: |
-          set -euo pipefail
-          npm i --no-audit --no-fund --silent @spyglassmc/spyglass
+          fetch-depth: 0
 
       - name: Validate JSON
         run: |
           set -euo pipefail
           find . -name "*.json" -print0 | xargs -0 -n1 jq empty
 
-      - name: Spyglass (errors only, MC 1.20.4)
-        run: |
-          set -euo pipefail
-          npx --yes spyglass lint . \
-            --data-version 3700 \
-            --severity error
+      - name: Datapack Lint (language-server based)
+        uses: ChenCMD/datapack-linter@v2
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          lintDirectory: "."
+          # If you want it to actually fail the workflow when lint finds problems:
+          forcePass: false
