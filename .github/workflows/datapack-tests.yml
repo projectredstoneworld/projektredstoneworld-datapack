@@ -23,5 +23,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ github.token }}
           lintDirectory: "."
+          configPath: spyglass.json
           # If you want it to actually fail the workflow when lint finds problems:
           forcePass: false
