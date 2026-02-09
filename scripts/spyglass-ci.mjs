@@ -77,7 +77,16 @@ connection.onNotification("textDocument/publishDiagnostics", (params) => {
     }
   }
 });
+// Spyglass LSP will ask for workspace configuration; answer with empty configs.
+connection.onRequest("workspace/configuration", (params) => {
+  // Must return an array with one entry per requested item.
+  return (params?.items ?? []).map(() => ({}));
+});
 
+// Some servers also request workspace folders.
+connection.onRequest("workspace/workspaceFolders", () => {
+  return [];
+});
 connection.listen();
 
 await connection.sendRequest("initialize", {
