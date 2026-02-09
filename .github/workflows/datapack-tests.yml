@@ -10,18 +10,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Validate JSON
+      - name: Install jq
         run: |
           set -euo pipefail
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+      - name: Validate JSON (including pack.mcmeta)
+        run: |
+          set -euo pipefail
+          jq empty pack.mcmeta
           find . -name "*.json" -print0 | xargs -0 -n1 jq empty
 
-      - name: Datapack Lint (language-server based)
-        uses: ChenCMD/datapack-linter@v2
+      - name: Mecha command check (MC 1.20.4)
+        uses: mcbeet/check-commands@v1
         with:
-          GITHUB_TOKEN: ${{ github.token }}
-          lintDirectory: "."
-          # If you want it to actually fail the workflow when lint finds problems:
-          forcePass: false
+          source: .
+          minecraft: "1.20.4"
+          log: ERROR
+          stats: false
