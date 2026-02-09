@@ -62,4 +62,8 @@ jobs:
         env:
           SPYGLASS_FILE_LIST: changed_files.txt
           SPYGLASS_MC_VERSION: "1.20.4"
-        run: node scripts/spyglass-ci.mjs
+        run: |
+          set -euo pipefail
+          echo "Changed mcfunction files:"
+          grep -E '\.mcfunction$' changed_files.txt || true
+          node scripts/spyglass-ci.mjs

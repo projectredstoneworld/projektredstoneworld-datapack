@@ -79,8 +79,10 @@ connection.onNotification("textDocument/publishDiagnostics", (params) => {
 });
 // Spyglass LSP will ask for workspace configuration; answer with empty configs.
 connection.onRequest("workspace/configuration", (params) => {
-  // Must return an array with one entry per requested item.
-  return (params?.items ?? []).map(() => ({}));
+  const items = params?.items ?? [];
+  return items.map(() => ({
+    minecraft: { version: process.env.SPYGLASS_MC_VERSION || "1.20.4" }
+  }));
 });
 
 // Some servers also request workspace folders.
@@ -107,7 +109,7 @@ for (const f of files) {
 }
 
 // Wait briefly for diagnostics
-await new Promise((r) => setTimeout(r, 1500));
+await new Promise((r) => setTimeout(r, 4000));
 
 try { await connection.sendRequest("shutdown"); } catch {}
 try { connection.sendNotification("exit"); } catch {}
