@@ -61,7 +61,7 @@ jobs:
       - name: Spyglass (errors only, changed mcfunction files)
         env:
           SPYGLASS_FILE_LIST: changed_files.txt
-          SPYGLASS_MC_VERSION: "1.20.4"
+          SPYGLASS_MC_VERSION: "1.20"
         run: |
           set -euo pipefail
           echo "Changed mcfunction files:"

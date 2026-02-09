@@ -81,7 +81,7 @@ connection.onNotification("textDocument/publishDiagnostics", (params) => {
 connection.onRequest("workspace/configuration", (params) => {
   const items = params?.items ?? [];
   return items.map(() => ({
-    minecraft: { version: process.env.SPYGLASS_MC_VERSION || "1.20.4" }
+    minecraft: { version: process.env.SPYGLASS_MC_VERSION || "1.20" }
   }));
 });
 
