@@ -1,0 +1,3 @@
+schedule function projektredstoneworld:light_10t 5t
+schedule function projektredstoneworld:rcrailschedule 10t
+schedule function projektredstoneworld:rcrailtick 2t

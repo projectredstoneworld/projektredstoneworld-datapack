@@ -1,0 +1,344 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 2,
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{HideFlags:1,rakestick:1b,Enchantments:[{id:\"minecraft:sharpness\",lvl:5s},{id:\"minecraft:knockback\",lvl:2s}]}"
+            },
+            {
+              "function": "set_name",
+              "name": {
+                "text": "Rake StunStick",
+                "color": "gold",
+                "bold": true,
+                "italic": false
+              }
+            }
+          ]
+        },
+		{
+		  "type": "empty",
+		  "weight": 2
+		},
+        {
+          "type": "item",
+          "weight": 3,
+          "name": "minecraft:stick",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{HideFlags:1,rakestick:1b,Enchantments:[{id:\"minecraft:sharpness\",lvl:5s},{id:\"minecraft:knockback\",lvl:2s}]}"
+            },
+            {
+              "function": "set_name",
+              "name": {
+                "text": "Rake StunStick",
+                "color": "gold",
+                "bold": true,
+                "italic": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:iron_chestplate",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{HideFlags:6,Unbreakable:1b,AttributeModifiers:[{AttributeName:\"generic.max_health\",Name:\"generic.max_health\",Amount:25,Operation:0,UUID:[I;-1910782666,-1887812998,-1293810795,-1680062981]}]}"
+            },
+            {
+              "function": "set_name",
+              "name": {
+                "text": "Protection Vest"
+              }
+            }
+          ]
+        },
+		{
+		  "type": "empty",
+		  "weight": 1
+		}
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 2,
+          "name": "minecraft:iron_chestplate",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{HideFlags:6,Unbreakable:1b,AttributeModifiers:[{AttributeName:\"generic.max_health\",Name:\"generic.max_health\",Amount:25,Operation:0,UUID:[I;-9539163,989611545,-1835005422,2026093295]}]}"
+            },
+            {
+              "function": "set_name",
+              "name": {
+                "text": "Protection Vest"
+              }
+            }
+          ]
+        },
+        {
+          "type": "empty",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 2
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_regeneration\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "weight": 4,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_regeneration\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 2
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"Potion of Swiftness\"}'},custom_potion_effects:[{id:\"minecraft:speed\",amplifier:4b,duration:600}],Potion:\"minecraft:water\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "weight": 4,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"Potion of Swiftness\"}'},custom_potion_effects:[{id:\"minecraft:speed\",amplifier:4b,duration:600}],Potion:\"minecraft:water\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_regeneration\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_regeneration\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{Potion:\"minecraft:strong_regeneration\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"Potion of Swiftness\"}'},custom_potion_effects:[{id:\"minecraft:speed\",amplifier:4b,duration:600}],Potion:\"minecraft:water\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"Potion of Swiftness\"}'},custom_potion_effects:[{id:\"minecraft:speed\",amplifier:4b,duration:600}],Potion:\"minecraft:water\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 4
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{display:{Name:'{\"text\":\"Potion of Swiftness\"}'},custom_potion_effects:[{id:\"minecraft:speed\",amplifier:4b,duration:600}],Potion:\"minecraft:water\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "weight": 3,
+          "name": "minecraft:iron_chestplate",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 1
+            },
+            {
+              "function": "set_nbt",
+              "tag": "{HideFlags:6,Unbreakable:1b,AttributeModifiers:[{AttributeName:\"generic.max_health\",Name:\"generic.max_health\",Amount:25,Operation:0,UUID:[I;-1406605531,1912948950,-1125662985,1971222644]}]}"
+            },
+            {
+              "function": "set_name",
+              "name": [
+                {
+                  "text": "Protection Vest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "empty",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

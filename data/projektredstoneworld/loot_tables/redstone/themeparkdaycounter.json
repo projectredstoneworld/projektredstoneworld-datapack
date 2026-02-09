@@ -1,0 +1,46 @@
+{
+    "type": "command",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:paper"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "set_name",
+                    "name": {
+                        "text": "Theme Park Stamp: ",
+                        "color": "white",
+                        "italic": false,
+                        "extra":[
+                            {
+                                "score": {
+                                    "name": "#tag",
+                                    "objective": "info"
+                                },
+                                "color": "white"
+                            }
+                        ]
+                    },
+                    "entity": "this"
+                },
+                {
+                    "function": "set_count",
+                    "count": 1
+                },
+				{
+					"function": "set_lore",
+					"lore": [
+						{
+						"text": "Theme Park ReEntry Stamp of the day"
+						}
+					]
+				}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+execute positioned -1914.00 64.54 895.46 run kill @e[type=minecraft:text_display,distance=..1,tag=dosreactortemp]
+execute positioned -1914.10 64.5 895.5 run summon text_display ~ ~ ~ {Rotation:[90F,0F],text:'[{"text":"Reactor Core Temperature: "},{"score":{"name":"#reactortemp","objective":"info"},"color":"red","bold":true},{"text":"° C","color":"red","bold":true}]',background:-2146113281,Tags:["dosreactortemp"]}
+data merge block -1986 62 849 {front_text:{messages:['{"text":"TEMPERATURE:"}','[{"score":{"name":"#reactortemp","objective":"info"},"color":"red","bold":true},{"text":"° C","color":"red","bold":true}]','{"text":"URANIUM AMOUNT:"}','[{"score":{"name":"#tpuranium","objective":"info"},"color":"green","bold":true},{"text":" kg","color":"green","bold":true}]']}}

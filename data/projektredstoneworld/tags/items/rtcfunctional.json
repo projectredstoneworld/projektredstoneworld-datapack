@@ -1,0 +1,26 @@
+{
+    "values": [
+        "minecraft:torch",
+		"minecraft:soul_torch",
+		"minecraft:lantern",
+		"minecraft:soul_lantern",
+		"minecraft:chain",
+		"minecraft:end_rod",
+		"minecraft:glowstone",
+		"minecraft:furnace",
+		"minecraft:ladder",
+		"minecraft:scaffolding",
+		"minecraft:item_frame",
+		"minecraft:glow_item_frame",
+		"minecraft:birch_sign",
+		"minecraft:birch_hanging_sign",
+		"minecraft:spruce_sign",
+		"minecraft:spruce_hanging_sign",
+		"minecraft:chest",
+		"minecraft:barrel",
+		"minecraft:bookshelf",
+		"minecraft:lodestone",
+		"minecraft:crying_obsidian",
+		"minecraft:beacon"
+    ]
+}
