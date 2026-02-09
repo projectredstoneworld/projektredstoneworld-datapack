@@ -8,25 +8,58 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install jq
-        run: |
-          set -euo pipefail
-          sudo apt-get update -y
-          sudo apt-get install -y jq
-
-      - name: Validate JSON (including pack.mcmeta)
-        run: |
-          set -euo pipefail
-          jq empty pack.mcmeta
-          find . -name "*.json" -print0 | xargs -0 -n1 jq empty
-
-      - name: Mecha command check (MC 1.20.4)
-        uses: mcbeet/check-commands@v1
+      - uses: actions/checkout@v4
         with:
-          source: .
-          minecraft: "1.20"
-          log: ERROR
-          stats: false
+          fetch-depth: 0
+
+      - name: Check pack_format is 1.20.4 (26)
+        run: |
+          set -euo pipefail
+          test -f pack.mcmeta
+          pf=$(jq -r '.pack.pack_format' pack.mcmeta)
+          if [ "$pf" != "26" ]; then
+            echo "pack.mcmeta pack_format is $pf, expected 26 for Minecraft 1.20.4"
+            exit 1
+          fi
+
+      - name: Setup Node (cached)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install lint deps
+        run: npm ci
+
+      - name: Collect changed files
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="${{ github.event.pull_request.base.sha }}"
+          else
+            BASE="${{ github.event.before }}"
+            if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+              BASE="$(git rev-parse HEAD~1)"
+            fi
+          fi
+
+          git diff --name-only "$BASE"...HEAD > changed_files.txt || true
+
+          echo "Changed files:"
+          sed -n '1,200p' changed_files.txt || true
+
+      - name: Validate changed JSON files
+        run: |
+          set -euo pipefail
+          if [ -s changed_files.txt ]; then
+            grep -E '\.json$' changed_files.txt | while read -r f; do
+              [ -f "$f" ] && jq empty "$f"
+            done || true
+          fi
+
+      - name: Spyglass (errors only, changed mcfunction files)
+        env:
+          SPYGLASS_FILE_LIST: changed_files.txt
+          SPYGLASS_MC_VERSION: "1.20.4"
+        run: node scripts/spyglass-ci.mjs

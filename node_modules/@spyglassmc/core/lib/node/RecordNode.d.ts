@@ -1,0 +1,21 @@
+import type { Range } from '../source/index.js';
+import type { AstNode } from './AstNode.js';
+export interface RecordBaseNode<K extends AstNode, V extends AstNode> extends AstNode {
+    readonly children: PairNode<K, V>[];
+    innerRange?: Range;
+}
+export interface RecordNode<K extends AstNode, V extends AstNode> extends RecordBaseNode<K, V> {
+    type: 'record';
+}
+export interface PairNode<K extends AstNode, V extends AstNode> extends AstNode {
+    readonly type: 'pair';
+    readonly children?: [K, V] | [K] | [V];
+    readonly key?: K;
+    readonly sep?: Range;
+    readonly value?: V;
+    readonly end?: Range;
+}
+export declare namespace PairNode {
+    function is<K extends AstNode, V extends AstNode>(node: AstNode | undefined): node is PairNode<K, V>;
+}
+//# sourceMappingURL=RecordNode.d.ts.map

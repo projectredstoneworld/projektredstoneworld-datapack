@@ -1,0 +1,13 @@
+import type * as core from '@spyglassmc/core';
+import type { CommandChildNode } from '../node/command.js';
+import type { ArgumentTreeNode } from '../tree/index.js';
+/**
+ * A function that returns a parser for the provided tree node.
+ *
+ * @param treeNode The argument tree node.
+ *
+ * @returns The parser corresponding to that tree node, or `undefined` if such parser doesn't exist.
+ */
+export type ArgumentParserGetter = (treeNode: ArgumentTreeNode, prevNodes: CommandChildNode[]) => core.Parser | undefined;
+export declare function argumentTreeNodeToString(name: string, treeNode: ArgumentTreeNode): string;
+//# sourceMappingURL=argument.d.ts.map
