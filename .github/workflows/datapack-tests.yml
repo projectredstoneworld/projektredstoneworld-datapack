@@ -19,10 +19,9 @@ jobs:
           find . -name "*.json" -print0 | xargs -0 -n1 jq empty
 
       - name: Datapack Lint (language-server based)
-        uses: ChenCMD/datapack-linter@v2
+        uses: ChenCMD/datapack-linter@main
         with:
           GITHUB_TOKEN: ${{ github.token }}
           lintDirectory: "."
-          configPath: spyglass.json
           # If you want it to actually fail the workflow when lint finds problems:
           forcePass: false

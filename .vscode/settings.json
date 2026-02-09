@@ -1,6 +1,14 @@
 {
   "datapack.language-server.minecraftVersion": "1.20.4",
   "datapack.language-server.projectRoot": ".",
-  "datapackHelper.minecraftVersion": "1.20.4"
+  "datapackHelper.minecraftVersion": "1.20.4",
+  "datapack.languageServer.minecraftVersion": "1.20.4",
+  "datapack-language-server.minecraftVersion": "1.20.4",
+  "datapack.minecraftVersion": "1.20.4",
+  "minecraft.datapack.minecraftVersion": "1.20.4",
 
+  "datapack.languageServer.vanillaDataVersion": "1.20.4",
+  "datapack-language-server.vanillaDataVersion": "1.20.4"
 }
+
+
