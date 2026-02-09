@@ -1,0 +1,101 @@
+name: Discord Notify
+
+on:
+  push:
+  pull_request:
+    types: [opened, closed, reopened]
+  issues:
+    types: [opened, closed, reopened]
+  issue_comment:
+  pull_request_review:
+  release:
+    types: [published]
+  workflow_run:
+    workflows: ["Deploy Datapack"]
+    types: [completed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send fancy Discord embed
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          set -euo pipefail
+
+          EVENT="${{ github.event_name }}"
+          ACTOR="${{ github.actor }}"
+          AVATAR="https://github.com/${{ github.actor }}.png"
+          REPO="${{ github.repository }}"
+
+          COLOR=3447003
+          TITLE="GitHub Update"
+          DESC=""
+          URL="https://github.com/${{ github.repository }}"
+
+          if [ "$EVENT" = "workflow_run" ]; then
+            STATUS="${{ github.event.workflow_run.conclusion }}"
+            URL="${{ github.event.workflow_run.html_url }}"
+
+            if [ "$STATUS" = "success" ]; then
+              COLOR=5763719
+              TITLE="🚀 Datapack Deploy Succeeded"
+              DESC="Deployment completed successfully."
+            else
+              COLOR=15548997
+              TITLE="🔥 Datapack Deploy Failed"
+              DESC="Status: $STATUS"
+            fi
+
+          elif [ "$EVENT" = "push" ]; then
+            TITLE="📦 New Push"
+            DESC="${{ github.event.head_commit.message }}"
+            URL="${{ github.event.head_commit.url }}"
+
+          elif [ "$EVENT" = "pull_request" ]; then
+            TITLE="🔀 Pull Request ${{ github.event.action }}"
+            DESC="${{ github.event.pull_request.title }}"
+            URL="${{ github.event.pull_request.html_url }}"
+
+          elif [ "$EVENT" = "issues" ]; then
+            TITLE="🐛 Issue ${{ github.event.action }}"
+            DESC="${{ github.event.issue.title }}"
+            URL="${{ github.event.issue.html_url }}"
+
+          elif [ "$EVENT" = "issue_comment" ]; then
+            TITLE="💬 Comment Added"
+            DESC="Comment on issue/PR"
+            URL="${{ github.event.comment.html_url }}"
+
+          elif [ "$EVENT" = "pull_request_review" ]; then
+            TITLE="👀 PR Review ${{ github.event.action }}"
+            DESC="Review submitted"
+            URL="${{ github.event.pull_request.html_url }}"
+
+          elif [ "$EVENT" = "release" ]; then
+            TITLE="🏷️ Release Published"
+            DESC="${{ github.event.release.name }}"
+            URL="${{ github.event.release.html_url }}"
+          fi
+
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{
+            \"embeds\": [{
+              \"title\": \"$TITLE\",
+              \"description\": \"$DESC\",
+              \"url\": \"$URL\",
+              \"color\": $COLOR,
+              \"footer\": {
+                \"text\": \"$REPO\"
+              },
+              \"author\": {
+                \"name\": \"$ACTOR\",
+                \"icon_url\": \"$AVATAR\"
+              },
+              \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+            }]
+          }" \
+          "$WEBHOOK"
