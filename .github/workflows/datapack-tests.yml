@@ -19,7 +19,7 @@ jobs:
           find . -name "*.json" -print0 | xargs -0 -n1 jq empty
 
       - name: Datapack Lint (language-server based)
-        uses: ChenCMD/datapack-linter@main
+        uses: ChenCMD/datapack-linter@v2
         with:
           GITHUB_TOKEN: ${{ github.token }}
           lintDirectory: "."
