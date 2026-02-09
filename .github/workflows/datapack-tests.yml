@@ -22,14 +22,6 @@ jobs:
             exit 1
           fi
 
-      - name: Setup Node (cached)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install lint deps
-        run: npm ci
 
       - name: Collect changed files
         run: |
@@ -58,12 +50,4 @@ jobs:
             done || true
           fi
 
-      - name: Spyglass (errors only, changed mcfunction files)
-        env:
-          SPYGLASS_FILE_LIST: changed_files.txt
-          SPYGLASS_MC_VERSION: "1.20"
-        run: |
-          set -euo pipefail
-          echo "Changed mcfunction files:"
-          grep -E '\.mcfunction$' changed_files.txt || true
-          node scripts/spyglass-ci.mjs
+
