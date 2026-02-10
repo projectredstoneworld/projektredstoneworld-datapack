@@ -49,6 +49,29 @@ scoreboard players operation #rcrspeedspeed info /= 10 CONSTANTS
 # Display!
 execute if entity @s run title @s times 0 20 0 
 execute if entity @s run title @s title ""
+
+# Destination subtitle
+execute store result score #rcrstationdesttemp info run scoreboard players get @e[type=minecart,limit=1,sort=nearest,distance=5.3..5.5,tag=rcraildrive] rcsid
+execute if entity @s if score #rcrstationdesttemp info matches 0 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Testing Sector","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 1 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Theme Park","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 2 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Cruise Ship","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 3 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Dos Village","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 4 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Main Bunker","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 5 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"SMP Base (Dos)","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 6 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Gerudo Desert","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 7 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Emil's Villa","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 8 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Rakeport","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 9 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Founding Island - Spawn","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 10 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Forgotten Isle","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 11 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"FI Bunker","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 12 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Tavish Town","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 13 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Global Control / Founding Desert","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Eastern Village","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
+
+
+
+
 execute if entity @s run title @s actionbar [{"text":"RCorp speedometer: ","color":"#999999"},{"score":{"name":"#rcrspeedspeed","objective":"info"},"color":"#CC4444","bold":true},{"text":".","color":"#CC4444","bold":true},{"score":{"name":"#rcrspeedspeedmod","objective":"info"},"color":"#CC4444","bold":true},{"text":" blocks/sec ","color":"#CC4444","bold":false},{"text":"(","color":"#55AABB","bold":false},{"score":{"name":"#rcrspeedspeedk","objective":"info"},"color":"#55AABB","bold":true},{"text":".","color":"#55AABB","bold":true},{"score":{"name":"#rcrspeedspeedkmod","objective":"info"},"color":"#55AABB","bold":true},{"text":" km/h)","color":"#55AABB","bold":false}]
 tag @s remove speedometertarget
 
