@@ -28,8 +28,8 @@ execute if score @s rcrailcartstraight matches 48.. if score @s rcrailcartstraig
 execute if score @s rcrailcartstraight matches 48.. if score @s rcrailcartstraightz matches -1 run tp @s ~ ~ ~-2.1
 
 # Give minecart motion
-execute if score @s rcrailcartstraightx matches 1 run data merge entity @s {Motion:[1.0d,0.0d,0.0d]}
-execute if score @s rcrailcartstraightx matches -1 run data merge entity @s {Motion:[-1.0d,0.0d,0.0d]}
-execute if score @s rcrailcartstraightz matches 1 run data merge entity @s {Motion:[0.0d,0.0d,1.0d]}
-execute if score @s rcrailcartstraightz matches -1 run data merge entity @s {Motion:[0.0d,0.0d,-1.0d]}
+execute if score @s rcrailcartstraightx matches 1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[2.0d,0.0d,0.0d]}
+execute if score @s rcrailcartstraightx matches -1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[-2.0d,0.0d,0.0d]}
+execute if score @s rcrailcartstraightz matches 1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[0.0d,0.0d,2.0d]}
+execute if score @s rcrailcartstraightz matches -1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[0.0d,0.0d,-2.0d]}
 
