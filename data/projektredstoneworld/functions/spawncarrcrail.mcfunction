@@ -7,4 +7,7 @@ scoreboard players operation @e[tag=rcrailseat,distance=..10,type=pig,tag=!rcrai
 execute as @e[tag=rcrailcar,distance=..10,scores={redstoneworldID=0..}] run tag @s add rcrailhasid
 execute as @e[tag=rcrailcar,type=block_display,distance=..6] run data modify entity @s teleport_duration set value 10
 execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify entity @s teleport_duration set value 10
+execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
+execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
+
 scoreboard players add #rcrailtrip redstoneworldID 1
