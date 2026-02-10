@@ -1,4 +1,4 @@
-tag @e[type=minecart,distance=..33,tag=minecartgayrcrail] remove minecartgayrcrail
+tag @e[type=minecart,distance=..49,tag=minecartgayrcrail] remove minecartgayrcrail
 #say i am here, yes, this is my name. Hello. I am here. Hi. I am marker.
 #execute store result storage projektredstoneworld:gaydata rcrailpos0 int 
 #data modify storage projektredstoneworld:gaydata gaymarkerpos set from entity @s Pos
