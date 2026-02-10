@@ -67,8 +67,8 @@ execute if entity @s if score #rcrstationdesttemp info matches 11 run title @s s
 execute if entity @s if score #rcrstationdesttemp info matches 12 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Tavish Town","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 13 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Global Control / Founding Desert","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Eastern Village","color":"#E44444"}]
-execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
-execute at @s if entity @e[type=minecart,sort=nearest,limit=1,distance=5.3..5.5,tag=rcraildrive,nbt={Motion:[0.0d,0.0d,0.0d]}] run title @s subtitle {"text":"The car has stopped.","color":"#66AAFF"}
+execute if entity @s if score #rcrstationdesttemp info matches 15 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
+execute at @s if entity @e[type=marker,tag=rcsmanager,distance=..32] run title @s subtitle ""
 
 # Speed
 execute if entity @s if score #rcrspeedspeed info matches 0.. run title @s actionbar [{"text":"RCorp speedometer: ","color":"#999999"},{"score":{"name":"#rcrspeedspeed","objective":"info"},"color":"#CC4444","bold":true},{"text":".","color":"#CC4444","bold":true},{"score":{"name":"#rcrspeedspeedmod","objective":"info"},"color":"#CC4444","bold":true},{"text":" blocks/sec ","color":"#CC4444","bold":false},{"text":"(","color":"#55AABB","bold":false},{"score":{"name":"#rcrspeedspeedk","objective":"info"},"color":"#55AABB","bold":true},{"text":".","color":"#55AABB","bold":true},{"score":{"name":"#rcrspeedspeedkmod","objective":"info"},"color":"#55AABB","bold":true},{"text":" km/h)","color":"#55AABB","bold":false}]
