@@ -51,7 +51,7 @@ execute if entity @s run title @s times 0 20 0
 execute if entity @s run title @s title ""
 
 # Destination subtitle
-scoreboard players operation #rcrstationdesttemp info = @e[type=minecart,limit=1,sort=nearest,distance=5.3..5.5,tag=rcraildrive] rcsid
+execute at @s run scoreboard players operation #rcrstationdesttemp info = @e[type=minecart,limit=1,sort=nearest,distance=5.3..5.5,tag=rcraildrive] rcsid
 execute if entity @s if score #rcrstationdesttemp info matches 0 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Testing Sector","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 1 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Theme Park","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 2 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Cruise Ship","color":"#E44444"}]
@@ -70,8 +70,7 @@ execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s s
 execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
 
 
-
-
+# Speed
 execute if entity @s if score #rcrspeedspeed info matches 0.. run title @s actionbar [{"text":"RCorp speedometer: ","color":"#999999"},{"score":{"name":"#rcrspeedspeed","objective":"info"},"color":"#CC4444","bold":true},{"text":".","color":"#CC4444","bold":true},{"score":{"name":"#rcrspeedspeedmod","objective":"info"},"color":"#CC4444","bold":true},{"text":" blocks/sec ","color":"#CC4444","bold":false},{"text":"(","color":"#55AABB","bold":false},{"score":{"name":"#rcrspeedspeedk","objective":"info"},"color":"#55AABB","bold":true},{"text":".","color":"#55AABB","bold":true},{"score":{"name":"#rcrspeedspeedkmod","objective":"info"},"color":"#55AABB","bold":true},{"text":" km/h)","color":"#55AABB","bold":false}]
 tag @s remove speedometertarget
 
