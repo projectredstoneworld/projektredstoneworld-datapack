@@ -51,7 +51,7 @@ execute if entity @s run title @s times 0 20 0
 execute if entity @s run title @s title ""
 
 # Destination subtitle
-execute store result score #rcrstationdesttemp info run scoreboard players get @e[type=minecart,limit=1,sort=nearest,distance=..10,tag=rcraildrive] rcsid
+scoreboard players operation #rcrstationdesttemp info = @e[type=minecart,limit=1,sort=nearest,distance=5.3..5.5,tag=rcraildrive] rcsid
 execute if entity @s if score #rcrstationdesttemp info matches 0 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Testing Sector","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 1 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Theme Park","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 2 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Cruise Ship","color":"#E44444"}]
