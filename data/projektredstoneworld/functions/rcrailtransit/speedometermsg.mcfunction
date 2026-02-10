@@ -66,8 +66,9 @@ execute if entity @s if score #rcrstationdesttemp info matches 10 run title @s s
 execute if entity @s if score #rcrstationdesttemp info matches 11 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"FI Bunker","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 12 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Tavish Town","color":"#E44444"}]
 execute if entity @s if score #rcrstationdesttemp info matches 13 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Global Control / Founding Desert","color":"#E44444"}]
-execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Eastern Village","color":"#E44444"}]
-execute if entity @s if score #rcrstationdesttemp info matches 15 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 14 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"RTC-2 / Tower 3.0","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 15 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Eastern Village","color":"#E44444"}]
+execute if entity @s if score #rcrstationdesttemp info matches 16 run title @s subtitle [{"text":"Destination: ","color":"#AAAAAA"},{"text":"Blakewood Outpost","color":"#E44444"}]
 execute at @s if entity @e[type=marker,tag=rcsmanager,distance=..32] run title @s subtitle ""
 
 # Speed
