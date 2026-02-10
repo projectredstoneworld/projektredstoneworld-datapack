@@ -47,6 +47,8 @@ scoreboard players operation #rcrspeedspeedmod info %= 10 CONSTANTS
 scoreboard players operation #rcrspeedspeed info /= 10 CONSTANTS
 
 # Display!
-execute if entity @s[nbt={RootVehicle:{Entity:{id:"minecraft:minecart"}}}] run title @s times 0 20 0 
-execute if entity @s[nbt={RootVehicle:{Entity:{id:"minecraft:minecart"}}}] run title @s actionbar [{"text":"RCorp speedometer: ","color":"#999999"},{"score":{"name":"#rcrspeedspeed","objective":"info"},"color":"#CC4444","bold":true},{"text":".","color":"#CC4444","bold":true},{"score":{"name":"#rcrspeedspeedmod","objective":"info"},"color":"#CC4444","bold":true},{"text":" blocks/sec ","color":"#CC4444","bold":false},{"text":"(","color":"#55AABB","bold":false},{"score":{"name":"#rcrspeedspeedk","objective":"info"},"color":"#55AABB","bold":true},{"text":".","color":"#55AABB","bold":true},{"score":{"name":"#rcrspeedspeedkmod","objective":"info"},"color":"#55AABB","bold":true},{"text":" km/h)","color":"#55AABB","bold":false}]
+execute if entity @s run title @s times 0 20 0 
+execute if entity @s run title @s actionbar [{"text":"RCorp speedometer: ","color":"#999999"},{"score":{"name":"#rcrspeedspeed","objective":"info"},"color":"#CC4444","bold":true},{"text":".","color":"#CC4444","bold":true},{"score":{"name":"#rcrspeedspeedmod","objective":"info"},"color":"#CC4444","bold":true},{"text":" blocks/sec ","color":"#CC4444","bold":false},{"text":"(","color":"#55AABB","bold":false},{"score":{"name":"#rcrspeedspeedk","objective":"info"},"color":"#55AABB","bold":true},{"text":".","color":"#55AABB","bold":true},{"score":{"name":"#rcrspeedspeedkmod","objective":"info"},"color":"#55AABB","bold":true},{"text":" km/h)","color":"#55AABB","bold":false}]
 tag @s remove speedometertarget
+
+#@s[nbt={RootVehicle:{Entity:{id:"minecraft:minecart"}}}]
