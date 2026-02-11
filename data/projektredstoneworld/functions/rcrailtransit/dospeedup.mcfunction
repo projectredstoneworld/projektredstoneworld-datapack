@@ -42,7 +42,7 @@ execute at @s if score @s rcrspeedupspeed > @s rcrspeeduppspeed run playsound mi
 execute at @s if score @s rcrspeedupspeed < @s rcrspeeduppspeed run playsound minecraft:block.beacon.deactivate master @a[distance=..48] ~ ~ ~ 1.5 2 0.4
 scoreboard players operation @s rcrspeeduppspeed = @s rcrspeedupspeed
 
-execute at @s at @a[distance=..32] run playsound minecraft:block.bell.resonate master @s ~ ~ ~ 0.2 0 0.2
+execute at @s as @a[distance=..32] at @s run playsound minecraft:block.bell.resonate master @s ~ ~ ~ 0.2 0 0.2
 
 # Give minecart motion
 execute if score @s rcrailcartstraightx matches 1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[2.0d,0.0d,0.0d]}
