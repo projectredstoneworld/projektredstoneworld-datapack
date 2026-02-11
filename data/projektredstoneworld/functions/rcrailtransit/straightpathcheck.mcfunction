@@ -12,6 +12,8 @@ execute store result score @s rcrailcartstraightz run data get entity @s Motion[
 execute if score @s rcrailcartstraightz matches ..-1 run scoreboard players set @s rcrailcartstraightz -1
 execute if score @s rcrailcartstraightz matches 1.. run scoreboard players set @s rcrailcartstraightz 1
 
+execute if score @s rcrailcartstraightx matches 0 if score @s rcrailcartstraightz matches 0 run return fail
+
 # Store into marker
 execute store result entity @e[type=marker,distance=..1,tag=rcrstraightpathcheckmarker,limit=1,sort=nearest] data.x int 1 run scoreboard players get @s rcrailcartstraightx
 execute store result entity @e[type=marker,distance=..1,tag=rcrstraightpathcheckmarker,limit=1,sort=nearest] data.z int 1 run scoreboard players get @s rcrailcartstraightz
