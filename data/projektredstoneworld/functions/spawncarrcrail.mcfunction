@@ -11,3 +11,6 @@ execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
 
 scoreboard players add #rcrailtrip redstoneworldID 1
+
+# Default destination to spawn
+scoreboard players set @e[tag=rcraildrive,distance=..4,type=minecart,tag=!rcrailhasid] rcsid 9
