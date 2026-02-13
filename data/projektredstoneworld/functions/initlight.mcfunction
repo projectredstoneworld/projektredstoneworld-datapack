@@ -1,0 +1,1 @@
+schedule function projektredstoneworld:light_10t 5t

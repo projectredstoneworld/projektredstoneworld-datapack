@@ -1,0 +1,1 @@
+setworldspawn -220 98 477

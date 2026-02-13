@@ -1,0 +1,7 @@
+execute as @a[scores={t2hrordtrig=13,t2hrseatid=1..}] run tag @s add orderfinalized
+execute as @a[scores={t2hrordtrig=13,t2hrseatid=1..}] run tellraw @s {"text":"Your order has been finalized and is on its way! Enjoy your meal!!","color":"green"}
+summon minecraft:armor_stand -19.5 127.00 603.5 {ArmorItems:[{id:"minecraft:leather_boots",Count:1b,tag:{display:{color:16777215}}},{id:"minecraft:leather_leggings",Count:1b,tag:{display:{color:16777215}}},{id:"minecraft:leather_chestplate",Count:1b,tag:{display:{color:16777215}}},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;-1729092157,-1828435817,-1967107619,1039924532],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2M1MDU4NTQ4ZWYzNTIwM2IxMmU3NGIzMjM1MTRlMDFiMmJlYTlhMTg1NzFhZGU4YmRjODM1ZDAyYjllMzY2OSJ9fX0="}]}}}}],Rotation:[-90F,0F],ShowArms:1b,PersistenceRequired:1b,NoBasePlate:1b,Invulnerable:1b,DisabledSlots:4144959,HandItems:[{id:"minecraft:bundle",Count:1b},{}],Tags:["t2hrserve","t2hrservenew"],Silent:1b,Health:1024f}
+scoreboard players operation @e[type=armor_stand,tag=t2hrserve,tag=t2hrservenew] t2hrtableid = @s t2hrtableid
+scoreboard players operation @e[type=armor_stand,tag=t2hrserve,tag=t2hrservenew] t2hrseatid = @s t2hrseatid
+
+tag @e[tag=t2hrservenew] remove t2hrservenew

@@ -1,0 +1,22 @@
+{
+    "values": [
+        "minecraft:coal",
+		"minecraft:charcoal",
+		"minecraft:iron_ingot",
+		"minecraft:gold_ingot",
+		"minecraft:diamond",
+		"minecraft:emerald",
+		"minecraft:nether_star",
+		"minecraft:lapis_lazuli",
+		"minecraft:copper_ingot",
+		"minecraft:netherite_ingot",
+		"minecraft:wheat",
+		"minecraft:sugar",
+		"minecraft:blaze_rod",
+		"minecraft:ender_pearl",
+		"minecraft:egg",
+		"minecraft:bowl",
+		"minecraft:ink_sac",
+		"minecraft:glow_ink_sac"
+    ]
+}
