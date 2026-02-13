@@ -1,7 +1,16 @@
 tag @s add handleSeatMovement
 
-execute rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^1.5 ^5 ^
-execute rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^-1.5 ^5 ^
+execute if entity @s[nbt={Motion:[0.0,0.0,0.0]}] rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^1.3 ^5 ^
+execute if entity @s[nbt={Motion:[0.0,0.0,0.0]}] rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^-1.5 ^5 ^
+execute at @s unless entity @e[tag=rcsmanager,distance=..30,type=marker] if score @s rcrspeedupspeed matches -1 rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^2.3 ^5 ^
+execute at @s unless entity @s[tag=rcsmanager,distance=..30,type=marker] if score @s rcrspeedupspeed matches -1 rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^-0.7 ^5 ^
+execute if score @s rcrspeedupspeed matches 1..2 rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^2.8 ^5 ^
+execute if score @s rcrspeedupspeed matches 1..2 rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^0.2 ^5 ^
+execute if score @s rcrspeedupspeed matches 1..2 rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^2.8 ^5 ^
+execute if score @s rcrspeedupspeed matches 1..2 rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^0.2 ^5 ^
+execute if score @s rcrspeedupspeed matches 3 rotated as @s as @e[type=pig,x=0,tag=rcrailseatf] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^2.8 ^5 ^
+execute if score @s rcrspeedupspeed matches 3 rotated as @s as @e[type=pig,x=0,tag=rcrailseatb] if score @s redstoneworldID = @e[type=minecart,tag=rcraildrive,tag=handleSeatMovement,limit=1,sort=nearest] redstoneworldID run tp @s ^0.2 ^5 ^
+
 
 tag @s remove handleSeatMovement
 tag @s add handledSeatMovement
