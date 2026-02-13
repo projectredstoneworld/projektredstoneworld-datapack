@@ -13,6 +13,8 @@ execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify enti
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
 
+effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infinite 67 true
+
 scoreboard players add #rcrailtrip redstoneworldID 1
 
 
