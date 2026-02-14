@@ -38,7 +38,7 @@ scoreboard players reset @a[tag=!rcrailmsg] rcrailtrig
 
 scoreboard players enable @a[tag=seenrcrailmsg] rcrailtrig
 
-execute as @a[tag=seenrcrailmsg,scores={rcrailtrig=1..},tag=!rcrailpasstrig1,tag=!rcraildirwait] at @s run function projektredstoneworld:rcrailtransit/handletrig1
+execute as @a[tag=seenrcrailmsg,scores={rcrailtrig=1..},tag=!rcrailpasstrig1,tag=!rcraildirwait,tag=!rcrailpass2,tag=!rcrailpass3] at @s run function projektredstoneworld:rcrailtransit/handletrig1
 
 execute as @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=!rcrailoneway] run tellraw @s ["",{"text":"R","bold":true,"color":"#FF0000"},{"text":"Corp","bold":true,"color":"red"},{"text":" Rail Network ","bold":true,"color":"dark_aqua"},{"text":"by Ij and Void","color":"aqua"},{"text":"\n"},{"text":"\n"},{"text":"Your current station requires a depart direction to proceed, please click one.","bold":true,"color":"green"},{"text":"\n"},{"text":"Mobile Users! Use /trigger rcrailtrig set <ID> the ID number is next to direction name!","color":"gray"},{"text":"\n"},{"text":"\n"},{"text":"Northbound/Westbound (18)","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger rcrailtrig set 18"}},{"text":"\n"},{"text":"Southbound/Eastbound (19)","bold":true,"color":"aqua","clickEvent":{"action":"run_command","value":"/trigger rcrailtrig set 19"}}]
 tag @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=rcrailoneway] add rcrailpass2
@@ -47,7 +47,7 @@ tag @a[tag=rcrailpasstrig1] remove rcrailpasstrig1
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 18 run tag @s add rcrailneg
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 19 run tag @s add rcrailpos
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 18..19 run tag @s add rcrailpass2
-execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] run scoreboard players reset @s rcrailtrig
+execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 18..19 run scoreboard players reset @s rcrailtrig
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait,tag=rcrailpass2] run tag @s remove rcraildirwait
 
 #Handoff to station
