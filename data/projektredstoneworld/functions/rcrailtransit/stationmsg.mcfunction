@@ -23,7 +23,7 @@ execute as @a[x=-1522,y=98,z=752,dx=2,dy=4,dz=7] run tag @s add rcrailoneway
 execute as @a[x=-1033,y=71,z=729,dx=2,dy=4,dz=9] run tag @s add rcrailoneway
 execute as @a[x=-526,y=73,z=-88,dx=9,dy=4,dz=2] run tag @s add rcrailoneway
 
-execute as @a[tag=rcrailmsg] unless score @s rcrailpay matches 1.. run tag @s remove rcrailmsg
+execute as @a[tag=rcrailmsg] unless score @s rcrailpay matches 4.. run tag @s remove rcrailmsg
 
 
 
