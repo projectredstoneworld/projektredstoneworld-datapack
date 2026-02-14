@@ -48,3 +48,12 @@ execute if score @s rcrailcartstraightx matches -1 if score @s rcrailcartstraigh
 execute if score @s rcrailcartstraightz matches 1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[0.0d,0.0d,2.0d]}
 execute if score @s rcrailcartstraightz matches -1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[0.0d,0.0d,-2.0d]}
 
+# Update Display's teleport duration to disable/enable interpolation based on speed/rotating
+tag @s add rcrailUpdateInterp
+execute if score @s rcrspeedupspeed matches 0.. as @e[type=block_display,distance=..10,tag=rcrailcar] if score @s redstoneworldID = @e[tag=rcraildrive,distance=..10,type=minecart,limit=1,sort=nearest] redstoneworldID run data modify entity @s teleport_duration set value 0
+execute if score @s rcrspeedupspeed matches 0.. as @e[type=item_display,distance=..10,tag=rcrailcar] if score @s redstoneworldID = @e[tag=rcraildrive,distance=..10,type=minecart,limit=1,sort=nearest] redstoneworldID run data modify entity @s teleport_duration set value 0
+
+execute if score @s rcrspeedupspeed matches ..-1 as @e[type=block_display,distance=..10,tag=rcrailcar] if score @s redstoneworldID = @e[tag=rcraildrive,distance=..10,type=minecart,limit=1,sort=nearest] redstoneworldID run data modify entity @s teleport_duration set value 10
+execute if score @s rcrspeedupspeed matches ..-1 as @e[type=item_display,distance=..10,tag=rcrailcar] if score @s redstoneworldID = @e[tag=rcraildrive,distance=..10,type=minecart,limit=1,sort=nearest] redstoneworldID run data modify entity @s teleport_duration set value 10
+
+
