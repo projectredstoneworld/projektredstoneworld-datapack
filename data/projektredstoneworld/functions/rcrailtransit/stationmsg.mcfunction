@@ -41,6 +41,7 @@ scoreboard players enable @a[tag=seenrcrailmsg] rcrailtrig
 execute as @a[tag=seenrcrailmsg,scores={rcrailtrig=1..},tag=!rcrailpasstrig1,tag=!rcraildirwait,tag=!rcrailpass2,tag=!rcrailpass3] at @s run function projektredstoneworld:rcrailtransit/handletrig1
 
 execute as @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=!rcrailoneway] run tellraw @s ["",{"text":"R","bold":true,"color":"#FF0000"},{"text":"Corp","bold":true,"color":"red"},{"text":" Rail Network ","bold":true,"color":"dark_aqua"},{"text":"by Ij and Void","color":"aqua"},{"text":"\n"},{"text":"\n"},{"text":"Your current station requires a depart direction to proceed, please click one.","bold":true,"color":"green"},{"text":"\n"},{"text":"Mobile Users! Use /trigger rcrailtrig set <ID> the ID number is next to direction name!","color":"gray"},{"text":"\n"},{"text":"\n"},{"text":"Northbound/Westbound (18)","bold":true,"color":"red","clickEvent":{"action":"run_command","value":"/trigger rcrailtrig set 18"}},{"text":"\n"},{"text":"Southbound/Eastbound (19)","bold":true,"color":"aqua","clickEvent":{"action":"run_command","value":"/trigger rcrailtrig set 19"}}]
+tellraw @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=rcrailoneway,tag=!rcrailpass2] {"text":"Your train is spawning shortly! You may have to wait for any already present trains to depart first.","color":"green"}
 tag @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=rcrailoneway] add rcrailpass2
 tag @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=rcrailoneway] add rcrailneg
 tag @a[tag=seenrcrailmsg,tag=rcrailpasstrig1,tag=!rcrailoneway] add rcraildirwait
@@ -49,9 +50,10 @@ execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matche
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 19 run tag @s add rcrailpos
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 18..19 run tag @s add rcrailpass2
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait] if score @s rcrailtrig matches 18..19 run scoreboard players reset @s rcrailtrig
+tellraw @a[tag=seenrcrailmsg,tag=rcraildirwait,tag=rcrailpass2] {"text":"Your train is spawning shortly! You may have to wait for any already present trains to depart first.","color":"green"}
 execute as @a[tag=seenrcrailmsg,tag=rcraildirwait,tag=rcrailpass2] run tag @s remove rcraildirwait
 
 #Handoff to station
 execute as @a[tag=seenrcrailmsg,tag=rcrailpass2] at @s at @e[type=marker,distance=..20,tag=rcsmanager,limit=1,sort=nearest] run function projektredstoneworld:rcrailtransit/tryhandoff
-execute as @a[tag=seenrcrailmsg,tag=rcrailpass2,tag=rcrailpass3] run tellraw @s {"text":"Your train is spawning shortly! Please wait at the station platform and prepare for departure.","color":"green"}
+#execute as @a[tag=seenrcrailmsg,tag=rcrailpass2,tag=rcrailpass3] run tellraw @s {"text":"Your train is spawning shortly! Please wait at the station platform and prepare for departure.","color":"green"}
 tag @a[tag=seenrcrailmsg,tag=rcrailpass3] remove rcrailpass2

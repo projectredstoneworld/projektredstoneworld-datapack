@@ -19,5 +19,5 @@ effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infini
 
 scoreboard players add #rcrailtrip redstoneworldID 1
 
-tellraw @s {"text":"Your RCorp pod has been summoned!","color":"green"}
+tellraw @s {"text":"Your RCorp pod has been summoned! Please sit down inside and it will depart shortly!","color":"green"}
 
