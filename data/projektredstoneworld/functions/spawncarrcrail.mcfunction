@@ -4,9 +4,11 @@ execute as @e[tag=rcraildrive,distance=..4] at @s rotated as @s run summon pig ^
 
 execute as @e[tag=rcraildrive,distance=..4] at @s rotated as @s run summon pig ^-1.5 ^4 ^ {NoGravity:1b,Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Health:1024f,Saddle:1b,Tags:["rcrailcar","rcrailseat","rcrailseatb"],active_effects:[{id:"minecraft:invisibility",amplifier:255,duration:-1,show_particles:0b}],Attributes:[{Name:generic.max_health,Base:1024}]}
 scoreboard players operation @e[tag=rcrailseat,distance=..10,type=pig,tag=!rcrailhasid] redstoneworldID = #rcrailtrip redstoneworldID
+scoreboard players operation @e[tag=rcrailcar,tag=!rcraildrive,distance=..10,tag=!rcrailhasid] redstoneworldID = #rcrailtrip redstoneworldID
 # Default destination to spawn
 scoreboard players set @e[tag=rcraildrive,distance=..4,type=minecart,tag=!rcrailhasid] rcsid 9
 
+# Add the ID alignment
 execute as @e[tag=rcrailcar,distance=..10,scores={redstoneworldID=0..}] run tag @s add rcrailhasid
 execute as @e[tag=rcrailcar,type=block_display,distance=..6] run data modify entity @s teleport_duration set value 10
 execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify entity @s teleport_duration set value 10
@@ -17,4 +19,5 @@ effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infini
 
 scoreboard players add #rcrailtrip redstoneworldID 1
 
+tellraw @s {"text":"Your RCorp pod has been summoned!","color":"green"}
 
