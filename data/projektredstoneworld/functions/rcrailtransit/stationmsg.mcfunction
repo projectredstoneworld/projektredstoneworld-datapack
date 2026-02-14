@@ -54,4 +54,4 @@ execute as @a[tag=seenrcrailmsg,tag=rcraildirwait,tag=rcrailpass2] run tag @s re
 #Handoff to station
 execute as @a[tag=seenrcrailmsg,tag=rcrailpass2] at @s at @e[type=marker,distance=..20,tag=rcsmanager,limit=1,sort=nearest] run function projektredstoneworld:rcrailtransit/tryhandoff
 execute as @a[tag=seenrcrailmsg,tag=rcrailpass2,tag=rcrailpass3] run tellraw @s {"text":"Your train is spawning shortly! Please wait at the station platform and prepare for departure.","color":"green"}
-tag @s[tag=seenrcrailmsg,tag=rcrailpass3] remove rcrailpass2
+tag @a[tag=seenrcrailmsg,tag=rcrailpass3] remove rcrailpass2
