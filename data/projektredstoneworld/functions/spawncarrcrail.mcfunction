@@ -15,13 +15,8 @@ execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify enti
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] run data modify entity @s Rotation[0] set value 0F
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~-1 ~ detector_rail[shape=east_west] run data modify entity @s Rotation[0] set value 0F
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~-2 ~ detector_rail[shape=east_west] run data modify entity @s Rotation[0] set value 0F
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail run say i spawned at him! HES FUCKING ME
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~-1 ~ detector_rail run say i spawned ONE ABOVE him! HES FUCKING MY DAD
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~-2 ~ detector_rail run say i spawned TWO ABOVE him! HES FUCKING IAN
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~1 ~ detector_rail run say i spawned ONE BELOW HIM! HES FUCKING THE DEEPSLATE
 
+execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
 
 effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infinite 67 true
 
