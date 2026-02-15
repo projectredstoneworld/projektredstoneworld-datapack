@@ -18,7 +18,7 @@ execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[s
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value 180F
 
 
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
+execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -89F
 
 effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infinite 67 true
 
