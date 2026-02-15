@@ -14,7 +14,9 @@ execute as @e[tag=rcrailcar,type=block_display,distance=..6] run data modify ent
 execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify entity @s teleport_duration set value 10
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
-execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] run data modify entity @s Rotation[0] set value 0F
+execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] at @s if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 0F
+execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value 180F
+
 
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -90F
 
