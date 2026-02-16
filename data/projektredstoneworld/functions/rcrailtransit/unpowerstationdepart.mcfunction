@@ -1,4 +1,3 @@
-execute if block ~-1 ~ ~ repeater[delay=4] run setblock ~-2 ~ ~ deepslate_tiles
-execute if block ~1 ~ ~ repeater[delay=4] run setblock ~2 ~ ~ deepslate_tiles
-execute if block ~ ~ ~-1 repeater[delay=4] run setblock ~ ~ ~-2 deepslate_tiles
-execute if block ~ ~ ~1 repeater[delay=4] run setblock ~ ~ ~2 deepslate_tiles
+data modify entity @s data.block set value "minecraft:deepslate_tiles"
+function projektredstoneworld:macrosetblock with entity @s data
+scoreboard players set @s rcrailunpowertime 0
