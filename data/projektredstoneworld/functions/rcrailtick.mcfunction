@@ -9,4 +9,4 @@ execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRota
 
 
 execute as @e[type=minecart,tag=rcraildrive] at @s run function projektredstoneworld:rcrailtransit/dospeedup
-
+execute in overworld as @e[type=marker,tag=rcrailpowered,x=0] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
