@@ -1,7 +1,12 @@
 schedule function projektredstoneworld:rcrailschedule 10t
 
+#speedometer and dest messaging
 execute in overworld as @a[tag=rcrailrider,x=0] on vehicle if entity @s[type=pig] on passengers run function projektredstoneworld:rcrailtransit/speedometer
 
+# Dismount if not paid
+execute in overworld as @a[tag=rcrailrider,x=0] on vehicle if entity @s[type=pig,tag=rcrailseat] on passengers unless score @s rcrailpay matches 1.. run ride @s dismount
+
+# Handle rider tag
 execute in overworld run tag @a[tag=rcrailrider,x=0] remove rcrailrider
 execute in overworld if entity @e[type=pig,tag=rcrailseat,x=0] as @a on vehicle if entity @s[type=pig,tag=rcrailseat,x=0] on passengers run tag @s add rcrailrider
 

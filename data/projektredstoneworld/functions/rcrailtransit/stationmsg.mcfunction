@@ -4,7 +4,7 @@ tag @a remove rcrailoneway
 execute as @a[x=-3457,y=95,z=-120,dx=2,dy=4,dz=9] run tag @s add rcrailmsg
 execute as @a[x=-2143,y=85,z=919,dx=12,dy=4,dz=2] run tag @s add rcrailmsg
 execute as @a[x=-2110,y=73,z=174,dx=9,dy=4,dz=2] run tag @s add rcrailmsg
-execute as @a[x=-1522,y=98,z=752,dx=2,dy=4,dz=7] run tag @s add rcrailmsg
+execute as @a[x=-1522,y=98,z=744,dx=2,dy=4,dz=13] run tag @s add rcrailmsg
 execute as @a[x=-1344,y=87,z=-25,dx=9,dy=4,dz=2] run tag @s add rcrailmsg
 execute as @a[x=-1033,y=71,z=729,dx=2,dy=4,dz=9] run tag @s add rcrailmsg
 execute as @a[x=-710,y=65,z=570,dx=2,dy=4,dz=9] run tag @s add rcrailmsg
@@ -19,7 +19,7 @@ execute as @a[x=-26,y=65,z=679,dx=32,dy=5,dz=11] run tag @s add rcrailmsg
 execute as @a[x=446,y=69,z=122,dx=2,dy=4,dz=9] run tag @s add rcrailmsg
 execute as @a[x=2882,y=77,z=661,dx=2,dy=4,dz=9] run tag @s add rcrailmsg
 # One way stations: Dos Village, SMP Base, Rakeport
-execute as @a[x=-1522,y=98,z=752,dx=2,dy=4,dz=7] run tag @s add rcrailoneway
+execute as @a[x=-1522,y=98,z=744,dx=2,dy=4,dz=13] run tag @s add rcrailoneway
 execute as @a[x=-1033,y=71,z=729,dx=2,dy=4,dz=9] run tag @s add rcrailoneway
 execute as @a[x=-526,y=73,z=-88,dx=9,dy=4,dz=2] run tag @s add rcrailoneway
 
