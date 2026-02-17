@@ -6,6 +6,7 @@
 data modify entity @s data.block set value "minecraft:redstone_block"
 function projektredstoneworld:macrosetblock with entity @s data
 tag @s add rcrailpowered
+tag @e[tag=rcraildrive,type=minecart,distance=..1,limit=1,sort=nearest] add rcrailaged
 
 execute unless score @s rcrailunpowertime matches 30.. run scoreboard players add @s rcrailunpowertime 1
 
