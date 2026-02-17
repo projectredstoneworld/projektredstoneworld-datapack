@@ -58,7 +58,7 @@ execute as @a[tag=seenrcrailmsg,tag=rcrailpass2] at @s at @e[type=marker,distanc
 #execute as @a[tag=seenrcrailmsg,tag=rcrailpass2,tag=rcrailpass3] run tellraw @s {"text":"Your train is spawning shortly! Please wait at the station platform and prepare for departure.","color":"green"}
 tag @a[tag=seenrcrailmsg,tag=rcrailpass3] remove rcrailpass2
 
-# Pass 3 means it's all on me! yes ij the blacks are all on you
+# Pass 3 means it's all on me! 
 # Primary gets removed after leaving the station, prompt front seat / only rider for switching station, re-prompt at arrival to station
 
 execute in overworld as @e[type=marker,x=0,tag=rcsneg] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] unless entity @a[tag=rcrailpass3,tag=rcrailneg,limit=1,sort=nearest,distance=..32] as @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] run function projektredstoneworld:rcrailtransit/killrcrailcar
@@ -70,7 +70,6 @@ execute in overworld as @e[type=marker,x=0,tag=rcspos] at @s if entity @e[type=m
 execute in overworld as @e[type=marker,x=0,tag=rcsneg] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1] if score @a[tag=rcrailpass3,tag=rcrailneg,limit=1,sort=nearest,distance=..10] redstoneworldID = @s redstoneworldID as @a[tag=rcrailpass3,tag=rcrailneg,limit=1,sort=nearest,distance=..10] on vehicle if entity @s[type=pig,tag=rcrailseat] as @e[type=marker,tag=rcsneg,limit=1,sort=nearest,distance=..10] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
 execute in overworld as @e[type=marker,x=0,tag=rcspos] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1] if score @a[tag=rcrailpass3,tag=rcrailpos,limit=1,sort=nearest,distance=..10] redstoneworldID = @s redstoneworldID as @a[tag=rcrailpass3,tag=rcrailpos,limit=1,sort=nearest,distance=..10] on vehicle if entity @s[type=pig,tag=rcrailseat] as @e[type=marker,tag=rcspos,limit=1,sort=nearest,distance=..10] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
 
-# Skibidi toilet oh fuck it's on the car that's why I gooned pls help I can't control the SEMEN! INTO THE STEERING WHEEL HE GOES! AHHHHHH IT'S GRIPPY!
 
 execute in overworld as @a[tag=rcrailneg,x=0] at @s unless entity @e[type=marker,tag=rcsneg,distance=..32] run tag @s remove rcrailneg
 execute in overworld as @a[tag=rcrailpos,x=0] at @s unless entity @e[type=marker,tag=rcspos,distance=..32] run tag @s remove rcrailpos
