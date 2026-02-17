@@ -61,8 +61,8 @@ tag @a[tag=seenrcrailmsg,tag=rcrailpass3] remove rcrailpass2
 # Pass 3 means it's all on me! yes ij the blacks are all on you
 # Primary gets removed after leaving the station, prompt front seat / only rider for switching station, re-prompt at arrival to station
 
-execute in overworld as @e[type=marker,x=0,tag=rcsneg] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1] unless entity @a[tag=rcrailpass3,tag=rcrailneg,limit=1,sort=nearest,distance=..32] as @e[type=minecart,tag=rcraildrive,distance=..1] run function projektredstoneworld:rcrailtransit/killrcrailcar
-execute in overworld as @e[type=marker,x=0,tag=rcspos] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1] unless entity @a[tag=rcrailpass3,tag=rcrailpos,limit=1,sort=nearest,distance=..32] as @e[type=minecart,tag=rcraildrive,distance=..1] run function projektredstoneworld:rcrailtransit/killrcrailcar
+execute in overworld as @e[type=marker,x=0,tag=rcsneg] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] unless entity @a[tag=rcrailpass3,tag=rcrailneg,limit=1,sort=nearest,distance=..32] as @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] run function projektredstoneworld:rcrailtransit/killrcrailcar
+execute in overworld as @e[type=marker,x=0,tag=rcspos] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] unless entity @a[tag=rcrailpass3,tag=rcrailpos,limit=1,sort=nearest,distance=..32] as @e[type=minecart,tag=rcraildrive,distance=..1,tag=!rcrailaged] run function projektredstoneworld:rcrailtransit/killrcrailcar
 
 # close doors here
 
