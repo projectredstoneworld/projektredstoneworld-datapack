@@ -10,3 +10,5 @@ execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRota
 
 execute as @e[type=minecart,tag=rcraildrive] at @s run function projektredstoneworld:rcrailtransit/dospeedup
 execute in overworld as @e[type=marker,tag=rcrailpowered,x=0] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtokill] run scoreboard players add @s rcrailunpowertime 1
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtokill] at @s if score @s rcrailunpowertime matches 167.. run function projektredstoneworld:rcrailtransit/killrcrailcar

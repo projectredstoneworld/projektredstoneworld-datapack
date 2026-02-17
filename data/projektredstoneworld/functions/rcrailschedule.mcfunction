@@ -15,6 +15,9 @@ execute as @e[type=minecart,tag=rcraildrive,x=0] run function projektredstonewor
 
 function projektredstoneworld:rcrailtransit/stationmsg
 
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailarrive] at @s unless entity @a[tag=rcrailrider,distance=..7] run tag @s add rcrailtokill
+execute in overworld run tag @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtokill,tag=rcrailarrive] remove rcrailarrive
+
 #execute as @e[tag=rcraildrive] at @s rotated as @s run tp @e[tag=rcrailseatf,limit=1,distance=..10] ^1.5 ^5 ^
 #execute as @e[tag=rcraildrive] at @s rotated as @s run tp @e[tag=rcrailseatb,limit=1,distance=..10] ^-1.5 ^5 ^
 #execute as @e[tag=rcrailcar,tag=!rcraildrive,tag=!rcrailanchor] run data modify entity @s Rotation[0] set from entity @e[type=minecart,tag=rcraildrive,limit=1] Rotation[0]
