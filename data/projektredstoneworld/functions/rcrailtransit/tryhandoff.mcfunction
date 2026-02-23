@@ -13,6 +13,8 @@ execute if entity @s[tag=rcrailpos] at @e[type=marker,distance=..15,tag=rcspos] 
 # Apply rcsid
 scoreboard players operation @e[type=minecart,tag=rcraildrive,tag=!rcrhandled,sort=nearest,limit=1,distance=..20] rcsid = @s rcsid
 execute as @e[type=minecart,tag=rcraildrive,tag=!rcrhandled,sort=nearest,limit=1,distance=..20] run function projektredstoneworld:rcrailtransit/applycoords
+execute as @e[type=minecart,tag=rcraildrive,tag=!rcrhandled,sort=nearest,limit=1,distance=..20] run tag @s add openingrcr
+execute as @e[type=minecart,tag=rcraildrive,tag=!rcrhandled,sort=nearest,limit=1,distance=..20] at @s run function projektredstoneworld:rcrailtransit/dooropen1
 tag @e[type=minecart,tag=rcraildrive,tag=!rcrhandled,sort=nearest,limit=1,distance=..20] add rcrhandled
 tag @s add rcrailprimary
 tag @s add rcrailpass3

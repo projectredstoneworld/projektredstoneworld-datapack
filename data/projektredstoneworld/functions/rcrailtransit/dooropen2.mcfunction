@@ -3,3 +3,7 @@ execute in overworld at @e[type=minecart,tag=openingrcr,tag=rcraildrive] as @e[t
 
 execute in overworld at @e[type=minecart,tag=openingrcr,tag=rcraildrive] as @e[type=block_display,tag=rcrailcardoorfr,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=openingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[1.01f,0.5f,-1.95f],scale:[1f,2f,1f]}}
 execute in overworld at @e[type=minecart,tag=openingrcr,tag=rcraildrive] as @e[type=block_display,tag=rcrailcardoorbr,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=openingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-2.01f,0.5f,-1.95f],scale:[1f,2f,1f]}}
+
+execute in overworld at @e[type=minecart,tag=openingrcr,tag=rcraildrive] run playsound entity.experience_orb.pickup master @a[distance=..20] ~ ~ ~ 2 0 0.5
+
+execute in overworld as @e[type=minecart,tag=openingrcr,tag=rcraildrive] run tag @s remove openingrcr

@@ -1,0 +1,9 @@
+execute as @e[type=block_display,tag=rcrailcardoorfl,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=closingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0.5f,0.95f],scale:[1f,2f,1f]}}
+execute as @e[type=block_display,tag=rcrailcardoorbl,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=closingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1f,0.5f,0.95f],scale:[1f,2f,1f]}}
+
+execute as @e[type=block_display,tag=rcrailcardoorfr,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=closingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0.5f,-1.95f],scale:[1f,2f,1f]}}
+execute as @e[type=block_display,tag=rcrailcardoorbr,limit=1,sort=nearest,distance=..10] if score @s redstoneworldID = @e[tag=rcraildrive,limit=1,tag=closingrcr,type=minecart,distance=..10] redstoneworldID run data merge entity @s {start_interpolation:0,interpolation_duration:10,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1f,0.5f,-1.95f],scale:[1f,2f,1f]}}
+
+playsound block.sculk_shrieker.shriek master @a[distance=..20] ~ ~ ~ 2 2 0.5
+
+schedule function projektredstoneworld:rcrailtransit/doorclose2 10t
