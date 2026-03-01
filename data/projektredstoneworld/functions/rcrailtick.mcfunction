@@ -12,3 +12,6 @@ execute as @e[type=minecart,tag=rcraildrive] at @s run function projektredstonew
 execute in overworld as @e[type=marker,tag=rcrailpowered,x=0] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtokill] run scoreboard players add @s rcrailunpowertime 1
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtokill] at @s if score @s rcrailunpowertime matches 167.. run function projektredstoneworld:rcrailtransit/killrcrailcar
+
+# Prevent seat from breaking if player holds carrot on a stick, clears inventory of it if they have it selected (since it doesn't work with the way we're doing seat movement)
+execute in overworld as @a[x=0,tag=rcrailrider] if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick"}}] run clear @s minecraft:carrot_on_a_stick
