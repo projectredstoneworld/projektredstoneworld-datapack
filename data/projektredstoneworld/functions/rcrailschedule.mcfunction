@@ -23,7 +23,7 @@ execute in overworld as @e[type=pig,tag=rcrailseat,x=0] run scoreboard players o
 
 # 30 second timeout for pods in motion
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailaged] at @s if score @s rcrailtimerdiff matches 600.. run function projektredstoneworld:rcrailtransit/killrcrailcar
-execute in overworld as @e[type=pig,tag=rcrailseat,x=0] if entity @e[type=minecart,tag=rcraildrive,distance=..10,tag=!rcrailaged] run scoreboard players set @s rcrailtimerdiff 0
+execute in overworld as @e[type=pig,tag=rcrailseat,x=0] at @s if entity @e[type=minecart,tag=rcraildrive,distance=..10,tag=!rcrailaged] run scoreboard players set @s rcrailtimerdiff 0
 execute in overworld as @e[type=pig,tag=rcrailseat,x=0] if score @s rcrailtimerdiff matches 610.. run kill @s
 # 60 second timeout for pods at station
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=!rcrailaged] at @s if score @s rcrailtimerdiff matches 1200.. run function projektredstoneworld:rcrailtransit/killrcrailcar
@@ -39,3 +39,5 @@ execute in overworld run tag @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtoki
 #execute as @e[tag=rcraildrive] at @s rotated as @s run tp @e[tag=rcrailseatf,limit=1,distance=..10] ^1.5 ^5 ^
 #execute as @e[tag=rcraildrive] at @s rotated as @s run tp @e[tag=rcrailseatb,limit=1,distance=..10] ^-1.5 ^5 ^
 #execute as @e[tag=rcrailcar,tag=!rcraildrive,tag=!rcrailanchor] run data modify entity @s Rotation[0] set from entity @e[type=minecart,tag=rcraildrive,limit=1] Rotation[0]
+
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0] at @s as @e[type=item,distance=..30,nbt={Item:{id:"minecraft:saddle"}}] unless data entity @s Thrower run kill @s
