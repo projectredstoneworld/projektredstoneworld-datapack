@@ -16,6 +16,9 @@ execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcspos,
 execute as @e[tag=rcraildrive,distance=..4] if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 90F
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] at @s if entity @e[type=marker,tag=rcsneg,distance=..3] run data modify entity @s Rotation[0] set value 0F
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=east_west] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value 180F
+execute store result score #servertimer rcrailtimer run time query gametime
+execute as @e[tag=rcraildrive,distance=..4] run scoreboard players operation @s rcrailtimer = #servertimer rcrailtimer
+execute as @e[tag=rcraildrive,distance=..4] run scoreboard players set @s rcrailtimerdiff 0
 
 
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -89F

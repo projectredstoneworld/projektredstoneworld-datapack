@@ -21,9 +21,12 @@ execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=!handledPodTime
 execute in overworld as @e[type=pig,tag=rcrailseat,x=0] run scoreboard players operation @s rcrailtimerdiff = #servertimer rcrailtimer
 execute in overworld as @e[type=pig,tag=rcrailseat,x=0] run scoreboard players operation @s rcrailtimerdiff -= @s rcrailtimer
 
-# Super low timeout value at 10 seconds for testing, will set to something higher later
-execute in overworld as @e[type=minecart,tag=rcraildrive,x=0] at @s if score @s rcrailtimerdiff matches 200.. run function projektredstoneworld:rcrailtransit/killrcrailcar
-execute in overworld as @e[type=pig,tag=rcrailseat,x=0] if score @s rcrailtimerdiff matches 210.. run kill @s
+# 30 second timeout for pods in motion
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailaged] at @s if score @s rcrailtimerdiff matches 600.. run function projektredstoneworld:rcrailtransit/killrcrailcar
+execute in overworld as @e[type=pig,tag=rcrailseat,x=0] if entity @e[type=minecart,tag=rcraildrive,distance=..10,tag=!rcrailaged] run scoreboard players set @s rcrailtimerdiff 0
+execute in overworld as @e[type=pig,tag=rcrailseat,x=0] if score @s rcrailtimerdiff matches 610.. run kill @s
+# 60 second timeout for pods at station
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=!rcrailaged] at @s if score @s rcrailtimerdiff matches 1200.. run function projektredstoneworld:rcrailtransit/killrcrailcar
 
 # Ambient pod sounds
 execute as @e[type=minecart,tag=rcraildrive,x=0] run function projektredstoneworld:rcrailtransit/ambientsound
