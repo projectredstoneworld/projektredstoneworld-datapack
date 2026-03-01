@@ -41,3 +41,7 @@ execute in overworld run tag @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailtoki
 #execute as @e[tag=rcrailcar,tag=!rcraildrive,tag=!rcrailanchor] run data modify entity @s Rotation[0] set from entity @e[type=minecart,tag=rcraildrive,limit=1] Rotation[0]
 
 execute in overworld as @e[type=marker,tag=rcsmanager,x=0] at @s as @e[type=item,distance=..30,nbt={Item:{id:"minecraft:saddle"}}] unless data entity @s Thrower run kill @s
+
+scoreboard players add #rcrailghostpodtime info 10
+# Attempt to spawn a "Ghost Pod" this pod is for atmosphere and has limited features such as no seats and will auto disappear at its randomly chosen destination station. Only allow five max in world. Ghost pod needs a spawning station to be loaded.
+#execute if score #rcrailghostpodtime info matches 3600.. unless score #rcrailghostpodnum info matches 5.. run function projektredstoneworld:rcrailtransit/ghostpodspawn
