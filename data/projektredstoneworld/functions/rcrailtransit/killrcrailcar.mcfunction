@@ -9,4 +9,5 @@ execute at @s run particle minecraft:end_rod ~ ~4.5 ~ 1 1 1 1 2000 normal
 execute at @s run playsound minecraft:block.anvil.land master @a[distance=..20] ~ ~ ~ 1 0
 execute at @s run playsound minecraft:block.end_portal.spawn master @a[distance=..20] ~ ~ ~ 1 1
 execute if entity @s[tag=rcrailghost] run scoreboard players remove #rcrailghostpodnum info 1
+execute if score #rcrailghostpodnum info matches ..-1 run scoreboard players set #rcrailghostpodnum info 0
 kill @s
