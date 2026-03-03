@@ -52,5 +52,5 @@ execute in overworld run tag @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghos
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost,tag=rcrailaged,tag=!handledGhostMotion,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/ghostpodmotioncheck
 
 
-execute in overworld run tag @e[tag=rcraildrive,type=minecart,x=0] remove handledPodRotation
-execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRotation,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/podrotation
+#execute in overworld run tag @e[tag=rcraildrive,type=minecart,x=0] remove handledPodRotation
+#execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRotation,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/podrotation
