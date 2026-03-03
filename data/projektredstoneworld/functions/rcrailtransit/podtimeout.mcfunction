@@ -15,4 +15,4 @@ tag @s remove handlePodTimeOut
 tag @s add handledPodTimeOut
 
 # Recursion for each pod, handle the rest in schedule now
-execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=!handledPodTimeOut,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/podtimeout
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=!handledPodTimeOut,limit=1,sort=random,tag=!rcrailghost] at @s run function projektredstoneworld:rcrailtransit/podtimeout

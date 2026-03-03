@@ -14,4 +14,4 @@ execute if score @s rcrspeedupspeed matches 3 rotated as @s as @e[type=pig,x=0,t
 
 tag @s remove handleSeatMovement
 tag @s add handledSeatMovement
-execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledSeatMovement,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/seatmovement
+execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledSeatMovement,limit=1,sort=random,tag=!rcrailghost] at @s run function projektredstoneworld:rcrailtransit/seatmovement
