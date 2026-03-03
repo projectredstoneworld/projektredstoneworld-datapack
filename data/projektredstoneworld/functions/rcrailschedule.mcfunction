@@ -55,5 +55,5 @@ execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost,tag
 #execute in overworld run tag @e[tag=rcraildrive,type=minecart,x=0] remove handledPodRotation
 #execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRotation,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/podrotation
 
-execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at @s store result score @s rcrailghostcollide if entity @e[type=minecart,tag=rcraildrive,x=0,distance=..5]
+execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at @s store result score @s rcrailghostcollide if entity @e[type=minecart,tag=rcraildrive,distance=..5]
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at @s if score @s rcrailghostcollide matches 2.. run function projektredstoneworld:rcrailtransit/killrcrailcar
