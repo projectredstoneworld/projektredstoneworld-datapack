@@ -18,8 +18,9 @@ execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s u
 execute if score #rcrailghostpodside info matches 0 in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s at @e[type=marker,distance=..15,tag=rcsneg] if entity @e[tag=rcraildrive,distance=..1,type=minecart] run return fail
 execute if score #rcrailghostpodside info matches 1 in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s at @e[type=marker,distance=..15,tag=rcspos] if entity @e[tag=rcraildrive,distance=..1,type=minecart] run return fail
 
-# If it has made it this far we are good to go
-scoreboard players set #rcrailsghost info 1
+# If it has made it this far we are good to go 
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 0 at @e[type=marker,distance=..15,tag=rcsneg] run scoreboard players set #rcrailsghost info 1
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 1 at @e[type=marker,distance=..15,tag=rcspos] run scoreboard players set #rcrailsghost info 1
 execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 0 at @e[type=marker,distance=..15,tag=rcsneg] run function projektredstoneworld:spawncarrcrail
 execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 1 at @e[type=marker,distance=..15,tag=rcspos] run function projektredstoneworld:spawncarrcrail
 
@@ -30,4 +31,5 @@ execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s a
 execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s as @e[type=minecart,distance=..15,tag=rcraildrive,tag=rcrailghost] at @s as @e[type=marker,tag=rcsneg,distance=..2] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
 execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s as @e[type=minecart,distance=..15,tag=rcraildrive,tag=rcrailghost] at @s as @e[type=marker,tag=rcspos,distance=..2] at @s run function projektredstoneworld:rcrailtransit/handlepowerdepart
 
-scoreboard players set #rcrailghostpodtime info 0
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 0 at @e[type=marker,distance=..15,tag=rcsneg] run scoreboard players set #rcrailghostpodtime info 0
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,tag=chosenRCS] at @s if score #rcrailghostpodside info matches 1 at @e[type=marker,distance=..15,tag=rcspos] run scoreboard players set #rcrailghostpodtime info 0
