@@ -50,3 +50,7 @@ execute if score #rcrailghostpodtime info matches 2400.. unless score #rcrailgho
 # Since ghosts dont time out need to check if they are bugged and stopped
 execute in overworld run tag @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost,tag=rcrailaged] remove handledGhostMotion
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost,tag=rcrailaged,tag=!handledGhostMotion,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/ghostpodmotioncheck
+
+
+execute in overworld run tag @e[tag=rcraildrive,type=minecart,x=0] remove handledPodRotation
+execute in overworld as @e[tag=rcraildrive,type=minecart,x=0,tag=!handledPodRotation,limit=1,sort=random] at @s run function projektredstoneworld:rcrailtransit/podrotation
