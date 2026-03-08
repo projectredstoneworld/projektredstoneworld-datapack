@@ -59,3 +59,6 @@ execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at
 execute in overworld as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at @s if score @s rcrailghostcollide matches 2.. run function projektredstoneworld:rcrailtransit/killrcrailcar
 
 execute if score #rcrailghosts info matches 0 as @e[type=minecart,tag=rcraildrive,x=0,tag=rcrailghost] at @s run function projektredstoneworld:rcrailtransit/killrcrailcar
+
+# This is completely unrelated to rcorp rail, I just wanted to use the 10 ticks cycle, REMOVE THIS ON WORLD DOWNLOAD PREPARATIONS
+execute in plotworld run function projektredstoneworld:plotspamentitymitigate
