@@ -44,7 +44,7 @@ execute in overworld as @e[type=marker,tag=rcsmanager,x=0] at @s as @e[type=item
 
 execute if score #rcrailghosts info matches 1 run scoreboard players add #rcrailghostpodtime info 10
 # Attempt to spawn a "Ghost Pod" this pod is for atmosphere and has limited features such as no seats and will auto disappear at its randomly chosen destination station. Only allow five max in world. Ghost pod needs a spawning station to be loaded.
-execute if score #rcrailghostpodtime info >= #rcrailghostdelay info unless score #rcrailghostpodnum info matches 5.. run function projektredstoneworld:rcrailtransit/ghostpodspawn
+execute if score #rcrailghostpodtime info >= #rcrailghostdelay info unless score #rcrailghostpodnum info >= #rcrailghostcutoff info run function projektredstoneworld:rcrailtransit/ghostpodspawn
 #execute if score #rcrailghostpodtime info matches 600.. unless score #rcrailghostpodnum info matches 5.. run function projektredstoneworld:rcrailtransit/ghostpodspawn
 
 # Since ghosts dont time out need to check if they are bugged and stopped
