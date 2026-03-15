@@ -23,8 +23,8 @@ execute as @e[tag=rcraildrive,distance=..4] run scoreboard players set @s rcrail
 
 execute as @e[tag=rcraildrive,distance=..4] at @s if block ~ ~ ~ detector_rail[shape=north_south] at @s if entity @e[type=marker,tag=rcspos,distance=..3] run data modify entity @s Rotation[0] set value -89F
 
-execute as @e[tag=rcrailcar,type=block_display,distance=..6] run data modify entity @s teleport_duration set value 10
-execute as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify entity @s teleport_duration set value 10
+schedule function projektredstoneworld:rcrailtransit/setinterpolation 20t
+
 
 effect give @e[tag=rcrailseat,distance=..7,type=pig] minecraft:resistance infinite 67 true
 

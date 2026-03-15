@@ -1,0 +1,2 @@
+execute in overworld as @e[tag=rcraildrive,type=minecart,x=0] at @s as @e[tag=rcrailcar,type=block_display,distance=..6] run data modify entity @s teleport_duration set value 10
+execute in overworld as @e[tag=rcraildrive,type=minecart,x=0] at @s as @e[tag=rcrailcar,type=item_display,distance=..6] run data modify entity @s teleport_duration set value 10
