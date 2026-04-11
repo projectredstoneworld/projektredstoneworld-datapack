@@ -19,6 +19,7 @@
 		"minecraft:ink_sac",
 		"minecraft:glow_ink_sac",
 		"minecraft:dried_kelp_block",
-		"minecraft:netherite_upgrade_smithing_template"
+		"minecraft:netherite_upgrade_smithing_template",
+		"minecraft:gunpowder"
     ]
 }
