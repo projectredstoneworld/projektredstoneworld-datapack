@@ -18,6 +18,7 @@ execute if score @s rcrailtrig matches 14 run scoreboard players set @s rcsid 15
 execute if score @s rcrailtrig matches 15 if score @s rcorpsec matches 2.. run scoreboard players set @s rcsid 0
 execute if score @s rcrailtrig matches 16 if score @s rcorpsec matches 2.. run scoreboard players set @s rcsid 10
 execute if score @s rcrailtrig matches 17 if score @s rcorpsec matches 2.. run scoreboard players set @s rcsid 16
+# Restrict until built execute if score @s rcrailtrig matches 20 run scoreboard players set @s rcsid 17
 
 # Update destination
 execute unless score @e[type=minecart,tag=rcraildrive,distance=..12,limit=1,sort=nearest] rcsid = @s rcsid run tellraw @s {"text":"Destination successfully updated!","color":"green"}

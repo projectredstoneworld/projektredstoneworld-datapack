@@ -19,6 +19,7 @@ execute if score @s rcrailtrig matches 15 if score @s rcorpsec matches 2.. run s
 execute if score @s rcrailtrig matches 16 if score @s rcorpsec matches 2.. run scoreboard players set @s rcsid 10
 execute if score @s rcrailtrig matches 17 if score @s rcorpsec matches 2.. run scoreboard players set @s rcsid 16
 #18 and 19 are reserved for player choosing direction, so for any future stations start at 20 for rcrailtrig, rcsid 17
+# Restrict until built execute if score @s rcrailtrig matches 20 run scoreboard players set @s rcsid 17
 execute if score @s rcsid matches 255 run tellraw @s {"text":"Error: Invalid or Restricted Station ID. Please try again later.","color":"red"}
 scoreboard players reset @s rcrailtrig
 execute if score @s rcsid matches 0..254 run tag @s add rcrailpasstrig1
