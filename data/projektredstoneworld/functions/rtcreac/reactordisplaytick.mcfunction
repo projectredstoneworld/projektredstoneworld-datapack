@@ -1,10 +1,10 @@
 # Runs if player is in control room or LBS
 
 # Control rod display modes
-execute if score #rtcreactorrodheight info matches 70.. run scoreboard players set #rtcreactorctrlmode info 1
-execute if score #rtcreactorrodheight info matches 30..69 run scoreboard players set #rtcreactorctrlmode info 2
-execute if score #rtcreactorrodheight info matches 10..29 run scoreboard players set #rtcreactorctrlmode info 3
-execute if score #rtcreactorrodheight info matches 0..9 run scoreboard players set #rtcreactorctrlmode info 4
+execute if score #rtcreactorrodheight info matches 70.. run scoreboard players set #rtcreactorctrlrodmode info 1
+execute if score #rtcreactorrodheight info matches 30..69 run scoreboard players set #rtcreactorctrlrodmode info 2
+execute if score #rtcreactorrodheight info matches 10..29 run scoreboard players set #rtcreactorctrlrodmode info 3
+execute if score #rtcreactorrodheight info matches 0..9 run scoreboard players set #rtcreactorctrlrodmode info 4
 execute if score #rtcreactorrodheight info matches 10..29 if score #rtcreactorcoretemp info matches 700.. run scoreboard players set #rtcreactorctrlmode info 4
 
 # Fuel rod display modes
