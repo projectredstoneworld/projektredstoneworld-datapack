@@ -70,6 +70,7 @@ scoreboard players operation #rtcreactorcoretempdelta info = #rtcreactorcoretemp
 scoreboard players operation #rtcreactorcoretempdelta info -= #rtcreactorcoretemp info
 execute if score #rtcreactorcoretemp info > #rtcreactorcoretemptarget info run scoreboard players remove #rtcreactorcoretemp info 1
 execute if score #rtcreactorcoretemp info < #rtcreactorcoretemptarget info run scoreboard players add #rtcreactorcoretemp info 1
+execute if score #rtcreactorcoretempdelta info matches 800.. run scoreboard players add #rtcreactorcoretemp info 4
 
 # Clamp core temperature to a maximum of 2600
 execute if score #rtcreactorcoretemp info matches 2600.. run scoreboard players set #rtcreactorcoretemp info 2600
