@@ -3,9 +3,11 @@
 # ==== WATER PRESSURE ====
 scoreboard players set #rtcreactorwaterpressuretarget info 28000
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
-scoreboard players operation #rtcreactorintermediate info *= #rtcreactorpumprate info
+execute if score #rtcreactorpumprate info matches 0 run scoreboard players set #rtcreactorpumprate info 1
+scoreboard players operation #rtcreactorintermediate info /= #rtcreactorpumprate info
+execute if score #rtcreactorpumprate info matches 1 run scoreboard players set #rtcreactorpumprate info 0
 scoreboard players operation #rtcreactorintermediate info *= -37 CONSTANTS
-scoreboard players operation #rtcreactorintermediate info /= 500 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info *= 500 CONSTANTS
 scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
 # Clamp water pressure target
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
