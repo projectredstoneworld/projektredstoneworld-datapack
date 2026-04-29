@@ -22,7 +22,7 @@ scoreboard players operation #rtcreactorintermediate info /= #rtcreactorCxenonde
 scoreboard players operation #rtcreactoractualxenon info -= #rtcreactorintermediate info
 # Clamp xenon and iodine values to positive
 execute if score #rtcreactoriodine info matches ..0 run scoreboard players set #rtcreactoriodine info 0
-execute if score #rtcreactoractualxenon info matches ..500000 run scoreboard players set #rtcreactoractualxenon info 500000
+execute if score #rtcreactoractualxenon info matches ..0 run scoreboard players set #rtcreactoractualxenon info 0
 # Derive xenon from actual xenon
 scoreboard players operation #rtcreactorxenon info = #rtcreactoractualxenon info
 scoreboard players operation #rtcreactorxenon info /= 1000 CONSTANTS
