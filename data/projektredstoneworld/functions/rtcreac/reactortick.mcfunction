@@ -1,5 +1,17 @@
 # Runs every tick that the reactor is loaded
 
+# Default core temperature
+scoreboard players set #rtcreactorcoretemptarget info 650
+
+# Control rods affect core temperature
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorcontrolrodheight info
+scoreboard players operation #rtcreactorintermediate info *= -13 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info /= 2 CONSTANTS
+scoreboard players operation #rtcreactorcoretemptarget info += #rtcreactorintermediate info
+
+# Clamp core temperature target
+execute if score #rtcreactorcoretemptarget info matches ..50 run scoreboard players set #rtcreactorcoretemptarget info 50
+
 # Approach core temperature target
 scoreboard players operation #rtcreactorcoretempdelta info = #rtcreactorcoretemptarget info
 scoreboard players operation #rtcreactorcoretempdelta info -= #rtcreactorcoretemp info
