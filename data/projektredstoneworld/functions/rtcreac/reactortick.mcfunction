@@ -49,8 +49,7 @@ scoreboard players add #rtcreactorintermediate info 250
 # debuff this if core temp is above 1000
 scoreboard players operation #rtcreactorintermediate2 info = #rtcreactorcoretemp info
 scoreboard players remove #rtcreactorintermediate2 info 1000
-scoreboard players operation #rtcreactorintermediate2 info /= 2 CONSTANTS
-execute if score #rtcreactorintermediate2 info matches 500.. run scoreboard players operation #rtcreactorintermediate info += #rtcreactorintermediate2 info
+execute if score #rtcreactorintermediate2 info matches 0.. run scoreboard players operation #rtcreactorintermediate info += #rtcreactoritermediate2 info
 execute if score #rtcreactorintermediate info matches 650.. run scoreboard players set #rtcreactorintermediate info 650
 scoreboard players operation #rtcreactorcoretemptarget info *= 650 CONSTANTS
 scoreboard players operation #rtcreactorcoretemptarget info /= #rtcreactorintermediate info
