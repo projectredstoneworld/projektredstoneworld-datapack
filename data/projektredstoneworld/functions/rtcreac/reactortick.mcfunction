@@ -17,7 +17,7 @@ scoreboard players operation #rtcreactoractualxenon info += #rtcreactorintermedi
 scoreboard players operation #rtcreactorintermediate2 info *= #rtcreactorCxenonabsorbency info
 scoreboard players operation #rtcreactoractualxenon info -= #rtcreactorintermediate2 info
 # Xenon decay
-scoreboard players operation #rtcreactorintermediate info = #rtcreactorxenon info
+scoreboard players operation #rtcreactorintermediate info = #rtcreactoractualxenon info
 scoreboard players operation #rtcreactorintermediate info /= #rtcreactorCxenondecay info
 scoreboard players operation #rtcreactoractualxenon info -= #rtcreactorintermediate info
 # Clamp xenon and iodine values to positive
