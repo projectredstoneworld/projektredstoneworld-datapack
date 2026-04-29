@@ -1,8 +1,20 @@
 # Runs every tick that the reactor is loaded
 
+# ==== WATER PRESSURE ====
+scoreboard players set #rtcreactorwaterpressuretarget info 10000
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
+scoreboard players operation #rtcreactorintermediate info *= #rtcreactorpumprate info
+scoreboard players operation #rtcreactorintermediate info *= -37 CONSTANTS
+scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
+# Clamp water pressure target
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressuretarget info
+scoreboard players operation #rtcreactorintermediate info *= 48 CONSTANTS
+execute if score #rtcreactorintermediate info < #rtcreactorwaterpressuretarget info run scoreboard players operation #rtcreactorwaterpressuretarget info = #rtcreactorintermediate info
+
+
+# ==== CORE TEMPERATURE ====
 # Default core temperature
 scoreboard players set #rtcreactorcoretemptarget info 650
-
 # Control rods affect core temperature
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorrodheight info
 scoreboard players operation #rtcreactorintermediate info *= -13 CONSTANTS
