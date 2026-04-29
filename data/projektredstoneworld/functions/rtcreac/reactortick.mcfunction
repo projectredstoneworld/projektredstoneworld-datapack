@@ -53,6 +53,13 @@ execute if score #rtcreactorintermediate2 info matches 0.. run scoreboard player
 execute if score #rtcreactorintermediate info matches 650.. run scoreboard players set #rtcreactorintermediate info 650
 scoreboard players operation #rtcreactorcoretemptarget info *= 650 CONSTANTS
 scoreboard players operation #rtcreactorcoretemptarget info /= #rtcreactorintermediate info
+# clamp core temp target minimum based off pump rate
+scoreboard players set #rtcreactorintermediate2 info 1000
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorpumprate info
+scoreboard players operation #rtcreactorintermediate info *= 4 CONSTANTS
+scoreboard players operation #rtcreactorintermediate2 info -= #rtcreactorintermediate info
+execute if score #rtcreactorcoretemptarget info < #rtcreactorintermediate2 info run scoreboard players operation #rtcreactorcoretemptarget info = #rtcreactorintermediate2 info
+
 
 # Clamp core temperature target
 execute if score #rtcreactorcoretemptarget info matches ..50 run scoreboard players set #rtcreactorcoretemptarget info 50
