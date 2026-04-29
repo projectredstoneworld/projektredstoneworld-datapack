@@ -1,10 +1,11 @@
 # Runs every tick that the reactor is loaded
 
 # ==== WATER PRESSURE ====
-scoreboard players set #rtcreactorwaterpressuretarget info 10000
+scoreboard players set #rtcreactorwaterpressuretarget info 28000
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players operation #rtcreactorintermediate info *= #rtcreactorpumprate info
 scoreboard players operation #rtcreactorintermediate info *= -37 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info /= 500 CONSTANTS
 scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
 # Clamp water pressure target
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressuretarget info
