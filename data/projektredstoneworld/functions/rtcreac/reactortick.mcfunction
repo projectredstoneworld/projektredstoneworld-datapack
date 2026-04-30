@@ -151,7 +151,7 @@ execute if score #rtcreactorwaterpressure info matches ..4000 run scoreboard pla
 # Clamp turbine power to 0-6000
 execute if score #rtcreactorturbinepowertarget info matches 6000.. run scoreboard players set #rtcreactorturbinepowertarget info 6000
 execute if score #rtcreactorturbinepowertarget info matches ..0 run scoreboard players set #rtcreactorturbinepowertarget info 0
-execute if score #rtcreactorrodheight info matches 80.. run scoreboard players operation #rtcreactorturbinepowertarget info /= 4 CONSTANTS
+execute if score #rtcreactorrodheight info matches 80.. if score #rtcreactorfuelmode info matches 0 run scoreboard players operation #rtcreactorturbinepowertarget info /= 4 CONSTANTS
 # Make turbine power approach target thru use of delta
 scoreboard players operation #rtcreactorturbinepowerdelta info = #rtcreactorturbinepowertarget info
 scoreboard players operation #rtcreactorturbinepowerdelta info -= #rtcreactorturbinepower info
