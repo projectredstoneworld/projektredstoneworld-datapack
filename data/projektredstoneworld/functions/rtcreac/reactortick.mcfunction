@@ -189,4 +189,3 @@ execute if score #rtcreactoreccstime info matches 1.. run function projektredsto
 
 # ==== STEAM RELEASE ====
 execute if score #rtcreactorsteamrelease info matches 1.. run function projektredstoneworld:rtcreac/steamrelease
-
