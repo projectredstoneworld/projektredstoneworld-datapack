@@ -49,7 +49,7 @@ execute if score #rtcreactorintermediate info matches 0.. run scoreboard players
 execute if score #rtcreactorcoretemp info matches ..250 run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 100 CONSTANTS
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-execute if score #rtcreactorintermediate info matches 1.. run say OH NO MY ZININ TOOOO SMALLLLL
+execute if score #rtcreactorintermediate info matches ..-1 run say OH NO MY ZININ TOOOO SMALLLLL
 # if core temperature >400 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players remove #rtcreactorintermediate info 400
