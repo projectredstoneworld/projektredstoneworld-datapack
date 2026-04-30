@@ -43,7 +43,7 @@ scoreboard players operation #rtcreactorwaterpressuretarget info -= #rtcreactori
 # Coolant tower cover causes huge pressure increase while reactor is on
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players remove #rtcreactorintermediate info 100
-scoreboard players operation #rtcreactorintermediate info *= 300 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info *= 700 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
 execute if score #rtcreactortitcover info matches 1 run scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
 # Clamp water pressure target
