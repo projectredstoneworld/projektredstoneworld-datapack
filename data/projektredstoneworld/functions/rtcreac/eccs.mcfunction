@@ -7,8 +7,10 @@ execute if score #rtcreactorwaterpressure info matches ..18000 run scoreboard pl
 
 scoreboard players set #rtcreactorai info 0
 scoreboard players set #rtcreactorrodheight info 100
-scoreboard players set #rtcreactorpumprate info 9000
+scoreboard players set #rtcreactorpumprate info 900
 scoreboard players set #rtcreactorusepump info 1
 scoreboard players set #rtcreactorwatermode info 0
 scoreboard players set #rtcreactorfuelmode info 0
+
+playsound minecraft:entity.generic.extinguish_fire master @a[tag=inrtcreactor] ~ ~ ~ 360 1 1
 
