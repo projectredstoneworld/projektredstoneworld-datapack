@@ -189,6 +189,5 @@ execute if score #rtcreactoreccstime info matches 1.. run function projektredsto
 execute if score #rtcreactoreccstime info matches 0 run scoreboard players set #rtcreactorpumprate info 500
 
 # ==== STEAM RELEASE ====
-execute if score #rtcreactorsteamrelease info matches ..1 run scoreboard players remove #rtcreactorsteamrelease info 1
 execute if score #rtcreactorsteamrelease info matches 1.. run function projektredstoneworld:rtcreac/steamrelease
 
