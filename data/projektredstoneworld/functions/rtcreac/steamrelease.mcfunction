@@ -2,7 +2,7 @@ execute if score #rtcreactorwaterpressure info matches 5000.. run scoreboard pla
 execute if score #rtcreactorcoretemp info matches 400.. run scoreboard players remove #rtcreactorcoretemp info 20
 execute if score #rtcreactorcoretemp info matches 80.. run scoreboard players remove #rtcreactorcoretemp info 10
 
-execute if score #rtcreactowaterpressure info matches 5000.. run scoreboard players add #radrtcreactoraddmsv info 1
+execute if score #rtcreactorwaterpressure info matches 5000.. run scoreboard players add #radrtcreactoraddmsv info 1
 
 playsound minecraft:entity.generic.extinguish_fire master @a[tag=inrtcreactor] ~ ~ ~ 360 2 1
 
