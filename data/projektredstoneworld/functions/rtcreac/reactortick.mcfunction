@@ -166,6 +166,11 @@ scoreboard players operation #radrtcreactoraddfrac info += #rtcreactorintermedia
 
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorturbinepowertarget info
 scoreboard players operation #rtcreactorintermediate info /= 7 CONSTANTS
+
+# water and fuel modes affect radiation
+execute if score #rtcreactorfuelmode info matches 1 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
+execute if score #rtcreactorwatermode info matches 0 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
+
 scoreboard players operation #radrtcreactoraddfrac info += #rtcreactorintermediate info
 
 execute if score #radrtcreactoraddfrac info matches ..-1 run scoreboard players set #radrtcreactoraddfrac info 0
