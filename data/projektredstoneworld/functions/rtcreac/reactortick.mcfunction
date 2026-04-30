@@ -40,6 +40,12 @@ execute if score #rtcreactorpumprate info matches 0 run scoreboard players set #
 scoreboard players operation #rtcreactorintermediate info /= #rtcreactorpumprate info
 execute if score #rtcreactorpumprate info matches 1 run scoreboard players set #rtcreactorpumprate info 0
 scoreboard players operation #rtcreactorwaterpressuretarget info -= #rtcreactorintermediate info
+# Coolant tower cover causes huge pressure increase while reactor is on
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
+scoreboard players remove #rtcreactorintermediate info 100
+scoreboard players operation #rtcreactorintermediate info *= 300 CONSTANTS
+execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
+scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
 # Clamp water pressure target
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players operation #rtcreactorintermediate info *= 48 CONSTANTS
