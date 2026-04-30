@@ -7,8 +7,8 @@ scoreboard players operation #rtcreactoriodinep info = #rtcreactoriodine info
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players operation #rtcreactorintermediate info *= -1 CONSTANTS
 execute if score #rtcreactorintermediate info matches 0 run scoreboard players add #rtcreactorstability info 1
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
-execute if score #rtcreactorintermediate info matches 24.. run scoreboard players set #rtcreactorintermediate info 24
-scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
+execute if score #rtcreactorintermediate info matches ..-24 run scoreboard players set #rtcreactorintermediate info -24
+scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
 # water pressure delta
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
 scoreboard players operation #rtcreactorintermediate info -= #rtcreactorwaterpressurep info
@@ -16,8 +16,8 @@ scoreboard players operation #rtcreactorwaterpressurep info = #rtcreactorwaterpr
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players operation #rtcreactorintermediate info *= -1 CONSTANTS
 execute if score #rtcreactorintermediate info matches 0 run scoreboard players add #rtcreactorstability info 1
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
-execute if score #rtcreactorintermediate info matches 24.. run scoreboard players set #rtcreactorintermediate info 24
-scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
+execute if score #rtcreactorintermediate info matches ..-24 run scoreboard players set #rtcreactorintermediate info -24
+scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
 # if water pressure >19000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
 scoreboard players remove #rtcreactorintermediate info 19000
