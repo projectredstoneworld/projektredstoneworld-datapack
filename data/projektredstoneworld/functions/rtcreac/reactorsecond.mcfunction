@@ -27,7 +27,7 @@ scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediat
 # if water pressure <14000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
 scoreboard players remove #rtcreactorintermediate info 14000
-execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
+execute if score #rtcreactorintermediate info matches 0.. run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
 # if xenon >7000 remove stability
