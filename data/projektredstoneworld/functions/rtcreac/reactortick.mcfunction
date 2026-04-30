@@ -20,7 +20,7 @@ scoreboard players operation #rtcreactorxedelta info -= #rtcreactorintermediate2
 scoreboard players operation #rtcreactorintermediate info = #rtcreactoractualxenon info
 scoreboard players operation #rtcreactorintermediate info /= #rtcreactorCxenondecay info
 scoreboard players operation #rtcreactorxedelta info -= #rtcreactorintermediate info
-execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorxdelta info matches ..-300 run scoreboard players set #rtcreactorxedelta info -300 
+execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorxdelta info matches -300..0 run scoreboard players set #rtcreactorxedelta info -300 
 # change xenon if delta is > 0.25 mg/t
 execute unless score #rtcreactorxedelta info matches -250..250 run scoreboard players operation #rtcreactoractualxenon info += #rtcreactorxedelta info
 # Clamp xenon and iodine values to positive
