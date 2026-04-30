@@ -9,7 +9,6 @@ execute if score #rtcreactorintermediate info matches 0 run scoreboard players a
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..-24 run scoreboard players set #rtcreactorintermediate info -24
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-tellraw @a [{"text":"Iodine PREGNANCY: ","color":"#00FFFF"},{"score":{"name":"#rtcreactorstability","objective":"info"},"color":"#FFFFFF"}]
 # water pressure delta
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
 scoreboard players operation #rtcreactorintermediate info -= #rtcreactorwaterpressurep info
@@ -19,7 +18,6 @@ execute if score #rtcreactorintermediate info matches 0 run scoreboard players a
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..-24 run scoreboard players set #rtcreactorintermediate info -24
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-tellraw @a [{"text":"Water Pressure Pregnancy: ","color":"#00FFFF"},{"score":{"name":"#rtcreactorstability","objective":"info"},"color":"#FFFFFF"}]
 # xenon delta
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorxenon info
 scoreboard players operation #rtcreactorintermediate info -= #rtcreactorxenonp info
@@ -29,14 +27,12 @@ execute if score #rtcreactorintermediate info matches 0 run scoreboard players a
 scoreboard players operation #rtcreactorintermediate info /= 50 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..-12 run scoreboard players set #rtcreactorintermediate info -12
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-tellraw @a [{"text":"my ass g irlfrifnd named xenon pregnant"},{"score":{"name":"#rtcreactorstability","objective":"info"}}]
 # if water pressure >19000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
 scoreboard players remove #rtcreactorintermediate info 19000
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 40 CONSTANTS
 scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
-tellraw @a [{"text":"my ass g irlfrifnd named AHH HER WATER BROKE pregnant"},{"score":{"name":"#rtcreactorstability","objective":"info"}}]
 
 # if water pressure <14000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
@@ -44,7 +40,6 @@ scoreboard players remove #rtcreactorintermediate info 14000
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-tellraw @a [{"text":"my ass g irlfrifnd named SMALL WATER pregnant"},{"score":{"name":"#rtcreactorstability","objective":"info"}}]
 
 # if xenon >7000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorxenon info
@@ -52,16 +47,14 @@ scoreboard players remove #rtcreactorintermediate info 7000
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 100 CONSTANTS
 scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
-tellraw @a [{"text":"my ass g irlfrifnd named xenon BIGGGG pregnant"},{"score":{"name":"#rtcreactorstability","objective":"info"}}]
 
-# if xenon <4500 remove stability
+# if xenon <3000 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorxenon info
-scoreboard players remove #rtcreactorintermediate info 4500
+scoreboard players remove #rtcreactorintermediate info 3000
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players set #rtcreactorintermediate info 0
 execute if score #rtcreactorcoretemp info matches ..250 run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 100 CONSTANTS
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
-tellraw @a [{"text":"my ass g irlfrifnd named xenon LOWWWW pregnant"},{"score":{"name":"#rtcreactorstability","objective":"info"}}]
 
 # if core temperature >400 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
