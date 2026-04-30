@@ -54,7 +54,7 @@ execute if score #rtcreactorintermediate info matches ..-1 run say OH NO MY ZINI
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players remove #rtcreactorintermediate info 400
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
-scoreboard players operation #rtcreactorstability info /= 2 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info /= 2 CONSTANTS
 scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
 execute if score #rtcreactorintermediate info matches 1.. run say OH NO MY CORE TEMP FAILED CORE TEMP FAILURE
 # final clamping
