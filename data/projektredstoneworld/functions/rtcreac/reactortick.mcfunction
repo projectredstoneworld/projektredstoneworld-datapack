@@ -89,6 +89,24 @@ scoreboard players set #rtcreactorintermediate info 20000
 scoreboard players operation #rtcreactorintermediate info -= #rtcreactorxenon info
 scoreboard players operation #rtcreactorcoretemptarget info *= #rtcreactorintermediate info
 scoreboard players operation #rtcreactorcoretemptarget info /= 14500 CONSTANTS
+# side character controls
+# scale 1
+execute if score #rtcreactorfuelmode info matches 0 run scoreboard players set #rtcreactorintermediate info 1
+execute if score #rtcreactorfuelmode info matches 1 run scoreboard players set #rtcreactorintermediate info 3
+scoreboard players operation #rtcreactorcoretemptarget info *= #rtcreactorintermediate info
+# scale 4
+execute if score #rtcreactorboric info matches 1 run scoreboard players set #rtcreactorintermediate info 5
+execute if score #rtcreactorboric info matches 2 run scoreboard players set #rtcreactorintermediate info 4
+execute if score #rtcreactorboric info matches 3 run scoreboard players set #rtcreactorintermediate info 3
+scoreboard players operation #rtcreactorcoretemptarget info *= #rtcreactorintermediate info
+# scale 5
+execute if score #rtcreactorwatermode info matches 0 run scoreboard players set #rtcreactorintermediate info 1
+execute if score #rtcreactorwatermode info matches 1 run scoreboard players set #rtcreactorintermediate info 5
+scoreboard players operation #rtcreactorcoretemptarget info *= #rtcreactorintermediate info
+# scale back down by 20
+scoreboard players operation #rtcreactorcoretemptarget info /= 20 CONSTANTS
+
+
 # clamp core temp target minimum based off pump rate
 scoreboard players set #rtcreactorintermediate2 info 1000
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorpumprate info
