@@ -1,3 +1,6 @@
+execute if score #rtcreactorrodheight info matches 100 if score #rtcreactorusepump info matches 1 if score #rtcreactorpumprate info matches 400.. if score #rtcreactorfuelmode info matches 0 run return fail
+execute if score #rtcreactorscrammed info matches 1 run return fail
+
 # scram the reactor
 scoreboard players set #rtcreactorscrammed info 1
 scoreboard players set #rtcreactorai info 0
