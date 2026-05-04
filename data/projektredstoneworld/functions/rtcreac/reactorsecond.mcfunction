@@ -123,3 +123,11 @@ execute if score #rtcreactorauxwattage info matches ..-1 if score #rtcreactoraux
 execute if score #rtcreactorauxwattage info matches 1.. run function projektredstoneworld:rtcreac/auxcharge
 execute if score #rtcreactorauxwattage info matches ..-1 run function projektredstoneworld:rtcreac/auxdischarge
 #execute if score #rtcreactorauxwattage info matches 0 run function projektredstoneworld:rtcreac/auxneutral
+
+# ==== AUTOSCRAM ====
+# process scrammed variable
+execute if score #rtcreactorrodheight info matches ..99 run scoreboard players set #rtcreactorscrammed info 0
+# autoscram under certain conditions
+execute if score #rtcreactorcoretemp info matches 500.. if score #rtcreactorrodheight info matches 30..99 run function projektredstoneworld:rtcreac/autoscram
+execute if score #rtcreactorcoretemp info matches 700.. if score #rtcreactorrodheight info matches 10..29 run function projektredstoneworld:rtcreac/autoscram
+execute if score #rtcreactorcoretemp info matches 950.. if score #rtcreactorrodheight info matches 0..9 if score #rtcreactorusepump info matches 1 run function projektredstoneworld:rtcreac/autoscram
