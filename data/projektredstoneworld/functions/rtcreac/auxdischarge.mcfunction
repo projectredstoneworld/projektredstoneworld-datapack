@@ -4,6 +4,7 @@
 
 # Voltage is being used as a range 0 to 10000 to represent the percentage to charge, real voltage value is based on 100% = 500 kV
 # We can use V = V - V * k * PowerFrac
+scoreboard players operation #rtcreactorauxwattage info *= -1 CONSTANTS
 
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorauxvoltpercent info
 scoreboard players operation #rtcreactorintermediate info *= 80 CONSTANTS
