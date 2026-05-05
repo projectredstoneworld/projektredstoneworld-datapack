@@ -69,5 +69,5 @@ execute if score @s rcsid matches 16 run scoreboard players set @s rcsx 15
 execute if score @s rcsid matches 16 run scoreboard players set @s rcsz 10
 
 #Reborn X Museum
-execute if score @s rcsid matches 17 run scoreboard players set @s rcsx 10
+execute if score @s rcsid matches 17 run scoreboard players set @s rcsx 11
 execute if score @s rcsid matches 17 run scoreboard players set @s rcsz 12
