@@ -1,3 +1,6 @@
+execute if score #rtcreactorautoscramtimer info matches ..999 run return fail
+scoreboard players set #rtcreactorautoscramtimer info 0
+
 # scram the reactor
 scoreboard players set #rtcreactorscrammed info 1
 scoreboard players set #rtcreactorai info 0

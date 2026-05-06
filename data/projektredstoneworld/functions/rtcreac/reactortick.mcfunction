@@ -198,3 +198,6 @@ forceload remove 90 600
 execute if score #rtcreactorcoretemp info matches 501.. run forceload add 90 600
 execute if score #radrtcreactor2 info matches 1001.. run forceload add 90 600
 execute if score #rtcreactorforceload info matches 1 run forceload add 90 600
+
+# autoscram timer
+execute unless score #rtcreactorautoscramtimer info matches 1000 run scoreboard players add #rtcreactorautoscramtimer info 1
