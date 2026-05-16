@@ -41,7 +41,7 @@ scoreboard players operation @s rcrspeedupspeed /= 12 CONSTANTS
 execute at @s if score @s rcrspeedupspeed > @s rcrspeeduppspeed run playsound minecraft:block.beacon.activate master @a[distance=..48] ~ ~ ~ 1.5 2 0.4
 execute at @s if score @s rcrspeedupspeed < @s rcrspeeduppspeed run playsound minecraft:block.beacon.deactivate master @a[distance=..48] ~ ~ ~ 1.5 2 0.4
 scoreboard players operation @s rcrspeeduppspeed = @s rcrspeedupspeed
-
+execute at @s if score @s rcrspeedupspeed matches 3 run advancement grant @a[tag=rcrailrider,distance=..8] only redstoneworld:rcrailfast
 # Give minecart motion
 execute if score @s rcrailcartstraightx matches 1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[2.0d,0.0d,0.0d]}
 execute if score @s rcrailcartstraightx matches -1 if score @s rcrailcartstraight matches 6.. run data merge entity @s {Motion:[-2.0d,0.0d,0.0d]}
