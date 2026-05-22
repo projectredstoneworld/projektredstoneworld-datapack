@@ -54,7 +54,11 @@ jobs:
 
           elif [ "$EVENT" = "push" ]; then
             TITLE="📦 New Push"
+            ADDED="${{ github.event.commits[0].added[0] }}"
+            MODIFIED="${{ github.event.commits[0].modified[0] }}"
+            REMOVED="${{ github.event.commits[0].removed[0] }}"
             DESC="${{ github.event.head_commit.message }}"
+            DESC=$'+'$ADDED' ~'$MODIFIED' -'$REMOVED'\n'"$DESC"
             URL="${{ github.event.head_commit.url }}"
 
           elif [ "$EVENT" = "pull_request" ]; then
