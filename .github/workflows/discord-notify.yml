@@ -35,6 +35,8 @@ jobs:
           DESC=""
           URL="https://github.com/${REPO}"
 
+          CONTENT=""
+          
           if [ "$EVENT" = "workflow_run" ]; then
             STATUS="${{ github.event.workflow_run.conclusion }}"
             URL="${{ github.event.workflow_run.html_url }}"
