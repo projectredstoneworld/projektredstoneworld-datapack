@@ -53,11 +53,14 @@ jobs:
             fi
 
           elif [ "$EVENT" = "push" ]; then
-            COMMITS_JSON='${{ toJson(github.event.commits) }}'
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.event.after }}"
+            DATA=$(curl -s "https://api.github.com/repos/${{ github.repository }}/compare/$BEFORE...$AFTER")
+            ADDED=$(echo "$DATA" | jq '[.files[] | select(.status=="added")] | length')
+            MODIFIED=$(echo "$DATA" | jq '[.files[] | select(.status=="modified")] | length')
+            REMOVED=$(echo "$DATA" | jq '[.files[] | select(.status=="removed")] | length')
+            
             TITLE="📦 New Push"
-            ADDED=$(echo '${{ toJson(github.event.commits) }}' | jq '[.[].added[]?] | length')
-            MODIFIED=$(echo '${{ toJson(github.event.commits) }}' | jq '[.[].modified[]?] | length')
-            REMOVED=$(echo '${{ toJson(github.event.commits) }}' | jq '[.[].removed[]?] | length')
             DESC="${{ github.event.head_commit.message }}"
             DESC=$'[+'$ADDED$' ~'$MODIFIED$' -'$REMOVED$']\n'"$DESC"
             URL="${{ github.event.head_commit.url }}"
