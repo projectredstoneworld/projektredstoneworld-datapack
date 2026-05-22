@@ -61,13 +61,13 @@ jobs:
             REMOVED=$(echo "$DATA" | jq '[.files[] | select(.status=="removed")] | length')
             ADDEDL=$(echo "$DATA" | jq '.files[].additions' | awk '{sum+=$1} END {print sum+0}')
             REMOVEDL=$(echo "$DATA" | jq '.files[].deletions' | awk '{sum+=$1} END {print sum+0}')
-            FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 8 | awk -F/ '{print $NF}' | sed 's/^/> - /')
+            FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 8 | awk -F/ '{print $NF}' | sed 's/^/-\xE2\x80\x8B /')
 
             TITLE="📦 New Push"
             DESC="${{ github.event.head_commit.message }}"
             DESC+=$'\n> Files: +'"${ADDED}"' ~'"${MODIFIED}"'  -'"${REMOVED}"''
             DESC+=$'\n> ↳ Lines: +'"${ADDEDL}"' -'"${REMOVEDL}"''
-            DESC+=$'\n\n> Files changed:\n'"$FILE_LIST"
+            DESC+=$'\n\nFiles changed:\n'"$FILE_LIST"
             URL="${{ github.event.head_commit.url }}"
 
           elif [ "$EVENT" = "pull_request" ]; then
