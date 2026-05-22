@@ -42,11 +42,11 @@ jobs:
             if [ "$STATUS" = "success" ]; then
               COLOR=5763719
               TITLE="🚀 Datapack Deployment Succeeded"
-              DESC="Run /minecraft:reload ingame to apply changes.\n<@&1507221840987426827>"
+              DESC=$'Run /minecraft:reload ingame to apply changes.\n<@&1507221840987426827>'
             else
               COLOR=15548997
               TITLE="🔥 Datapack Deployment Failed!\n<@&1507221840987426827>"
-              DESC="Status: $STATUS"
+              DESC=$'Status: '"$STATUS"$'\n<@&1507221840987426827>'
             fi
 
           elif [ "$EVENT" = "push" ]; then
@@ -90,6 +90,9 @@ jobs:
             --arg time "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             --argjson color "$COLOR" \
             '{
+              allowed_mentions: {
+                parse: ["roles"]
+              },
               embeds: [{
                 title: $title,
                 description: $desc,
