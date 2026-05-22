@@ -1,3 +1,5 @@
+# TODO: Make this fail when AI is in malware mode
+
 execute if score #rtcreactorrodheight info matches 100 if score #rtcreactorusepump info matches 1 if score #rtcreactorpumprate info matches 400.. if score #rtcreactorfuelmode info matches 0 run return fail
 execute if score #rtcreactorscrammed info matches 1 run return fail
 
