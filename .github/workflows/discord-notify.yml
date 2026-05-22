@@ -36,7 +36,7 @@ jobs:
           URL="https://github.com/${REPO}"
 
           CONTENT=""
-          
+
           if [ "$EVENT" = "workflow_run" ]; then
             STATUS="${{ github.event.workflow_run.conclusion }}"
             URL="${{ github.event.workflow_run.html_url }}"
@@ -94,6 +94,7 @@ jobs:
             --arg time "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             --argjson color "$COLOR" \
             '{
+              content: $content,
               allowed_mentions: {
                 roles: ["1507221840987426827"]
               },
