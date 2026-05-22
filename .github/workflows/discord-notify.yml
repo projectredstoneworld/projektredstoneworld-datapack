@@ -67,7 +67,7 @@ jobs:
             DESC="${{ github.event.head_commit.message }}"
             DESC+=$'\n> [+'"${ADDED}"' ~'"${MODIFIED}"'  -'"${REMOVED}"'] files'
             DESC+=$'\n> ↳ [+'"${ADDEDL}"' -'"${REMOVEDL}"'] lines'
-            DESC+=$'\n"
+            DESC+=$'\n'
             DESC+=$'\n> Files changed:\n'"$FILE_LIST"
             URL="${{ github.event.head_commit.url }}"
 
