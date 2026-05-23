@@ -9,4 +9,4 @@ scoreboard players add #macrobeamiterations info 1
 
 $tp @s ^ ^ ^$(density)
 
-execute as @s at @s run function projektredstoneworld:macrobeamloop with entity @s
+execute as @s at @s run function projektredstoneworld:macrobeamloop with entity @s data
