@@ -9,7 +9,5 @@ $execute at @s run tp @s ~ ~ ~ $(yaw) $(pitch)
 # Prepare to call loop function
 scoreboard players set #macrobeamiterations info 0
 
-say macrobeamgreg
-
 # Call loop function
-execute as @s at @s run function projektredstoneworld:macrobeamloop with entity @s data
+execute at @s run function projektredstoneworld:macrobeamloop with entity @s data
