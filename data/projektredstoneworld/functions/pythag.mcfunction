@@ -1,4 +1,4 @@
-# Inputs: #pythagx #pythagy #pythagz INPUTS VALUES ARE DESTROYED, Output in #sqrt
+# Inputs: #pythagx #pythagy #pythagz INPUTS VALUES ARE DESTROYED, Output in #sqrt USES THREE DIMENSIONS, NOT TWO
 
 scoreboard players operation #pythagx info *= #pythagx info
 scoreboard players operation #pythagy info *= #pythagy info
