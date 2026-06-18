@@ -39,7 +39,7 @@ tag @s remove tagrtcbound
 # Good hunk of T3.0 and T2
 execute if entity @s[x=-69,y=17,z=533,dx=112,dy=600,dz=109] run tag @s add tagrtcbound
 # Most of bridge
-execute if entity @s[x=-50,y=82,z=109,dx=84,dy=64,dz=452] run tag @s add tagrtcbound
+execute if entity @s[x=-50,y=82,z=109,dx=55,dy=64,dz=452] run tag @s add tagrtcbound
 # Club
 execute if entity @s[x=-50,y=-4,z=255,dx=63,dy=30,dz=91] run tag @s add tagrtcbound
 # Secret mall
