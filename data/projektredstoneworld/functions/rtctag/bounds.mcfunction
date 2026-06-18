@@ -46,5 +46,8 @@ execute if entity @s[x=-50,y=-4,z=255,dx=63,dy=30,dz=91] run tag @s add tagrtcbo
 execute if entity @s[x=-99,y=-49,z=334,dx=163,dy=56,dz=295] run tag @s add tagrtcbound
 # Mall to T2 stairs
 execute if entity @s[x=-51,y=-45,z=602,dx=29,dy=65,dz=34] run tag @s add tagrtcbound
+# Love you Ij <3
+execute if entity @s[x=-25,y=47,z=406,dx=3,dy=52,dz=6] run tag @s add tagrtcbound
+execute if entity @s[x=-35,y=47,z=398,dx=23,dy=13,dz=22] run tag @s add tagrtcbound
 # Everything in RTC should be within RTC-2
 tag @s[tag=tagrtc2bound] add tagrtcbound
