@@ -1,5 +1,5 @@
 # Runs every 10 game ticks while tag is in progress
-execute if score #tagstatus info matches 2..3 run schedule function projektredstoneworld:rtctag/tagtick 10t
+execute if score #tagstatus info matches 2..3 run schedule function projektredstoneworld:rtctag/tagschedule 10t
 
 # Tag timer with lag compensation
 scoreboard players set #tpstimerdiff info 1000000
