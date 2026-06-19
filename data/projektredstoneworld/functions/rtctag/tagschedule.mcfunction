@@ -23,3 +23,11 @@ execute if score #tagstatus info matches 2 if score #tagtimersec info matches 10
 execute if score #tagstatus info matches 2 if score #tagtimersec info matches ..9 run bossbar set tagtimer name [{"text":"Head start: ","color":"#FFFF00"},{"score":{"name":"#tagtimermin","objective":"info"},"color":"#FFFF00","bold":true},{"text":":0","bold":true},{"score":{"name":"#tagtimersec","objective":"info"},"color":"#FFFF00","bold":true}]
 execute if score #tagstatus info matches 3 if score #tagtimersec info matches 10.. run bossbar set tagtimer name [{"text":"Time remaining: ","color":"#FF0000"},{"score":{"name":"#tagtimermin","objective":"info"},"color":"#FF0000","bold":true},{"text":":","bold":true},{"score":{"name":"#tagtimersec","objective":"info"},"color":"#FF0000","bold":true}]
 execute if score #tagstatus info matches 3 if score #tagtimersec info matches ..9 run bossbar set tagtimer name [{"text":"Time remaining: ","color":"#FF0000"},{"score":{"name":"#tagtimermin","objective":"info"},"color":"#FF0000","bold":true},{"text":":0","bold":true},{"score":{"name":"#tagtimersec","objective":"info"},"color":"#FF0000","bold":true}]
+
+
+# Effects
+effect clear @a[tag=pontoka]
+effect give @a[tag=pontoka] glowing 4 0 true
+effect give @a[tag=pontoka] regeneration 4 4 true
+effect give @a[tag=pontoka] saturation 4 0 true
+effect give @a[tag=pontokachase] strength 4 255 true
