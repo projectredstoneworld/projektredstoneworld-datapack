@@ -19,5 +19,6 @@ tag @s remove tagfirtcbound
 tag @s remove tagrtcbound
 tag @s remove tagrtc2bound
 tellraw @s "You have been caught, gg!"
-execute if score #tagpcount info = #tagchasec info run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The runner(s) have been all caught! The chasers win!","bold":false}]
-execute if score #tagpcount info = #tagchasec info run function projektredstoneworld:rtctag/end
+execute store result score #tagrunc info if entity @a[tag=pontokarun]
+execute if score #tagrunc info matches 0 run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The runner(s) have been all caught! The chasers win!","bold":false}]
+execute if score #tagrunc info matches 0 run function projektredstoneworld:rtctag/end
