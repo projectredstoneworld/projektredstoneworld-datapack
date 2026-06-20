@@ -25,4 +25,4 @@ scoreboard objectives remove tagdeathrip
 
 gamemode survival @a[tag=pontoka]
 
-schedule function projektredstoneworld:rtctag/ensureplayerpos 100t
+schedule function projektredstoneworld:rtctag/ensureplayerpos 10t
