@@ -64,3 +64,6 @@ execute as @a[scores={rcrailpay=1..}] run advancement grant @s only redstoneworl
 
 # This is completely unrelated to rcorp rail, I just wanted to use the 10 ticks cycle, REMOVE THIS ON WORLD DOWNLOAD PREPARATIONS
 execute in plotworld run function projektredstoneworld:plotspamentitymitigate
+
+# Unrelated to rcorp rail, but RTC new reconnect system is a good schedule to use
+execute in overworld as @a[scores={rtcreconnect=1..}] at @s run function projektredstoneworld:handlereconnect
