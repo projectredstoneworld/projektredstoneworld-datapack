@@ -7,6 +7,7 @@ execute if score #tagchasers info matches 2 if score #tagpcount info matches ..3
 execute if score #tagchasers info matches 3 if score #tagpcount info matches ..4 run scoreboard players set #tagstatus info 0
 execute if score #tagchasers info matches 4 if score #tagpcount info matches ..5 run scoreboard players set #tagstatus info 0
 execute if score #tagstatus info matches 0 run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"Not enough players have joined to start the game! Either change the number of chasers (or game mode) or ask more people to play!","color":"#FF0055","bold":false}]
+execute if score #tagstatus info matches 0 run return fail
 
 tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The game will start in 10 seconds!","bold":false}]
 
@@ -33,4 +34,3 @@ execute if score #tagchasers info matches ..1 run tellraw @a [{"text":"[Tag] ","
 execute if score #tagchasers info matches 2.. run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The chasers are ","bold":false},{"selector":"@a[tag=pontokachase]","bold":false}]
 
 scoreboard players set #tagstatus info -1
-schedule function projektredstoneworld:rtctag/init 200t
