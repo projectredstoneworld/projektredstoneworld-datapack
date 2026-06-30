@@ -5,3 +5,5 @@ clear @s book{rebornx:4}
 clear @s leather_chestplate{rebornx:5}
 clear @s magma_cream{rebornx:6}
 clear @s echo_shard{rebornx:7}
+
+clear @s written_book{curatorbook:1b}
