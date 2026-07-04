@@ -17,10 +17,10 @@ execute in plotworld as @e[type=#projektredstoneworld:vehicles,x=0] at @s if sco
 
 # For pass 2: spammerdetected2
 execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20] at @s store result score @s plotentityspamcheck if entity @e[type=!player,type=!marker,distance=..15]
-execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20] at @s if score @s plotentityspamcheck matches 50.. run tag @a[distance=..20] add spammerdetected2
+execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20] at @s if score @s plotentityspamcheck matches 100.. run tag @a[distance=..20] add spammerdetected2
 
 execute in plotworld if entity @a[tag=spammerdetected2,x=0] in overworld run setblock -257 44 391 minecraft:redstone_block
 
-execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20] at @s if score @s plotentityspamcheck matches 50.. run tag @e[type=!player,type=!marker,distance=..20,scores={plotentityspamcheck=25..}] add spammerdetected2tokill
+execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20] at @s if score @s plotentityspamcheck matches 100.. run tag @e[type=!player,type=!marker,distance=..20,scores={plotentityspamcheck=25..}] add spammerdetected2tokill
 execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20,tag=spammerdetected2tokill] at @s run data modify entity @s DeathLootTable set value "minecraft:empty"
 execute in plotworld as @a[x=0] at @s as @e[type=!player,type=!marker,distance=..20,tag=spammerdetected2tokill] at @s run kill @s
