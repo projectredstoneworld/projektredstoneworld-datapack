@@ -11,6 +11,7 @@ execute if score #tagtimerdiff info matches 2000.. run scoreboard players set #t
 execute unless score #tagtimer info matches 0 run scoreboard players operation #tagtimer info -= #tagtimerdiff info
 execute if score #tagtimer info matches ..0 if score #tagstatus info matches 2 run function projektredstoneworld:rtctag/start
 execute if score #tagtimer info matches ..0 if score #tagstatus info matches 3 run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The game's time limit has been reached! The runner(s) win!","bold":false}]
+execute if score #tagtimer info matches ..0 if score #tagstatus info matches 3 run advancement grant @a[tag=pontokarun] only redstoneworld:rtctagwin
 execute if score #tagtimer info matches ..0 if score #tagstatus info matches 3 run function projektredstoneworld:rtctag/end
 execute if score #tagtimer info matches ..0 run scoreboard players set #tagtimer info 0
 # Display timer + Formatting

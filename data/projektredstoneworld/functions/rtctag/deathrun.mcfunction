@@ -17,6 +17,7 @@ tag @s remove pontokarun
 tag @s remove tagfirtcbound
 tag @s remove tagrtcbound
 tag @s remove tagrtc2bound
+tag @s remove pontokanearmiss
 tag @s add pontokadead
 tellraw @s "You have been caught, gg!"
 execute store result score #tagrunc info if entity @a[tag=pontokarun]

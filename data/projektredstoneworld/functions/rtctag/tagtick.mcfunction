@@ -23,5 +23,14 @@ execute store result score #tagchasec info if entity @a[tag=pontokachase]
 execute if score #tagbounds info matches -1 if score #tagchasec info matches 1 as @a[tag=!tagrtc2bound,tag=pontokarun,tag=!pontokaskibidi] run damage @s 5 out_of_world
 execute if score #tagbounds info matches -1 if score #tagchasec info matches 2.. as @a[tag=!tagrtcbound,tag=pontokarun,tag=!pontokaskibidi] run damage @s 5 out_of_world
 
+# This is for the advancement "Pontoka!" which is granted to the player with a near miss by the chaser.
+execute as @a[tag=pontokarun] at @s if entity @a[tag=pontokachase,distance=..3.5] run tag @s add pontokanearmiss
+
+execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
 execute as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/deathrun
 execute as @a[scores={tagdeathrip=1..},tag=pontokachase] run function projektredstoneworld:rtctag/deathchase
+
+execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run advancement grant @s only redstoneworld:rtctagnearmiss
+execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run tellraw @a[tag=pontoka] [{"text":"[Tag] ","color":"#FF0055","bold":true},{"selector":"@s"},{"text":" has had a successful Pontoka!! against a chaser (escaped a close call!)","color":"#FF0055"}]
+execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run playsound block.end_portal.spawn master @a[tag=pontoka] ~ ~ ~ 360 1 1
+execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run tag @s remove pontokanearmiss
