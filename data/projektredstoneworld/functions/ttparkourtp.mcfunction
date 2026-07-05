@@ -4,5 +4,5 @@ execute as @s run function agoodman:play
 effect give @s blindness 6 1 true
 effect give @s darkness 3 1 true
 effect give @s slowness 5 1 true
-tellraw @s [{"text":"\n\nEPIC FAILURE!!! YOU ARE TRAPPED HERE FOR NOW!!! The only way to get back to spawn is to run the command.","color":"red"}]
+tellraw @s [{"text":"\n\nEPIC FAILURE!!! YOU ARE TRAPPED HERE!! Maybe tower 0 will have a way out for you...","color":"red"}]
 tag @s add ttparkourtoreturn
