@@ -1,4 +1,4 @@
-# run as a random player trying to tp back to T3.0 from RTCM
+# run as a random player trying to tp back to T0 modern from T0 - 2015
 # Make sure no one else is currently getting restored
 execute if entity @a[tag=restoretargetrtcm] run return fail
 # make sure we can access the markers

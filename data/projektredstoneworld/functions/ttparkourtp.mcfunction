@@ -5,3 +5,4 @@ effect give @s blindness 6 1 true
 effect give @s darkness 3 1 true
 effect give @s slowness 5 1 true
 tellraw @s [{"text":"\n\nEPIC FAILURE!!! YOU ARE TRAPPED HERE FOR NOW!!! The only way to get back to spawn is to run the command.","color":"red"}]
+tag @s add ttparkourtoreturn
