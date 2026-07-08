@@ -9,6 +9,7 @@ execute if score #tagchasers info matches 0 if score #tagpcount info = #tagchase
 execute if score #tagchasers info matches 0 if score #tagpcount info = #tagchasec info run function projektredstoneworld:rtctag/end
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run tp @s @a[tag=pontokachase,limit=1,sort=furthest]
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run gamemode adventure @s
+execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run scoreboard players set @s tagdeathrip 0
 execute if score #tagchasers info matches 0 run return fail
 # Not infection mode!
 tag @s remove pontoka
