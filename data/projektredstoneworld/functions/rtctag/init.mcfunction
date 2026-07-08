@@ -9,11 +9,14 @@ scoreboard players set #tagstatus info 2
 scoreboard players operation #tagtimer info = #taghead info
 execute if score #taghead info matches 10.. run scoreboard players operation #tagtimer info *= 1000 CONSTANTS
 execute if score #taghead info matches ..9 run scoreboard players operation #tagtimer info *= 60000 CONSTANTS
-
+scoreboard players set #tagchasecmax info 0
 bossbar set tagtimer visible true
 bossbar set tagtimer players @a[tag=pontoka]
 bossbar set tagtimer color yellow
 execute store result bossbar tagtimer max run scoreboard players get #tagtimer info
+
+# Activate psudo to disable /spawn and such
+setblock 298 5 666 minecraft:redstone_block
 
 tellraw @a [{"text":"[Tag] ","bold":true,"color":"#FF0055"},{"text":"The runners have spawned in the auction house! The head start has begun","bold":false}]
 

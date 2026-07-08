@@ -13,4 +13,5 @@ execute if score #tagbounds info matches 1 in overworld as @s[tag=pontokaskibidi
 execute if score #tagbounds info matches 1 in overworld as @s[tag=pontokaskibiditoilet] run tellraw @s "You have been placed in Deepslate Diner of Tower 2. Make your way over to Tower 3.0 to start chasing again!"
 execute if score #tagbounds info matches 2 in overworld as @s[tag=pontokaskibiditoilet] run tp @s -140.5 67.0 726.5 -180 0
 execute if score #tagbounds info matches 2 in overworld as @s[tag=pontokaskibiditoilet] run tellraw @s "You have been placed near the Reborn X museum. Make your way to the RTC to start chasing again!"
+gamemode adventure @s
 tag @s remove pontokaskibiditoilet

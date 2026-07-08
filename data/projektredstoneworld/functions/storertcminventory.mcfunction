@@ -11,6 +11,7 @@ data modify entity @e[tag=rtcminv_new,limit=1] data.Inventory set from entity @s
 # mark as finish copying
 tag @e[tag=rtcminv_new] remove rtcminv_new
 clear @s
+tag @s add rtcm
 execute as @s[x=5.0,y=277.9,z=673.0,dx=4.0,dy=5.1,dz=8.0,gamemode=!spectator] at @s run tp @s ~290 ~-274 ~-30
 #tag @s remove t3tortcm
 execute as @a[x=5.0,y=277.9,z=673.0,dx=4.0,dy=5.1,dz=8.0,gamemode=!spectator,limit=1,sort=random] at @s run function projektredstoneworld:storertcminventory

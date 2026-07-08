@@ -5,7 +5,7 @@ execute if entity @a[tag=restoretargetrtcm] run return fail
 forceload add -264 384 -264 364
 
 tag @s add restoretargetrtcm
-
+tag @s remove rtcm
 clear @s
 
 execute as @e[type=marker,tag=rtcminv_store] if score @s redstoneworldID = @a[tag=restoretargetrtcm,limit=1] redstoneworldID run function projektredstoneworld:inventoryrestorertcm

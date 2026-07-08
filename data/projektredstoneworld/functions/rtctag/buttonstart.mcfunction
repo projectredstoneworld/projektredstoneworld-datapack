@@ -18,6 +18,7 @@ execute if score #tagneedchase info matches -4 run tag @a[tag=pontoka,tag=!wantc
 execute if score #tagneedchase info matches -3 run tag @a[tag=pontoka,tag=!wantchase,limit=3,sort=random] add pontokachase
 execute if score #tagneedchase info matches -2 run tag @a[tag=pontoka,tag=!wantchase,limit=2,sort=random] add pontokachase
 execute if score #tagneedchase info matches -1 run tag @a[tag=pontoka,tag=!wantchase,limit=1,sort=random] add pontokachase
+execute if score #tagneedchase info matches 1.. if score #tagchasers info matches 0 run tag @a[tag=pontoka,tag=wantchase,limit=1,sort=random] add pontokachase
 execute if score #tagneedchase info matches 1.. if score #tagchasers info matches 1 run tag @a[tag=pontoka,tag=wantchase,limit=1,sort=random] add pontokachase
 execute if score #tagneedchase info matches 1.. if score #tagchasers info matches 2 run tag @a[tag=pontoka,tag=wantchase,limit=2,sort=random] add pontokachase
 execute if score #tagneedchase info matches 1.. if score #tagchasers info matches 3 run tag @a[tag=pontoka,tag=wantchase,limit=3,sort=random] add pontokachase

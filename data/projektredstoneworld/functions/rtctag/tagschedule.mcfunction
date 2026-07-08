@@ -36,7 +36,11 @@ effect give @a[tag=pontoka] saturation 100 100 true
 effect give @a[tag=pontokachase] strength 4 255 true
 
 execute as @a[tag=pontokadead] unless entity @s[x=281,y=2,z=649,dx=11,dy=8,dz=21] run tp @s 286.5 4.0 654.5 0 0
+execute as @a[tag=pontokadead] run tag @s add pontokaneedperm
+# restore lp perms
+setblock 297 5 666 minecraft:redstone_block
 tag @a[x=281,y=2,z=649,dx=11,dy=8,dz=21,gamemode=survival] remove pontokadead
 gamemode survival @a[x=281,y=2,z=649,dx=11,dy=8,dz=21,tag=pontokadead]
 
-
+# Kill any cheaters who go to a diff dimension
+execute as @a[tag=pontokarun] in overworld unless entity @s[x=0] run function projektredstoneworld:rtctag/deathrun

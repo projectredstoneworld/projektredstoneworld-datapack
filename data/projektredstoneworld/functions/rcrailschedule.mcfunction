@@ -67,3 +67,6 @@ execute in plotworld run function projektredstoneworld:plotspamentitymitigate
 
 # Unrelated to rcorp rail, but RTC new reconnect system is a good schedule to use
 execute in overworld as @a[scores={rtcreconnect=1..}] at @s run function projektredstoneworld:handlereconnect
+
+# Sorry i keep putting things completley unrelated in here but I love my 10 tick schedule, give RTC minigames center users saturation!
+effect give @a[tag=rtcm] saturation 15 255 true
