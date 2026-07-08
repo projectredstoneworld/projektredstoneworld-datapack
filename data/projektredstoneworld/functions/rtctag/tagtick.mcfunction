@@ -28,11 +28,12 @@ execute if score #tagbounds info matches -1 if score #tagchasec info matches 2..
 #Log out protection
 execute if score #tagstatus info matches 3 if score #tagchasec info > #tagchasecmax info run scoreboard players operation #tagchasecmax info = #tagchasec info
 # This is for the advancement "Pontoka!" which is granted to the player with a near miss by the chaser.
-execute as @a[tag=pontokarun] at @s if entity @a[tag=pontokachase,distance=..3.5] run tag @s add pontokanearmiss
+execute as @a[tag=pontokarun] if score #tagstatus info matches 3 at @s if entity @a[tag=pontokachase,distance=..3.5] run tag @s add pontokanearmiss
 
 execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
-execute as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/deathrun
 execute as @a[scores={tagdeathrip=1..},tag=pontokachase] run function projektredstoneworld:rtctag/deathchase
+execute as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/deathrun
+
 
 execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run advancement grant @s only redstoneworld:rtctagnearmiss
 execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run tellraw @a[tag=pontoka] [{"text":"[Tag] ","color":"#FF0055","bold":true},{"selector":"@s"},{"text":" has had a successful Pontoka!! against a chaser (escaped a close call!)","color":"#FF0055"}]
