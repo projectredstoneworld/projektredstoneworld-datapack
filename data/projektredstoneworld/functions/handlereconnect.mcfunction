@@ -5,7 +5,7 @@ tag @s remove rebornxfoundfrag
 
 # Minigame Center / Tag down below
 # Keep things like usual if tag is going on
-execute as @a[tag=pontoka] unless score #tagstatus info matches 2..3 run function projektredstoneworld:rtctag/reconnectlate
+execute if entity @s[tag=pontoka] unless score #tagstatus info matches 2..3 run function projektredstoneworld:rtctag/reconnectlate
 
 # Clear reconnect status
 scoreboard players reset @s rtcreconnect
