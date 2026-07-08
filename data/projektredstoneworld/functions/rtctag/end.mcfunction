@@ -18,8 +18,8 @@ tag @a remove pontokarun
 tag @a remove tagfirtcbound
 tag @a remove tagrtcbound
 tag @a remove tagrtc2bound
-tag @s remove pontokanearmiss
-tag @s add pontokaneedperm
+tag @a remove pontokanearmiss
+tag @a add pontokaneedperm
 setblock 297 5 666 minecraft:redstone_block
 tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The game has ended!","bold":false}]
 

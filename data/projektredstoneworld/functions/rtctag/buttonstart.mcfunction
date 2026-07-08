@@ -13,6 +13,8 @@ tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The game wi
 
 execute store result score #tagneedchase info if entity @a[tag=wantchase]
 scoreboard players operation #tagneedchase info -= #tagchasers info
+# Special case, for infection mode tagchasers is 0, but we still need to start with 1 chaser, so we need to subtract 1 from the #tagneedchase info score if tagchasers is 0
+execute if score #tagchasers info matches 0 run scoreboard players remove #tagneedchase info 1
 execute if score #tagneedchase info matches ..0 run tag @a[tag=pontoka,tag=wantchase] add pontokachase
 execute if score #tagneedchase info matches -4 run tag @a[tag=pontoka,tag=!wantchase,limit=4,sort=random] add pontokachase
 execute if score #tagneedchase info matches -3 run tag @a[tag=pontoka,tag=!wantchase,limit=3,sort=random] add pontokachase
