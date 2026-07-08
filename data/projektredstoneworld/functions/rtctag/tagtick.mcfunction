@@ -30,10 +30,15 @@ execute if score #tagstatus info matches 3 if score #tagchasec info > #tagchasec
 # This is for the advancement "Pontoka!" which is granted to the player with a near miss by the chaser.
 execute as @a[tag=pontokarun] if score #tagstatus info matches 3 at @s if entity @a[tag=pontokachase,distance=..3.5] run tag @s add pontokanearmiss
 
+execute as @a[tag=pontokachase,tag=taginfectunverify] if entity @s[x=-317,y=62,z=404,dx=4,dy=5,dz=5] at @s run tp @s @a[tag=pontokachase,limit=1,sort=furthest]
+execute as @a[tag=pontokachase,tag=taginfectunverify] if entity @s[x=-317,y=62,z=404,dx=4,dy=5,dz=5] at @s run gamemode adventure @s
+execute as @a[tag=pontokachase,tag=taginfectunverify] unless entity @s[x=-317,y=62,z=404,dx=4,dy=5,dz=5] at @s run tag @s remove taginfectunverify 
+
 execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
 execute at @a[scores={tagdeathrip=1..}] run kill @e[type=item,distance=..4,nbt={Item:{id:"minecraft:player_head"}}]
 execute as @a[scores={tagdeathrip=1..},tag=pontokachase] run function projektredstoneworld:rtctag/deathchase
 execute as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/deathrun
+
 
 
 execute as @a[tag=pontokarun,tag=pontokanearmiss] at @s unless score @s tagdeathrip matches 1.. unless entity @a[tag=pontokachase,distance=..10] run advancement grant @s only redstoneworld:rtctagnearmiss

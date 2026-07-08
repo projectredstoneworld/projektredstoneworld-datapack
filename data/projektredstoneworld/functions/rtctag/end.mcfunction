@@ -26,3 +26,5 @@ tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"The game ha
 scoreboard objectives remove tagdeathrip
 
 scoreboard players set #tagfailtime info 0
+
+execute in overworld run tp @a[tag=rtcm,x=-317,y=62,z=404,dx=4,dy=5,dz=5] 286.5 4.0 654.5 0 0
