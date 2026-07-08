@@ -6,8 +6,9 @@ execute if score #tagchasers info matches 0 run tellraw @s [{"text":"Since this 
 execute store result score #tagpcount info if entity @a[tag=pontoka]
 execute store result score #tagchasec info if entity @a[tag=pontokachase]
 execute if score #tagchasers info matches 0 if score #tagpcount info = #tagchasec info run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"Everyone has been infected!","bold":false}]
+execute if score #tagchasers info matches 0 if score #tagpcount info = #tagchasec info run tp @s 286.5 4.0 654.5 0 0
 execute if score #tagchasers info matches 0 if score #tagpcount info = #tagchasec info run function projektredstoneworld:rtctag/end
-execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run tp @s @a[tag=pontokachase,limit=1,sort=furthest]
+execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info at @s run tp @s @a[tag=pontokachase,limit=1,sort=furthest]
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run gamemode adventure @s
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run scoreboard players set @s tagdeathrip 0
 execute if score #tagchasers info matches 0 run return fail

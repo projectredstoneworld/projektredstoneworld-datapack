@@ -31,6 +31,7 @@ execute if score #tagstatus info matches 3 if score #tagchasec info > #tagchasec
 execute as @a[tag=pontokarun] if score #tagstatus info matches 3 at @s if entity @a[tag=pontokachase,distance=..3.5] run tag @s add pontokanearmiss
 
 execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
+execute at @a[scores={tagdeathrip=1..}] run kill @e[type=item,distance=..4,nbt={Item:{id:"minecraft:player_head"}}]
 execute as @a[scores={tagdeathrip=1..},tag=pontokachase] run function projektredstoneworld:rtctag/deathchase
 execute as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/deathrun
 
