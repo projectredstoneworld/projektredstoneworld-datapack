@@ -24,4 +24,7 @@ execute in minecraft:overworld run tp @a[tag=pontokarun] -12.5 141.0 669.5 -180 
 
 scoreboard objectives add tagdeathrip deathCount
 
+setblock 287 8 669 pink_stained_glass
+setblock 286 8 669 redstone_block
+
 function projektredstoneworld:rtctag/tagschedule

@@ -11,3 +11,4 @@ tag @s remove pontokanearmiss
 effect clear @s
 gamemode survival @s
 bossbar set tagtimer players @a[tag=pontoka]
+execute if score #tagpcount info matches ..1 run setblock 288 6 669 pink_stained_glass

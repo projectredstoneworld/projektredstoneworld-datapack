@@ -44,3 +44,11 @@ gamemode survival @a[x=281,y=2,z=649,dx=11,dy=8,dz=21,tag=pontokadead]
 
 # Kill any cheaters who go to a diff dimension
 execute as @a[tag=pontokarun] in overworld unless entity @s[x=0] run function projektredstoneworld:rtctag/deathrun
+
+# Head start status light
+execute if block 286 6 669 redstone_block run setblock 286 6 669 red_nether_brick_slab
+execute if block 286 6 669 pink_stained_glass if score #tagstatus info matches 2 run setblock 286 6 669 redstone_block
+execute if block 286 6 669 red_nether_brick_slab run setblock 286 6 669 pink_stained_glass
+
+execute if score #tagtimer info matches ..180000 if score #tagstatus info matches 3 run setblock 284 6 669 redstone_block
+execute if block 284 6 669 redstone_block run setblock 285 6 669 pink_stained_glass

@@ -10,3 +10,6 @@ execute store result bossbar tagtimer max run scoreboard players get #tagtimer i
 tellraw @a [{"text":"[Tag] ","bold":true,"color":"#FF0055"},{"text":"The chasers have spawned in the auction house! The game has started","bold":false}]
 
 execute in minecraft:overworld run tp @a[tag=pontokachase] -12.5 141.0 669.5 -180 0
+
+setblock 286 6 669 pink_stained_glass
+setblock 285 6 669 redstone_block

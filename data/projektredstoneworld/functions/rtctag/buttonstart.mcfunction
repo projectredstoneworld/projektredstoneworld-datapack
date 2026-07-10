@@ -41,3 +41,6 @@ scoreboard players set #tagstatus info -1
 gamemode adventure @a[tag=pontoka]
 clear @a[tag=pontoka]
 tag @a remove pontokadead
+
+setblock 288 6 669 minecraft:pink_stained_glass
+setblock 287 6 669 redstone_block

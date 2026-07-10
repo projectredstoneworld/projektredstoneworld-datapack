@@ -28,3 +28,5 @@ scoreboard objectives remove tagdeathrip
 scoreboard players set #tagfailtime info 0
 
 execute in overworld run tp @a[tag=rtcm,x=-317,y=62,z=404,dx=4,dy=5,dz=5] 286.5 4.0 654.5 0 0
+
+fill 288 6 669 284 6 669 pink_stained_glass
