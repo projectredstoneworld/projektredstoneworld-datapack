@@ -12,6 +12,7 @@ execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagc
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run gamemode adventure @s
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run scoreboard players set @s tagdeathrip 0
 execute if score #tagchasers info matches 0 unless score #tagpcount info = #tagchasec info run tag @s add taginfectunverify
+execute if score #tagchasers info matches 2 unless score #tagpcount info = #tagchasec info run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"Tag borders have expanded to the entirety of RTC!","bold":false}]
 execute if score #tagchasers info matches 0 run return fail
 # Not infection mode!
 tag @s remove pontoka

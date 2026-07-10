@@ -3,6 +3,7 @@
 scoreboard players set #tagstatus info 3
 scoreboard players operation #tagtimer info = #tagtime info
 scoreboard players operation #tagtimer info *= 60000 CONSTANTS
+scoreboard players set #taglowtime info 0
 
 bossbar set tagtimer color red
 execute store result bossbar tagtimer max run scoreboard players get #tagtimer info

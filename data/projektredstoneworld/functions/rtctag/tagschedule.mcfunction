@@ -50,5 +50,8 @@ execute if block 286 6 669 redstone_block run setblock 286 6 669 red_nether_bric
 execute if block 286 6 669 pink_stained_glass if score #tagstatus info matches 2 run setblock 286 6 669 redstone_block
 execute if block 286 6 669 red_nether_brick_slab run setblock 286 6 669 pink_stained_glass
 
-execute if score #tagtimer info matches ..180000 if score #tagstatus info matches 3 run setblock 284 6 669 redstone_block
+execute if score #tagtimer info matches ..180000 if score #taglowtime info matches 0 run scoreboard players set #taglowtime info 1
+execute if score #taglowtime info matches 1 run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"text":"Only 3 minutes remain!","bold":false}]
+execute if score #taglowtime info matches 1 if score #tagstatus info matches 3 run setblock 284 6 669 redstone_block
 execute if block 284 6 669 redstone_block run setblock 285 6 669 pink_stained_glass
+execute if score #taglowtime info matches 1 run scoreboard players set #taglowtime info 2
