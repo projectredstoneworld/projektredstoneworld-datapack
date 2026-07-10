@@ -1,3 +1,6 @@
+# Forceload FI
+function projektredstoneworld:fixworldspawn
+
 # Opening
 # Museum tunnel entrance
 forceload add -156 603
