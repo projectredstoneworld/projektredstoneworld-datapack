@@ -4,5 +4,6 @@ execute as @s run function agoodman:play
 effect give @s blindness 6 1 true
 effect give @s darkness 3 1 true
 effect give @s slowness 5 1 true
-tellraw @s [{"text":"\n\nEPIC FAILURE!!! YOU ARE TRAPPED HERE!! Maybe tower 0 will have a way out for you...","color":"red"}]
+tellraw @s [{"text":"\n\nEPIC FAILURE!!! YOU ARE TRAPPED HERE!! Maybe Tower 0 will have a way out for you...","color":"red"}]
+tellraw @s "On a more serious note, things in this archived world are broken since the command blocks have been removed (they interfered with scoreboards and other aspects of mainworld). Enjoy!"
 tag @s add ttparkourtoreturn
