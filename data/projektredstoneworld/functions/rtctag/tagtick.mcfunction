@@ -39,6 +39,7 @@ tag @a remove pontokaemer
 tag @a remove pontokaemer
 tag @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] remove pontokagoodcart
 tag @a[x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontoka] add pontokaemer
+tag @a remove pontokaemercart
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] on passengers if entity @s[type=player] on vehicle run tag @s add pontokagoodcart
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=!pontokagoodcart] run kill @s
 execute as @a[tag=pontokaemer] run effect give @s jump_boost 2 40 true
