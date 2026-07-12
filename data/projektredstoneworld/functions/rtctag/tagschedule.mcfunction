@@ -55,3 +55,14 @@ execute if score #taglowtime info matches 1 run tellraw @a [{"text":"[Tag] ","co
 execute if score #taglowtime info matches 1 if score #tagstatus info matches 3 run setblock 284 6 669 redstone_block
 execute if block 284 6 669 redstone_block run setblock 285 6 669 pink_stained_glass
 execute if score #taglowtime info matches 1 run scoreboard players set #taglowtime info 2
+
+# Make sure we masterkeyo!
+execute store result score #tagchasec info if entity @a[tag=pontokachase]
+scoreboard players set #tagneedmasterkey info 0
+execute if score #tagbounds info matches 2..3 run scoreboard players set #tagneedmasterkey info 1
+execute if score #tagbounds info matches -1 if score #tagchasec info matches 2.. run scoreboard players set #tagneedmasterkey info 1
+execute if score #tagneedmasterkey info matches 1 as @a[tag=pontoka] unless entity @s[nbt={Inventory:[{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}]}] at @s run kill @e[type=item,distance=..5,nbt={Item:{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}}]
+execute if score #tagneedmasterkey info matches 1 as @a[tag=pontoka] unless entity @s[nbt={Inventory:[{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}]}] at @s run give @s minecraft:name_tag{display: {Name: '{"text":"MasterKey_946144521"}'}} 1
+
+
+# TODO: May want to add a check for players accidentally taking minecarts outside of bounds and save them from getting knocked out of the game.

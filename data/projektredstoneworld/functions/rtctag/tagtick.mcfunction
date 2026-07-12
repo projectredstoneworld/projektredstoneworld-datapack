@@ -34,6 +34,19 @@ execute as @a[tag=pontokachase,tag=taginfectunverify] if entity @s[x=-317,y=62,z
 execute as @a[tag=pontokachase,tag=taginfectunverify] if entity @s[x=-317,y=62,z=404,dx=4,dy=5,dz=5] at @s run gamemode adventure @s
 execute as @a[tag=pontokachase,tag=taginfectunverify] unless entity @s[x=-317,y=62,z=404,dx=4,dy=5,dz=5] at @s run tag @s remove taginfectunverify 
 
+# Handle Emergency exit
+tag @a remove pontokaemer
+tag @a remove pontokaemer
+tag @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] remove pontokagoodcart
+tag @a[x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontoka] add pontokaemer
+execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] on passengers if entity @s[type=player] on vehicle run tag @s add pontokagoodcart
+execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=!pontokagoodcart] run kill @s
+execute as @a[tag=pontokaemer] run effect give @s jump_boost 2 40 true
+execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontokagoodcart] on passengers if entity @s[type=player,tag=pontokaemer] run tag @s add pontokaemercart
+execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] at @s positioned -2.53 ~ 697.49 run summon minecart ~ ~ ~ {Tags:["pontokarestoreemer"]}
+execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] at @s positioned -2.53 ~ 697.49 run ride @s mount @e[type=minecart,tag=pontokarestoreemer,limit=1,sort=nearest,distance=..16]
+tag @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] remove pontokarestoreemer
+
 execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
 execute at @a[scores={tagdeathrip=1..}] run kill @e[type=item,distance=..4,nbt={Item:{id:"minecraft:player_head"}}]
 execute as @a[scores={tagdeathrip=1..},tag=pontokachase] run function projektredstoneworld:rtctag/deathchase
