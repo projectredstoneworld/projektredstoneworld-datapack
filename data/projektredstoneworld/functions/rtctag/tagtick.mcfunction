@@ -42,7 +42,8 @@ tag @a[x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontoka] add pontokaemer
 tag @a remove pontokaemercart
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] on passengers if entity @s[type=player] on vehicle run tag @s add pontokagoodcart
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=!pontokagoodcart] run kill @s
-execute as @a[tag=pontokaemer] run effect give @s jump_boost 2 40 true
+effect clear @a[tag=pontokaemer] resistance
+execute as @a[x=-3,y=-9,z=697,dx=1,dy=350,dz=1] run effect give @s resistance 2 40 true
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontokagoodcart] on passengers if entity @s[type=player,tag=pontokaemer] run tag @s add pontokaemercart
 # Add onto this as new floors added with emergency exits
 execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] unless entity @s[y=-9,dy=2] unless entity @s[y=55,dy=1.5] unless entity @s[y=76,dy=1.5] unless entity @s[y=82,dy=1.5] unless entity @s[y=95,dy=1.5] unless entity @s[y=113,dy=1.5] unless entity @s[y=140,dy=3] unless entity @s[y=168,dy=1.5] unless entity @s[y=192,dy=1.5] at @s run function projektredstoneworld:rtctag/emergencyexitbringback
