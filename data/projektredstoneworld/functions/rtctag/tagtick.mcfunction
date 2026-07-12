@@ -43,9 +43,9 @@ execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] on passengers if e
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=!pontokagoodcart] run kill @s
 execute as @a[tag=pontokaemer] run effect give @s jump_boost 2 40 true
 execute as @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2,tag=pontokagoodcart] on passengers if entity @s[type=player,tag=pontokaemer] run tag @s add pontokaemercart
-execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] at @s positioned -2.53 ~ 697.49 run summon minecart ~ ~ ~ {Tags:["pontokarestoreemer"]}
-execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] at @s positioned -2.53 ~ 697.49 run ride @s mount @e[type=minecart,tag=pontokarestoreemer,limit=1,sort=nearest,distance=..16]
-tag @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] remove pontokarestoreemer
+# Add onto this as new floors added with emergency exits
+execute as @a[tag=pontokaemer] unless entity @s[tag=pontokaemercart] unless entity @s[y=-9,dy=2] unless entity @s[y=56,dy=0] unless entity @s[y=77,dy=0] unless entity @s[y=83,dy=0] unless entity @s[y=96,dy=0] unless entity @s[y=114,dy=0] unless entity @s[y=140,dy=3] unless entity @s[y=169,dy=0] unless entity @s[y=193,dy=0] at @s run function projektredstoneworld:rtctag/emergencyexitbringback
+
 
 execute if score #tagchasec info matches 1 as @a[scores={tagdeathrip=1..},tag=pontokarun] run function projektredstoneworld:rtctag/devtakedownadv
 execute at @a[scores={tagdeathrip=1..}] run kill @e[type=item,distance=..4,nbt={Item:{id:"minecraft:player_head"}}]
