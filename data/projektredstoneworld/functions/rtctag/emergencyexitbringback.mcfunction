@@ -1,3 +1,3 @@
-execute at @s positioned -2.53 ~ 697.49 run summon minecart ~ ~ ~ {Tags:["pontokarestoreemer"]}
-execute at @s positioned -2.53 ~ 697.49 run ride @s mount @e[type=minecart,tag=pontokarestoreemer,limit=1,sort=nearest,distance=..200]
+execute at @s positioned -2.5 ~ 697.5 run summon minecart ~ ~ ~ {Tags:["pontokarestoreemer"]}
+execute at @s positioned -2.5 ~ 697.5 run ride @s mount @e[type=minecart,tag=pontokarestoreemer,limit=1,sort=nearest,distance=..200]
 tag @e[type=minecart,x=-4,y=-9,z=696,dx=2,dy=350,dz=2] remove pontokarestoreemer
