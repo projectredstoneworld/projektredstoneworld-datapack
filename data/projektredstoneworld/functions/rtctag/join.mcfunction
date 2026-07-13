@@ -1,3 +1,5 @@
+execute unless score #tagstatus info matches 0 run return fail
+
 tag @s add pontoka
 execute store result score #tagpcount info if entity @a[tag=pontoka]
 tellraw @s {"text":"Welcome to RTC Tag! Feel free to change the settings as you wish, and start the game once everyone has joined."}
