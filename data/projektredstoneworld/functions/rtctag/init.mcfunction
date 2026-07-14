@@ -21,6 +21,7 @@ setblock 298 5 666 minecraft:redstone_block
 tellraw @a [{"text":"[Tag] ","bold":true,"color":"#FF0055"},{"text":"The runners have spawned in the auction house! The head start has begun","bold":false}]
 
 execute in minecraft:overworld run tp @a[tag=pontokarun] -12.5 141.0 669.5 -180 0
+clear @a[tag=pontokarun]
 
 scoreboard objectives add tagdeathrip deathCount
 
