@@ -62,7 +62,7 @@ scoreboard players set #tagneedmasterkey info 0
 execute if score #tagbounds info matches 2..3 run scoreboard players set #tagneedmasterkey info 1
 execute if score #tagbounds info matches -1 if score #tagchasec info matches 2.. run scoreboard players set #tagneedmasterkey info 1
 execute if score #tagneedmasterkey info matches 1 as @a[tag=pontoka] unless entity @s[nbt={Inventory:[{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}]}] at @s run kill @e[type=item,distance=..5,nbt={Item:{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}}]
-execute if score #tagneedmasterkey info matches 1 as @a[tag=pontoka] unless entity @s[nbt={Inventory:[{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}]}] at @s run give @s minecraft:name_tag{display: {Name: '{"text":"MasterKey_946144521"}'}} 1
-
-
+#execute if score #tagneedmasterkey info matches 1 as @a[tag=pontoka] unless entity @s[nbt={Inventory:[{id:"minecraft:name_tag",tag: {display: {Name: '{"text":"MasterKey_946144521"}'}}}]}] at @s run give @s minecraft:name_tag{display: {Name: '{"text":"MasterKey_946144521"}'}} 1
+clear @a[tag=pontoka]
+execute if score #tagneedmasterkey info matches 1 run item replace entity @a[tag=pontoka] inventory.0 with minecraft:name_tag{display: {Name: '{"text":"MasterKey_946144521"}'}} 1
 # TODO: May want to add a check for players accidentally taking minecarts outside of bounds and save them from getting knocked out of the game.
