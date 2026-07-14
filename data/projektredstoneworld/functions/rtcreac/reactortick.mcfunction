@@ -131,6 +131,7 @@ execute if score #rtcreactorcoretemptarget info < #rtcreactorintermediate2 info 
 
 # Clamp core temperature target
 execute if score #rtcreactorcoretemptarget info matches ..50 run scoreboard players set #rtcreactorcoretemptarget info 50
+execute if score #rtcreactorfuelhpwarn info matches 2 if score #rtcreactorcoretemptarget info matches ..900 run scoreboard players set #rtcreactorcoretemptarget info 900
 
 # Approach core temperature target
 scoreboard players operation #rtcreactorcoretempdelta info = #rtcreactorcoretemptarget info
@@ -197,6 +198,24 @@ execute if score #rtcreactoreccstime info matches 1.. run function projektredsto
 # ==== STEAM RELEASE ====
 execute if score #rtcreactorsteamrelease info matches 1.. run function projektredstoneworld:rtcreac/steamrelease
 
+# ==== FUEL ROD INTEGRITY ====
+# Fuel rods are fully repaired using repair kits -- Default value 314159
+# Fuel rod loses 1 hp per tick per degree above 450 (max. 700/t -- meltdown in ~22 seconds)
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
+scoreboard players remove #rtcreactorintermediate info 450
+execute if score #rtcreactorintermediate info matches 700.. run scoreboard players set #rtcreactorintermediate info 500
+execute if score #rtcreactorintermediate info matches 0.. run scoreboard players operation #rtcreactorfuelhp info -= #rtcreactorintermediate info
+execute if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorfuelhp info matches ..69420 run tellraw @a {"text":"Imminent danger: The RTC reactor's fuel rods are melting! The reactor is advised to scram immediately. A radiation spike has been detected in the reactor, rendering the complex unsafe. The fuel has the potential to melt and spike the radiation levels even further, the military warns.","color":"#FF0000"}
+execute if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorfuelhp info matches ..69420 run scoreboard players add #radrtcreactoraddmsv info 100
+execute if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorfuelhp info matches ..69420 run scoreboard players set #rtcralarm info 2
+execute if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorfuelhp info matches ..69420 as @a[tag=inrtcreactor] at @s run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 1 2 1
+execute if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorfuelhp info matches ..69420 run scoreboard players set #rtcreactorfuelhpwarn info 1
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches 0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches 0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.ender_dragon.death master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches 0 run scoreboard players add #radrtcreactoraddmsv info 5000
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches 0 run tellraw @a [{"text":"WARNING: RTC REACTOR MELTDOWN\n","color":"#FF0000","bold":true},{"text":"The RTC reactor has melted down. As a result, a 5 Sv/h spike in radiation has been observed in the reactor complex. Reports from RID suggest that the mass of melted fuel rods is fairly contained within the reactor containment building, however it is still necessary to acquire a fuel rod repair kit to repair the rods. It will also be necessary to purge radioactive content into the atmosphere during the repair. Please be ready to go into a nearby bunker and stay tuned for updates.","bold":false}]
+advancement grant @a[tag=inrtcreactor] only redstoneworld:rtcmeltdown
+execute if score #rtcreactorfuelhp info matches 69421.. run scoreboard players set #rtcreactorfuelhpwarn info 0
 
 # Forceload itself if the reactor is in critical state, core temp >500 or radiation > 1 Sv/h or forceload variable on
 forceload remove 90 600
