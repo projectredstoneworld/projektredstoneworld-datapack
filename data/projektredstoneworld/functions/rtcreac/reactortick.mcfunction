@@ -131,7 +131,7 @@ execute if score #rtcreactorcoretemptarget info < #rtcreactorintermediate2 info 
 
 # Clamp core temperature target
 execute if score #rtcreactorcoretemptarget info matches ..50 run scoreboard players set #rtcreactorcoretemptarget info 50
-execute if score #rtcreactorfuelhpwarn info matches 2 if score #rtcreactorcoretemptarget info matches ..900 run scoreboard players set #rtcreactorcoretemptarget info 900
+execute if score #rtcreactorfuelhpwarn info matches 2 if score #rtcreactorcoretemptarget info matches ..1200 run scoreboard players set #rtcreactorcoretemptarget info 1200
 
 # Approach core temperature target
 scoreboard players operation #rtcreactorcoretempdelta info = #rtcreactorcoretemptarget info
