@@ -5,4 +5,5 @@ scoreboard players add #radrtcreactoraddmsv info 3000
 scoreboard players set #rtcreactorrepairmode info 1
 scoreboard players set #rtcreactoriodine info 800000
 
+scoreboard players set #rtcreactorrepairkit info 0
 # TODO: Reactor spewing and external radiation
