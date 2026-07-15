@@ -14,9 +14,9 @@ scoreboard players operation #rtcreactoriodinechange info -= #rtcreactorintermed
 execute unless score #rtcreactoriodinechange info matches -3..3 run scoreboard players operation #rtcreactoriodine info += #rtcreactoriodinechange info
 execute if score #rtcreactorxenon info matches 6000.. if score #rtcreactoriodinechange info matches -3..3 run scoreboard players operation #rtcreactoriodine info += #rtcreactoriodinechange info
 # Misc. iodine clamps for extreme cases
-execute if score #rtcreactorcoretemp info matches 2000.. run scoreboard players set #rtcreactoriodine info 0
+execute if score #rtcreactorcoretemp info matches 2000.. if score #rtcreactorrepairkit info matches 0 run scoreboard players set #rtcreactoriodine info 0
 execute if score #rtcreactorfuelhpwarn info matches 2 run scoreboard players set #rtcreactoriodine info 0
-execute if score #rtcreactoriodine info matches 900000.. run scoreboard players set #rtcreactoriodine info 800000
+execute if score #rtcreactoriodine info matches 900000.. run scoreboard players set #rtcreactoriodine info 900000
 # Xenon production from iodine decay
 scoreboard players operation #rtcreactorintermediate info *= #rtcreactorCxenonmultiplier info
 scoreboard players operation #rtcreactorxedelta info = #rtcreactorintermediate info
