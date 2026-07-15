@@ -220,6 +220,8 @@ execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp
 execute if score #rtcreactorfuelhp info matches ..-1 run scoreboard players set #rtcreactorfuelhp info 0
 execute if score #rtcreactorfuelhp info matches 69421.. run scoreboard players set #rtcreactorfuelhpwarn info 0
 execute if score #rtcreactorfuelhpwarn info matches 2 run scoreboard players add #radrtcreactoraddfrac info 22000
+execute if score #rtcreactorrepairmode info matches 1 if score #rtcreactorcoretemp info matches ..450 run scoreboard players set #rtcreactorfuelhp info 69420
+execute if score #rtcreactorcoretemp info matches ..100 run scoreboard players set #rtcreactorrepairmode info 0
 
 # Forceload itself if the reactor is in critical state, core temp >500 or radiation > 1 Sv/h or forceload variable on
 forceload remove 90 600
