@@ -16,7 +16,7 @@ execute if score #rtcreactorxenon info matches 6000.. if score #rtcreactoriodine
 # Misc. iodine clamps for extreme cases
 execute if score #rtcreactorcoretemp info matches 2000.. if score #rtcreactorrepairkit info matches 0 run scoreboard players set #rtcreactoriodine info 0
 execute if score #rtcreactorfuelhpwarn info matches 2 run scoreboard players set #rtcreactoriodine info 0
-execute if score #rtcreactoriodine info matches 900000.. run scoreboard players set #rtcreactoriodine info 900000
+execute if score #rtcreactoriodine info matches 1400000.. run scoreboard players set #rtcreactoriodine info 1400000
 # Xenon production from iodine decay
 scoreboard players operation #rtcreactorintermediate info *= #rtcreactorCxenonmultiplier info
 scoreboard players operation #rtcreactorxedelta info = #rtcreactorintermediate info
@@ -224,7 +224,7 @@ execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorrodheight info 100
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorpumprate info 500
 execute if score #rtcreactorrepairmdoe info matches 1 run scoreboard players set #rtcreactorusepump info 1
-execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactoriodine info 900000
+execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactoriodine info 1400000
 execute if score #rtcreactorcoretemp info matches ..100 run scoreboard players set #rtcreactorrepairmode info 0
 
 # Forceload itself if the reactor is in critical state, core temp >500 or radiation > 1 Sv/h or forceload variable on
