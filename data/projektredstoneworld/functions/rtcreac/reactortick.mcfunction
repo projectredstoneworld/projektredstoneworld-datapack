@@ -223,7 +223,7 @@ execute if score #rtcreactorfuelhpwarn info matches 2 run scoreboard players add
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorfuelhp info 314159
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorrodheight info 100
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorpumprate info 500
-execute if score #rtcreactorrepairmdoe info matches 1 run scoreboard players set #rtcreactorusepump info 1
+execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorusepump info 1
 execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactoriodine info 1400000
 execute if score #rtcreactorcoretemp info matches ..100 run scoreboard players set #rtcreactorrepairmode info 0
 
