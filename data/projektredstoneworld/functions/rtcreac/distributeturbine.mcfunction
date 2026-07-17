@@ -2,17 +2,17 @@
 # Handle lowest power first
 execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #rtcreactorpowerdist info 0
 # Turn off diesel / aux use if power is high enough to power complex
-execute if score #rtcreactorpowerdist info matches 0 if score #rtcreactorturbinepower info matches 40.. run scoreboard players set #rtcreactorpowered info 1
+execute if score #rtcreactorturbinepower info matches ..599 if score #rtcreactorturbinepower info matches 40.. run scoreboard players set #rtcreactorpowered info 1
 # Turn on diesel / aux
-execute if score #rtcreactorpowerdist info matches 0 if score #rtcreactorturbinepower info matches ..39 run scoreboard players set #rtcreactorpowered info 0
+execute if score #rtcreactorturbinepower info matches ..599 if score #rtcreactorturbinepower info matches ..39 run scoreboard players set #rtcreactorpowered info 0
 # Power Outages
-execute if score #rtcreactorpowerdist info matches 0 run scoreboard players set #rtcpower info 0
-execute if score #rtcreactorpowerdist info matches 0 run scoreboard players set #fipower info 0
-execute if score #rtcreactorpowerdist info matches 0 run scoreboard players set #blakewoodpower info 0
-execute if score #rtcreactorpowerdist info matches 0 run scoreboard players set #dosbackuppower info 0
-execute if score #rtcreactorpowerdist info matches 0 run scoreboard players set #rtcreactorauxinput info 0
+execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #rtcpower info 0
+execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #fipower info 0
+execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #blakewoodpower info 0
+execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #dosbackuppower info 0
+execute if score #rtcreactorturbinepower info matches ..599 run scoreboard players set #rtcreactorauxinput info 0
 
-execute if score #rtcreactorpowerdist info matches 0 run return fail
+execute if score #rtcreactorturbinepower info matches ..599 run return fail
 
 # Get Player Counts
 execute store result score #rtcplayercount info if entity @a[x=-63,y=-64,z=54,dx=267,dy=400,dz=761]
@@ -21,7 +21,6 @@ execute store result score #time info run time query daytime
 
 # Handle low power, only power the reactor, rtc, and aux
 execute if score #rtcreactorturbinepower info matches 600..999 run scoreboard players operation #rtcreactorpowerdist info = #rtcreactorturbinepower info
-tellraw @a {"score":{"name": "#rtcreactorpowerdist","objective": "info"}}
 execute if score #rtcreactorpowerdist info matches 600..999 run scoreboard players remove #rtcreactorpowerdist info 35
 # Calculate RTC - Low
 scoreboard players operation #rtcreactorintermediate info = #rtcplayercount info
