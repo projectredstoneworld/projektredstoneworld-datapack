@@ -21,6 +21,7 @@ execute store result score #time info run time query daytime
 
 # Handle low power, only power the reactor, rtc, and aux
 execute if score #rtcreactorturbinepower info matches 600..999 run scoreboard players operation #rtcreactorpowerdist info = #rtcreactorturbinepower info
+tellraw @a {"score":{"name": "#rtcreactorpowerdist","objective": "info"}}
 execute if score #rtcreactorpowerdist info matches 600..999 run scoreboard players remove #rtcreactorpowerdist info 35
 # Calculate RTC - Low
 scoreboard players operation #rtcreactorintermediate info = #rtcplayercount info
