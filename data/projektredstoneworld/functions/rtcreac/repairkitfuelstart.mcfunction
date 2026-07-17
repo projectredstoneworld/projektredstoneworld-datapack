@@ -7,6 +7,6 @@ scoreboard players set #rtcreactorrepairmode info 1
 scoreboard players set #rtcreactorrepairkit info 0
 
 scoreboard players set #rtcreactorspewmode info 1
-scoreboard players set #rtcreactorspew info 14000000
-scoreboard players set #rtcreactorspewtime info 50
+scoreboard players set #rtcreactorspew info 21000000
+scoreboard players set #rtcreactorspewtime info 120
 # TODO: Reactor spewing and external radiation
