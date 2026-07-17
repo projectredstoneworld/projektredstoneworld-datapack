@@ -227,6 +227,11 @@ execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set
 execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactoriodine info 1400000
 execute if score #rtcreactorcoretemp info matches ..100 run scoreboard players set #rtcreactorrepairmode info 0
 
+# Forceload conditions
+scoreboard players set #rtcreactorforceload info 0
+execute unless score #rtcreactorspewmode info matches 0 run scoreboard players set #rtcreactorforceload info 1
+
+
 # Forceload itself if the reactor is in critical state, core temp >500 or radiation > 1 Sv/h or forceload variable on
 forceload remove 90 600
 execute if score #rtcreactorcoretemp info matches 501.. run forceload add 90 600
