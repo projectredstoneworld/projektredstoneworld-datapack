@@ -14,7 +14,7 @@ scoreboard players operation #rtcreactorintermediate info += #rtcreactorintermed
 execute if score #rtcreactorintermediate info matches ..2000 run scoreboard players set #rtcreactorintermediate info 2000
 scoreboard players operation #rtcreactorintermediate2 info = #rtcreactorspew info
 scoreboard players operation #rtcreactorintermediate2 info /= #rtcreactorintermediate info
-scoreboard players operation @s rtcrspew += #rtcreactorintermediate info
+scoreboard players operation @s rtcrspew += #rtcreactorintermediate2 info
 scoreboard players operation #rtcreactorintermediate info = @s rtcrspew
 scoreboard players operation #rtcreactorintermediate info /= 100 CONSTANTS
 scoreboard players operation @s radiationdose += #rtcreactorintermediate info
