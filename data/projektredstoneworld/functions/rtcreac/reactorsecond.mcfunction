@@ -108,6 +108,9 @@ execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoret
 # rtclimboenter - Self explanatory
 # rtcmeltdown - General meltdown
 
+# ==== CALCULATE POWER DIST ====
+function projektredstoneworld:rtcreac/distributeturbine
+
 
 # ==== AUX POWER MANAGEMENT ====
 # #rtcreactorauxinput should be set from wherever turbine power is split up from, #rtcreactorauxload is the load on the aux battery. Both should be in megawatts
