@@ -2,7 +2,7 @@ execute unless score #rtcreactorrepairkit info matches 0 run tellraw @p [{"text"
 execute unless score #rtcreactorrepairkit info matches 0 run return fail
 
 execute as @a at @s run playsound minecraft:block.anvil.land master @s ~ ~ ~ 1 0 1
-execute if score #rtcreactorfuelhp info matches 1.. run tellraw @a {"text":"The RTC reactor fuel rods have been repaired!","bold":true,"color":"#00FF00"}
+execute if score #rtcreactorfuelhp info matches 1.. run tellraw @a {"text":"The RTC reactor fuel rods have been repaired! No atmospheric purge necessary.","bold":true,"color":"#00FF00"}
 execute if score #rtcreactorfuelhp info matches 1.. run scoreboard players set #rtcreactorfuelhp info 314159
 execute if score #rtcreactorfuelhp info matches 1.. run return fail
 
