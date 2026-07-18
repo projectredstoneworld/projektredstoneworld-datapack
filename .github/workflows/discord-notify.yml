@@ -22,6 +22,26 @@ jobs:
       - name: Send fancy Discord embed
         env:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
+
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+
+          COMMENT_URL: ${{ github.event.comment.html_url }}
+
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
+
+          WORKFLOW_STATUS: ${{ github.event.workflow_run.conclusion }}
+          WORKFLOW_URL: ${{ github.event.workflow_run.html_url }}
+
+          ACTION: ${{ github.event.action }}
+
         run: |
           set -euo pipefail
 
@@ -38,8 +58,8 @@ jobs:
           CONTENT=""
 
           if [ "$EVENT" = "workflow_run" ]; then
-            STATUS="${{ github.event.workflow_run.conclusion }}"
-            URL="${{ github.event.workflow_run.html_url }}"
+            STATUS="$WORKFLOW_STATUS"
+            URL="$WORKFLOW_URL"
 
             if [ "$STATUS" = "success" ]; then
               COLOR=5763719
@@ -55,45 +75,50 @@ jobs:
           elif [ "$EVENT" = "push" ]; then
             BEFORE="${{ github.event.before }}"
             AFTER="${{ github.event.after }}"
-            DATA=$(curl -s "https://api.github.com/repos/${{ github.repository }}/compare/$BEFORE...$AFTER")
+
+            DATA=$(curl -s "https://api.github.com/repos/${REPO}/compare/$BEFORE...$AFTER")
+
             ADDED=$(echo "$DATA" | jq '[.files[] | select(.status=="added")] | length')
             MODIFIED=$(echo "$DATA" | jq '[.files[] | select(.status=="modified")] | length')
             REMOVED=$(echo "$DATA" | jq '[.files[] | select(.status=="removed")] | length')
+
             ADDEDL=$(echo "$DATA" | jq '.files[].additions' | awk '{sum+=$1} END {print sum+0}')
             REMOVEDL=$(echo "$DATA" | jq '.files[].deletions' | awk '{sum+=$1} END {print sum+0}')
+
             FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 8 | awk -F/ '{print $NF}' | sed 's/^/> /')
 
             TITLE="📦 New Push"
-            DESC="${{ github.event.head_commit.message }}"
-            DESC+=$'\n> Files: +'"${ADDED}"' ~'"${MODIFIED}"'  -'"${REMOVED}"''
-            DESC+=$'\n> Lines: +'"${ADDEDL}"' -'"${REMOVEDL}"''
+            DESC="$COMMIT_MESSAGE"
+            DESC+=$'\n> Files: +'"${ADDED}"' ~'"${MODIFIED}"' -'"${REMOVED}"
+            DESC+=$'\n> Lines: +'"${ADDEDL}"' -'"${REMOVEDL}"
             DESC+=$'\n\nFiles changed:\n'"$FILE_LIST"
-            URL="${{ github.event.head_commit.url }}"
+
+            URL="$COMMIT_URL"
 
           elif [ "$EVENT" = "pull_request" ]; then
-            TITLE="🔀 Pull Request ${{ github.event.action }}"
-            DESC="${{ github.event.pull_request.title }}"
-            URL="${{ github.event.pull_request.html_url }}"
+            TITLE="🔀 Pull Request $ACTION"
+            DESC="$PR_TITLE"
+            URL="$PR_URL"
 
           elif [ "$EVENT" = "issues" ]; then
-            TITLE="🐛 Issue ${{ github.event.action }}"
-            DESC="${{ github.event.issue.title }}"
-            URL="${{ github.event.issue.html_url }}"
+            TITLE="🐛 Issue $ACTION"
+            DESC="$ISSUE_TITLE"
+            URL="$ISSUE_URL"
 
           elif [ "$EVENT" = "issue_comment" ]; then
             TITLE="💬 Comment Added"
             DESC="Comment on issue/PR"
-            URL="${{ github.event.comment.html_url }}"
+            URL="$COMMENT_URL"
 
           elif [ "$EVENT" = "pull_request_review" ]; then
-            TITLE="👀 PR Review ${{ github.event.action }}"
+            TITLE="👀 PR Review $ACTION"
             DESC="Review submitted"
-            URL="${{ github.event.pull_request.html_url }}"
+            URL="$PR_URL"
 
           elif [ "$EVENT" = "release" ]; then
             TITLE="🏷️ Release Published"
-            DESC="${{ github.event.release.name }}"
-            URL="${{ github.event.release.html_url }}"
+            DESC="$RELEASE_NAME"
+            URL="$RELEASE_URL"
           fi
 
           jq -n \
@@ -121,6 +146,7 @@ jobs:
                 timestamp: $time
               }]
             }' \
-          | curl -H "Content-Type: application/json" \
-                 -d @- \
-                 "$WEBHOOK"
+          | curl \
+              -H "Content-Type: application/json" \
+              -d @- \
+              "$WEBHOOK"
