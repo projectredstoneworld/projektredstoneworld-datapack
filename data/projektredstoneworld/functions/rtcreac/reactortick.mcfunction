@@ -54,6 +54,8 @@ scoreboard players remove #rtcreactorintermediate info 100
 scoreboard players operation #rtcreactorintermediate info *= 300 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
 execute if score #rtcreactortitcover info matches 1 run scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
+# Explodo
+execute if score #rtcreactorrcbwarn info matches 2 if score #rtcreactorwaterpressuretarget info matches 8000.. run scoreboard players set #rtcreactorwaterpressuretarget info 8000
 # Clamp water pressure target
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players operation #rtcreactorintermediate info *= 48 CONSTANTS
@@ -161,6 +163,7 @@ execute if score #rtcreactorwaterpressure info matches ..2000 run scoreboard pla
 execute if score #rtcreactorturbinepowertarget info matches 6000.. run scoreboard players set #rtcreactorturbinepowertarget info 6000
 execute if score #rtcreactorturbinepowertarget info matches ..0 run scoreboard players set #rtcreactorturbinepowertarget info 0
 execute if score #rtcreactorrodheight info matches 80.. if score #rtcreactorfuelmode info matches 0 run scoreboard players operation #rtcreactorturbinepowertarget info /= 4 CONSTANTS
+execute if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players set #rtcreactorturbinepowertarget info 0
 # Make turbine power approach target thru use of delta
 scoreboard players operation #rtcreactorturbinepowerdelta info = #rtcreactorturbinepowertarget info
 scoreboard players operation #rtcreactorturbinepowerdelta info -= #rtcreactorturbinepower info
@@ -202,6 +205,7 @@ execute if score #rtcreactorsteamrelease info matches 1.. run function projektre
 # ==== FUEL ROD INTEGRITY ====
 # Fuel rods are fully repaired using repair kits -- Default value 314159
 # Fuel rod loses 1 hp per tick per degree above 450 (max. 700/t -- meltdown in ~22 seconds)
+# Warning message at 69420 HP
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players remove #rtcreactorintermediate info 450
 execute if score #rtcreactorintermediate info matches 700.. run scoreboard players set #rtcreactorintermediate info 500
@@ -226,6 +230,37 @@ execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set
 execute if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactorusepump info 1
 execute if score #rtcreactorcoretemp info matches ..100 if score #rtcreactorrepairmode info matches 1 run scoreboard players set #rtcreactoriodine info 1400000
 execute if score #rtcreactorcoretemp info matches ..100 run scoreboard players set #rtcreactorrepairmode info 0
+
+# ==== TURBINE/PRESSURE INTEGRITY ====
+# Turbines and RCB are repaired using repair kits -- Default value 696969
+# Turbine loses 1 HP/MW over 1900 up to 700/t
+# Turbine loses 1 HP/67 kPa over 19000 up to 700/t
+# Turbine loses 2000/t if pressure is above 69420 kPa
+# Warning message at 112358 HP
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorturbinepower info
+scoreboard players remove #rtcreactorintermediate info 1900
+execute if score #rtcreactorintermediate info matches 700.. run scoreboard players set #rtcreactorintermediate info 700
+execute if score #rtcreactorintermediate info matches 1.. run scoreboard players operation #rtcreactorrcbhp info -= #rtcreactorintermediate info
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
+scoreboard players remove #rtcreactorintermediate info 19000
+scoreboard players operation #rtcreactorintermediate info /= 67 CONSTANTS
+execute if score #rtcreactorintermediate info matches 700.. run scoreboard players set #rtcreactorintermediate info 700
+execute if score #rtcreactorintermediate info matches 1.. run scoreboard players operation #rtcreactorrcbhp info -= #rtcreactorintermediate info
+execute if score #rtcreactorwaterpressure info matches 69420.. run scoreboard players remove #rtcreactorrcbhp info 2000
+execute if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhp info 0
+execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run tellraw @a {"text":"Imminent danger: The RTC reactor RCB (Reactor Containment Building) is at risk of exploding. Immediate intervention is required. Immense pressure has built up in the reactor core, which has caused structural damage to the RCB. Further damage can result in an explosion which will release radioactive material. A SCRAM is advised. The reactor warning alarm has been activated, and will require manual disabling once intervention is completed.","color":"#FF0000"}
+execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run scoreboard players set #rtcralarm info 1
+execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 as @a[tag=inrtcreactor] at @s run playsound minecraft:block.anvil.land master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run scoreboard players set #rtcreactorrcbhpwarn info 1
+execute if score #rtcreactorrcbhpwarn info matches 112359.. run scoreboard players set #rtcreactorrcbhpwarn info 0
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.ender_dragon.death master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players add #radrtcreactoraddmsv info 2500
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run tellraw @a [{"text":"WARNING: RTC REACTOR RCB BREACH\n","bold":true,"color":"#FF0000"},{"text":"The RTC-Blakewood Nuclear Power Plant's RCB (Reactor Containment Building) has been breached. This is either caused due to a build up of excess pressure or an extreme power surge in the turbines. A very high amount of radiation has been ejected into the atmosphere. If you are in the FI-RTC complex: Please seek immediate shelter in the FI bunker (or any bunker further to the west), as the RTC microbunker will not provide sufficient protection. The RTC-Blakewood reactor will not produce any more power until it has been repaired using a repair kit. Stay safe and stay tuned for updates.","bold":false}]
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspew info 60000000
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewtime info 10
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewmode info 1
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbwarn info 2
 
 # Forceload conditions
 scoreboard players set #rtcreactorforceload info 0
