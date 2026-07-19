@@ -260,7 +260,8 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspew info 60000000
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewtime info 10
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewmode info 1
-execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbwarn info 2
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactortitcover info matches 1 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtccoolantcover
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhpwarn info 2
 
 # Forceload conditions
 scoreboard players set #rtcreactorforceload info 0

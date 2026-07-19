@@ -7,5 +7,6 @@ execute if score #rtcreactorrcbhp info matches 1.. run scoreboard players set #r
 execute if score #rtcreactorrcbhp info matches 1.. run return fail
 
 scoreboard players set #rtcreactorrcbhp info 696969
+scoreboard players set #rtcreactortitcover info 0
 function projektredstoneworld:rtcreac/autoscram
 tellraw @a {"text":"Hello! RTC reactor RCB HE IS REPARO!!!!! Please skibidi rizzler enjoy this placeholder! PONTOKAAAAAAA IN MY BOKAAAA"}
