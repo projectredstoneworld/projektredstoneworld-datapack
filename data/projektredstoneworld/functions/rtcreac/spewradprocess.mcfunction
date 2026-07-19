@@ -22,6 +22,7 @@ execute if entity @s[tag=radiationproof6] if score #rtcreactorintermediate2 info
 execute if entity @s[tag=radiationproof7] if score #rtcreactorintermediate2 info matches ..140 run scoreboard players set #rtcreactorintermediate2 info 0
 execute if entity @s[tag=radiationproof20] if score #rtcreactorintermediate2 info matches ..400 run scoreboard players set #rtcreactorintermediate2 info 0
 execute if entity @s[tag=radiationproofdev] run scoreboard players set #rtcreacrotintermediate2 info 0
+execute if entity @s[gamemode=spectator] run scoreboard players set #rtcreacrotintermediate2 info 0
 
 # RTC bunker
 execute if entity @s[x=-87,y=-8,z=610,dx=80,dy=8,dz=138] run scoreboard players operation #rtcreactorintermediate2 info /= 4 CONSTANTS
