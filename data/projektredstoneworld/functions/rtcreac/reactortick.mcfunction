@@ -252,7 +252,7 @@ execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run scoreboard players set #rtcralarm info 1
 execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 as @a[tag=inrtcreactor] at @s run playsound minecraft:block.anvil.land master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run scoreboard players set #rtcreactorrcbhpwarn info 1
-execute if score #rtcreactorrcbhpwarn info matches 112359.. run scoreboard players set #rtcreactorrcbhpwarn info 0
+execute if score #rtcreactorrcbhp info matches 112359.. run scoreboard players set #rtcreactorrcbhpwarn info 0
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.lightning_bolt.impact master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.ender_dragon.death master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players add #radrtcreactoraddmsv info 2500
