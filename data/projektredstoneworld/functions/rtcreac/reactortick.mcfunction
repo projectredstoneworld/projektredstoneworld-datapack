@@ -257,10 +257,11 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] at @s run playsound minecraft:entity.ender_dragon.death master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players add #radrtcreactoraddmsv info 2500
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run tellraw @a [{"text":"WARNING: RTC REACTOR RCB BREACH\n","bold":true,"color":"#FF0000"},{"text":"The RTC-Blakewood Nuclear Power Plant's RCB (Reactor Containment Building) has been breached. This is either caused due to a build up of excess pressure or an extreme power surge in the turbines. A very high amount of radiation has been ejected into the atmosphere. If you are in the FI-RTC complex: Please seek immediate shelter in the FI bunker (or any bunker further to the west), as the RTC microbunker will not provide sufficient protection. The RTC-Blakewood reactor will not produce any more power until it has been repaired using a repair kit. Stay safe and stay tuned for updates.","bold":false}]
-execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspew info 60000000
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players add #rtcreactorspew info 60000000
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewtime info 10
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewmode info 1
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactortitcover info matches 1 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtccoolantcover
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] run damage @s 16 on_fire
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhpwarn info 2
 
 # Forceload conditions
