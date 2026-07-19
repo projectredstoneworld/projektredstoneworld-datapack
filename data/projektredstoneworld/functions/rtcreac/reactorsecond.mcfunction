@@ -139,7 +139,7 @@ execute if score #rtcreactorxenon info matches 25000.. if score #rtcreactorxenon
 execute if score #rtcreactorxenon info matches 25000.. run scoreboard players set #rtcreactorxenonnotif info 1
 
 # ==== RADIJACULATE ====
-execute if score #rtcreactorspew info matches 32000000.. run scoreboard players set #rtcreactorspew info 32000000
+execute if score #rtcreactorspew info matches 1000000000.. run scoreboard players set #rtcreactorspew info 1000000000
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorspew info
 scoreboard players operation #rtcreactorintermediate info /= 67 CONSTANTS
 execute if score #rtcreactorspewmode info matches 2 run scoreboard players operation #rtcreactorspew info -= #rtcreactorintermediate info
