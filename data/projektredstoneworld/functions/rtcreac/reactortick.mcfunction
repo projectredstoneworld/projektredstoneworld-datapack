@@ -247,7 +247,7 @@ scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpres
 scoreboard players remove #rtcreactorintermediate info 19000
 scoreboard players operation #rtcreactorintermediate info /= 67 CONSTANTS
 execute if score #rtcreactorintermediate info matches 700.. run scoreboard players set #rtcreactorintermediate info 700
-execute if score #rtcreactorintermediate info matches 1.. run scoreboard players operation #rtcreactorrcbhp info -= #rtcreactorintermediate info
+execute if score #rtcreactorintermediate info matches 1.. if score #rtcreactorcoretemp info matches 120.. run scoreboard players operation #rtcreactorrcbhp info -= #rtcreactorintermediate info
 execute if score #rtcreactorwaterpressure info matches 69420.. run scoreboard players remove #rtcreactorrcbhp info 2000
 execute if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhp info 0
 execute if score #rtcreactorrcbhpwarn info matches 0 if score #rtcreactorrcbhp info matches ..112358 run tellraw @a {"text":"Imminent danger: The RTC reactor RCB (Reactor Containment Building) is at risk of exploding. Immediate intervention is required. Immense pressure has built up in the reactor core, which has caused structural damage to the RCB. Further damage can result in an explosion which will release radioactive material. A SCRAM is advised. The reactor warning alarm has been activated, and will require manual disabling once intervention is completed.","color":"#FF0000"}
@@ -266,6 +266,8 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactortitcover info matches 1 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtccoolantcover
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] run damage @s 16 on_fire
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhpwarn info 2
+
+execute if score #rtcreactorspew info matches 20000000.. if score #rtcreactorfuelhpwarn info matches 2.. run scoreboard players set #rtcreactortitcover info 0
 
 # Forceload conditions
 scoreboard players set #rtcreactorforceload info 0
