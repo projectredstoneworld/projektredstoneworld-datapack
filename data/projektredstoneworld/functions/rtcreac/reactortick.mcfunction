@@ -55,7 +55,7 @@ scoreboard players operation #rtcreactorintermediate info *= 300 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..0 run scoreboard players set #rtcreactorintermediate info 0
 execute if score #rtcreactortitcover info matches 1 run scoreboard players operation #rtcreactorwaterpressuretarget info += #rtcreactorintermediate info
 # Explodo
-execute if score #rtcreactorrcbwarn info matches 2 if score #rtcreactorwaterpressuretarget info matches 8000.. run scoreboard players set #rtcreactorwaterpressuretarget info 8000
+execute if score #rtcreactorrcbhpwarn info matches 2 if score #rtcreactorwaterpressuretarget info matches 8000.. run scoreboard players set #rtcreactorwaterpressuretarget info 8000
 # Clamp water pressure target
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
 scoreboard players operation #rtcreactorintermediate info *= 48 CONSTANTS
