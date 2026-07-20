@@ -179,6 +179,8 @@ scoreboard players operation #rtcreactorturbinepower info += #rtcreactorturbinep
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemptarget info
 scoreboard players remove #rtcreactorintermediate info 175
 scoreboard players operation #rtcreactorintermediate info *= 10 CONSTANTS
+# RCB breach massively amplifies radiation
+execute if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players operation #rtcreactorintermediate info *= 12 CONSTANTS
 scoreboard players operation #radrtcreactoraddfrac info = #rtcreactorintermediate info
 
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressuretarget info
@@ -191,9 +193,6 @@ scoreboard players operation #rtcreactorintermediate info /= 7 CONSTANTS
 # water and fuel modes affect radiation
 execute if score #rtcreactorfuelmode info matches 1 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
 execute if score #rtcreactorwatermode info matches 0 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
-
-# RCB breach massively amplifies radiation
-execute if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players operation #rtcreactorintermediate info *= 12 CONSTANTS
 
 scoreboard players operation #radrtcreactoraddfrac info += #rtcreactorintermediate info
 
