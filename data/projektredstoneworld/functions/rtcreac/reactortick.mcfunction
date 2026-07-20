@@ -131,6 +131,8 @@ scoreboard players operation #rtcreactorintermediate info *= 4 CONSTANTS
 scoreboard players operation #rtcreactorintermediate2 info -= #rtcreactorintermediate info
 execute if score #rtcreactorcoretemptarget info < #rtcreactorintermediate2 info run scoreboard players operation #rtcreactorcoretemptarget info = #rtcreactorintermediate2 info
 
+# div by 2 if rcb is breached
+execute if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players operation #rtcreactorcoretemptarget info /= 3 CONSTANTS
 
 # Clamp core temperature target
 execute if score #rtcreactorcoretemptarget info matches ..50 run scoreboard players set #rtcreactorcoretemptarget info 50
