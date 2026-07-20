@@ -192,6 +192,9 @@ scoreboard players operation #rtcreactorintermediate info /= 7 CONSTANTS
 execute if score #rtcreactorfuelmode info matches 1 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
 execute if score #rtcreactorwatermode info matches 0 run scoreboard players operation #rtcreactorintermediate info *= 2 CONSTANTS
 
+# RCB breach massively amplifies radiation
+execute if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players operation #rtcreactorintermediate info *= 12 CONSTANTS
+
 scoreboard players operation #radrtcreactoraddfrac info += #rtcreactorintermediate info
 
 execute if score #radrtcreactoraddfrac info matches ..-1 run scoreboard players set #radrtcreactoraddfrac info 0
