@@ -273,6 +273,11 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 
 execute if score #rtcreactorspew info matches 20000000.. if score #rtcreactorfuelhpwarn info matches 2.. run scoreboard players set #rtcreactortitcover info 0
 
+# Spewado
+execute if score #rtcreactorspewmode info matches 1 run particle end_rod 113.5 116 668.5 0 0 0 1.2 42
+execute if score #rtcreactorspewmode info matches 1 run particle end_rod 113.5 116 701.5 0 0 0 1.2 42
+
+
 # Forceload conditions
 scoreboard players set #rtcreactorforceload info 0
 execute unless score #rtcreactorspewmode info matches 0 run scoreboard players set #rtcreactorforceload info 1
