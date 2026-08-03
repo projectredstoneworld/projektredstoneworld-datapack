@@ -54,6 +54,9 @@ execute if score #rtcpower info matches 161.. run scoreboard players set #rtcpow
 scoreboard players operation #rtcpower info < #rtcreactorpowerdist info
 scoreboard players operation #rtcreactorpowerdist info -= #rtcpower info
 
+# Emergency Situation: Aux Battery Low or Depleted. Continue power outage for everything except RTC until aux is recovered.
+execute if score #rtcreactorauxlevel info matches ..299999 run scoreboard players operation #rtcreactorauxinput info = #rtcreactorpowerdist info
+execute if score #rtcreactorauxlevel info matches ..299999 run return fail
 # Calculate FI - Full
 scoreboard players set #fipower info 40
 execute if score #time info matches 23000.. run scoreboard players add #fipower info 20
