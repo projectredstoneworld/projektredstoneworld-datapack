@@ -23,10 +23,26 @@ execute if score #rtcpower info matches 0 run scoreboard players operation #rtcr
 execute if score #rtcpower info matches 0 run scoreboard players operation #rtcpower info += #rtcreactorintermediate2 info
 execute if score #fibunkersurge info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
 
+
+
 # The rest below requires "Ready" state >= 300k Megajoules
-execute if score #rtcreactorauxlevel info matches ..299999 run return fail
+execute if score #rtcreactorauxlevel info matches ..299999 unless score #rtcprobeburst info matches 1.. run return fail
 
 # FI Bunker can turn on with the jump start button which is accessible with level 3 keycard from rtc or fi control so we dont need to worry about that, only explosion state
 execute unless score #fibunkersurge info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
 execute if score #fibunkertemp info matches 8.. run scoreboard players add #fibunkerpower info 1210
 execute if score #fibunkertemp info matches 8.. unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge
+
+# Probes
+execute if score #rtcprobes info matches 0 run return fail
+# Probe Ready Mode
+execute if score #rtcprobes info matches 1.. run scoreboard players add #rtcprobepower info 12
+# Probe Small Burst
+execute if score #rtcprobeburst info matches 1..4 run scoreboard players add #rtcprobepower info 710
+execute if score #rtcprobeburst info matches 1..3 run scoreboard players add #rtcprobeburst info 1
+execute if score #rtcprobeburst info matches 4..5 run scoreboard players set #rtcprobeburst info 0
+# Probe Large Burst
+execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtcprobepower info 2147
+execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtcprobeburst info 1
+execute if score #rtcprobeburst info matches 16.. run scoreboard players set #rtcprobeburst info 0
+scoreboard players operation #rtcreactorauxload info += #rtcprobepower info
