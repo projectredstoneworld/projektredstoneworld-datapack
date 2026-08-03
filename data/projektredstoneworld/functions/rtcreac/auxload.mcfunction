@@ -9,6 +9,7 @@ execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxle
 execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..99999 if score #rtcreactorauxallow info matches 1 run scoreboard players set #rtcreactorpowered info 1
 
 # Calculate RTC - Full if no power provided
+execute store result score #rtcplayercount info if entity @a[x=-63,y=-64,z=54,dx=267,dy=400,dz=761]
 execute if score #rtcpower info matches 0 run scoreboard players set #rtcreactorintermediate2 info 60
 execute if score #rtcpower info matches 0 run execute if score #time info matches 23000.. run scoreboard players add #rtcreactorintermediate2 info 25
 execute if score #rtcpower info matches 0 run execute if score #time info matches 0..5000 run scoreboard players add #rtcreactorintermediate2 info 25
