@@ -28,4 +28,4 @@ execute if score #rtcreactorauxlevel info matches ..299999 run return fail
 
 execute if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
 execute if score #fibunkertemp info matches 8.. run scoreboard players add #fibunkerpower info 1210
-execute unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge
+execute if score #fibunkertemp info matches 8.. unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge
