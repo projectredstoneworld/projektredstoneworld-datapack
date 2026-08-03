@@ -42,7 +42,7 @@ execute if score #rtcprobeburst info matches 1..4 run scoreboard players add #rt
 execute if score #rtcprobeburst info matches 1..3 run scoreboard players add #rtcprobeburst info 1
 execute if score #rtcprobeburst info matches 4..5 run scoreboard players set #rtcprobeburst info 0
 # Probe Large Burst
-execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtcprobepower info 7100
+execute if score #rtcprobeburst info matches 7.. run scoreboard players operation #rtcprobepower info += #rtcburstconst info
 execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtcprobeburst info 1
 execute if score #rtcprobeburst info matches 16.. run scoreboard players set #rtcprobeburst info 0
 scoreboard players operation #rtcreactorauxload info += #rtcprobepower info
