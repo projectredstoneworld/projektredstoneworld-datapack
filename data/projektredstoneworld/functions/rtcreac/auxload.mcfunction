@@ -1,3 +1,31 @@
 # This Function will set #rtcreactorauxload info
 scoreboard players set #rtcreactorauxload info 0
-execute if score #rtcreactorpowered info matches 1 run scoreboard players add #rtcreactorauxload info 35
+scoreboard players set #rtcprobepower info 0
+scoreboard players set #fibunkerpower info 0
+# The rest below requires "Low" state 100-300k Megajoules
+execute if score #rtcreactorauxlevel info matches ..99999 run return fail
+execute if score #rtcreactorauxallow info matches 0 run return fail
+execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..99999 run scoreboard players add #rtcreactorauxload info 35
+execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..99999 if score #rtcreactorauxallow info matches 1 run scoreboard players set #rtcreactorpowered info 1
+
+# Calculate RTC - Full if no power provided
+execute if score #rtcpower info matches 0 run scoreboard players set #rtcreactorintermediate2 info 60
+execute if score #rtcpower info matches 0 run execute if score #time info matches 23000.. run scoreboard players add #rtcreactorintermediate2 info 25
+execute if score #rtcpower info matches 0 run execute if score #time info matches 0..5000 run scoreboard players add #rtcreactorintermediate2 info 25
+execute if score #rtcpower info matches 0 run execute if score #time info matches 5001..11999 run scoreboard players add #rtcreactorintermediate2 info 35
+execute if score #rtcpower info matches 0 run execute if score #time info matches 12000..17999 run scoreboard players add #rtcreactorintermediate2 info 10
+execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorintermediate info = #rtcplayercount info
+execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorintermediate info *= 7 CONSTANTS
+execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorintermediate2 info += #rtcreactorintermediate info
+execute if score #rtcpower info matches 0 run execute if score #rtcreactorintermediate2 info matches 161.. run scoreboard players set #rtcreactorintermediate2 info 160
+execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorauxload info += #rtcreactorintermediate2 info
+execute if score #rtcpower info matches 0 run scoreboard players operation #rtcpower info += #rtcreactorintermediate2 info
+
+# The rest below requires "Ready" state >= 300k Megajoules
+execute if score #rtcreactorauxlevel info matches ..299999 run return fail
+
+# FI Bunker can turn on with the jump start button which is accessible with level 3 keycard from rtc or fi control so we dont need to worry about that, only explosion state
+
+execute if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
+execute if score #fibunkertemp info matches 8.. run scoreboard players add #fibunkerpower info 1210
+execute unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge

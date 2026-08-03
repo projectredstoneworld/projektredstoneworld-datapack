@@ -110,7 +110,7 @@ execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoret
 
 # ==== CALCULATE POWER DIST ====
 function projektredstoneworld:rtcreac/distributeturbine
-
+function projektredstoneworld:rtcreac/auxload
 
 # ==== AUX POWER MANAGEMENT ====
 # #rtcreactorauxinput should be set from wherever turbine power is split up from, #rtcreactorauxload is the load on the aux battery. Both should be in megawatts
