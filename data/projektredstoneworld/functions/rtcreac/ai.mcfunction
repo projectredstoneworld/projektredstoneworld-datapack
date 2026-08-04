@@ -36,7 +36,7 @@ scoreboard players set #rtcreactorusedai info 1
 execute if score #rtcreactorturbinerush info matches 1 run scoreboard players set #rtcreactorpumprate info 200
 execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorrodheight info matches 78.. unless score #rtcreactorcoretemp info matches 400.. run scoreboard players set #rtcreactorrodheight info 76
 execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorcoretemp info matches ..300 if score #rtcreactorrodheight info matches 4.. run scoreboard players remove #rtcreactorrodheight info 4
-execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorcoretemp info matches 400.. if score #rtcreactorrodheight info matches ..96 run scoreboard players add #rtcreactorrodheight info 4
+execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorcoretemp info matches 340.. if score #rtcreactorrodheight info matches ..96 run scoreboard players add #rtcreactorrodheight info 4
 execute if score #rtcreactorauxlevel info matches 676769.. run scoreboard players set #rtcreactorturbinerush info 2
 execute if score #rtcreactorturbinerush info matches 2 if score #rtcreactorturbinepower info matches 1500.. run scoreboard players set #rtcreactorpumprate info 700
 execute if score #rtcreactorturbinerush info matches 2 if score #rtcreactorturbinepower info matches ..1499 run scoreboard players set #rtcreactorturbinerush info 0

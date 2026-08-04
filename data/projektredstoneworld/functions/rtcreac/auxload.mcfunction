@@ -47,5 +47,6 @@ execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtc
 # Trigger reactor turbine rush to save catalyst
 execute if score #rtcreactorauxvoltpercent info matches ..6067 if score #rtcprobeburst info matches 8 run scoreboard players set #rtcreactorai info 1
 execute if score #rtcreactorauxvoltpercent info matches ..6067 if score #rtcprobeburst info matches 8 run scoreboard players set #rtcreactorturbinerush info 1
+execute if score #rtcprobeburst info matches 16.. if score #rtcreactorturbinerush info matches 1 run scoreboard players set #rtcreactorturbinerush info 2
 execute if score #rtcprobeburst info matches 16.. run scoreboard players set #rtcprobeburst info 0
 scoreboard players operation #rtcreactorauxload info += #rtcprobepower info
