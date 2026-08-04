@@ -3,10 +3,10 @@ scoreboard players set #rtcreactorauxload info 0
 scoreboard players set #rtcprobepower info 0
 scoreboard players set #fibunkerpower info 0
 # The rest below requires "Low" state 100-300k Megajoules
-execute if score #rtcreactorauxlevel info matches ..99999 run return fail
 execute if score #rtcreactorauxallow info matches 0 run return fail
-execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..99999 run scoreboard players add #rtcreactorauxload info 35
-execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..99999 if score #rtcreactorauxallow info matches 1 run scoreboard players set #rtcreactorpowered info 1
+execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..10000 run scoreboard players add #rtcreactorauxload info 35
+execute if score #rtcreactorpowered info matches 0 unless score #rtcreactorauxlevel info matches ..10000 if score #rtcreactorauxallow info matches 1 run scoreboard players set #rtcreactorpowered info 1
+execute if score #rtcreactorauxlevel info matches ..99999 run return fail
 
 # Calculate RTC - Full if no power provided
 execute store result score #rtcplayercount info if entity @a[x=-63,y=-64,z=54,dx=267,dy=400,dz=761]
@@ -44,5 +44,8 @@ execute if score #rtcprobeburst info matches 4..5 run scoreboard players set #rt
 # Probe Large Burst
 execute if score #rtcprobeburst info matches 7.. run scoreboard players operation #rtcprobepower info += #rtcburstconst info
 execute if score #rtcprobeburst info matches 7.. run scoreboard players add #rtcprobeburst info 1
+# Trigger reactor turbine rush to save catalyst
+execute if score #rtcreactorauxvoltpercent info matches ..6067 if score #rtcprobeburst info matches 8 run scoreboard players set #rtcreactorai info 1
+execute if score #rtcreactorauxvoltpercent info matches ..6067 if score #rtcprobeburst info matches 8 run scoreboard players set #rtcreactorturbinerush info 1
 execute if score #rtcprobeburst info matches 16.. run scoreboard players set #rtcprobeburst info 0
 scoreboard players operation #rtcreactorauxload info += #rtcprobepower info

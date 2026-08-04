@@ -29,3 +29,11 @@ scoreboard players set #rtcreactorfuelmode info 0
 scoreboard players set #rtcreactorusepump info 1
 
 scoreboard players set #rtcreactorusedai info 1
+
+
+
+# ==== SPECIAL DESTRUCTIVE CONTROL #1 THIS IS BY THE CATALYST PROBES IF IN FULL EMERGENCY AND NEED TURBINE POWER ====
+execute if score #rtcreactorturbinerush info matches 1 run scoreboard players set #rtcreactorpumprate info 200
+execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorrodheight info matches 78.. unless score #rtcreactorcoretemp info matches 400.. run scoreboard players set #rtcreactorrodheight info 76
+execute if score #rtcreactorturbinerush info matches 1 if score #rtcreactorcoretemp info matches 400.. if score #rtcreactorrodheight info matches ..96 run scoreboard players add #rtcreactorrodheight info 4
+execute if score #rtcreactorauxlevel info matches 676769.. run scoreboard players set #rtcreactorturbinerush info 0
