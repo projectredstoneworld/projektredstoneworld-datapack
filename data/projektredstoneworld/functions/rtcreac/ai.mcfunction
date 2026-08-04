@@ -9,10 +9,10 @@ scoreboard players operation #rtcreactorrodblocks info = #rtcreactorrodheight in
 scoreboard players operation #rtcreactorrodblocks info /= 3 CONSTANTS
 execute if score #rtcreactorrodblocks info matches 32.. run scoreboard players set #rtcreactorrodblocks info 32
 execute unless score #rtcreactoroldrodblocks info = #rtcreactorrodblocks info as @e[type=marker,tag=rtcreactorcrod] at @s positioned ~ ~1 ~ run function projektredstoneworld:rtcreac/updcontrolrod
-# activate scram if stuff is out of control
-execute unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run scoreboard players set #rtcreactorrodheight info 100
-execute unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run tellraw @a {"text":"WARNING: RTC REACTOR SCRAM AUTO ACTIVATED BY AI; AI HAS SHUT DOWN","color":"#FF0000","bold":true}
-execute unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run scoreboard players set #rtcreactorai info 0
+# activate scram if stuff is out of control YOU DONT GET TO IN RUSH
+execute unless score #rtcreactorturbinerush info matches 1 unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run scoreboard players set #rtcreactorrodheight info 100
+execute unless score #rtcreactorturbinerush info matches 1 unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run tellraw @a {"text":"WARNING: RTC REACTOR SCRAM AUTO ACTIVATED BY AI; AI HAS SHUT DOWN","color":"#FF0000","bold":true}
+execute unless score #rtcreactorturbinerush info matches 1 unless score #rtcreactorcoretemp info matches ..500 unless score #rtcreactorwaterpressure info matches 12000.. run scoreboard players set #rtcreactorai info 0
 
 
 # ==== WATER PRESSURE CONTROLS ====
