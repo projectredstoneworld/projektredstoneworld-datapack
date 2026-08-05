@@ -11,6 +11,7 @@ execute in overworld run tp @a[tag=pontoka] 286.5 4.0 654.5 0 0
 execute in overworld run tp @a[tag=pontokadead] 286.5 4.0 654.5 0 0
 effect clear @a[tag=pontoka]
 gamemode survival @a[tag=pontoka]
+team leave @a[tag=pontoka]
 tag @a remove pontoka
 tag @a remove wantchase
 tag @a remove pontokachase

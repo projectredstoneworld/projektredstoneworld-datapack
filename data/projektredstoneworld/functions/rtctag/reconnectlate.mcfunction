@@ -6,6 +6,7 @@ tag @s remove tagfirtcbound
 tag @s remove tagrtcbound
 tag @s remove tagrtc2bound
 tag @s remove pontokanearmiss
+team leave @s
 
 tellraw @s {"text": "You have been removed from the RTC tag game due to a reconnect after the game already ended. Please restart the game if you wish to play again.","color":"#FF0000"}
 tp @s 286.5 4.0 654.5 0 0

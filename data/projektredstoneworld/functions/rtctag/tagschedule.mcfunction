@@ -67,3 +67,7 @@ clear @a[tag=pontoka]
 execute if score #tagneedmasterkey info matches 1 run item replace entity @a[tag=pontoka] hotbar.0 with minecraft:name_tag{display: {Name: '{"text":"MasterKey_946144521"}'}} 1
 # TODO: May want to add a check for players accidentally taking minecarts outside of bounds and save them from getting knocked out of the game.
 execute if score #tagstatus info matches 3 run title @a[tag=pontoka] clear
+
+# Prevent Friendly Fire
+team join pontokachase @a[tag=pontokachase]
+team join pontokarun @a[tag=pontokarun]

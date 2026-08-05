@@ -23,6 +23,7 @@ tag @s remove tagfirtcbound
 tag @s remove tagrtcbound
 tag @s remove tagrtc2bound
 tag @s remove pontokanearmiss
+team leave @s
 tag @s add pontokadead
 tellraw @s "You have been caught, gg!"
 gamemode survival @s
