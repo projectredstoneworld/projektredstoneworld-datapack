@@ -1,4 +1,3 @@
-execute if score #rtcreactorpumprate info matches 1.. run return fail
 execute if score #rtcreactorcoretemp info matches ..1500 run return fail
 execute if score #rtcreactorboric info matches 1.. run return fail
 execute if score #rtcreactorfuelmode info matches 0 run return fail
