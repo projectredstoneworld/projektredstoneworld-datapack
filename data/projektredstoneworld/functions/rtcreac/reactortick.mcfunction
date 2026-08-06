@@ -275,7 +275,7 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactorfuelhpwarn info matches 2 run function projektredstoneworld:rtcreac/checklimbocond
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhpwarn info 2
 
-execute if score #rtcreactorspew info matches 20000000.. if score #rtcreactorfuelhpwarn info matches 2.. run scoreboard players set #rtcreactortitcover info 0
+execute if score #rtcreactorspew info matches 20000000.. if score #rtcreactorfuelhpwarn info matches 2.. if score #rtcreactorcoretemp info matches ..1400 run scoreboard players set #rtcreactortitcover info 0
 
 # Spewado
 execute if score #rtcreactorspewmode info matches 1 run particle end_rod 113.5 116 668.5 0 0 0 1.2 27 force
