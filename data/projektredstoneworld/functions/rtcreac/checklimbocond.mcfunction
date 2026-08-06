@@ -9,4 +9,4 @@ execute if score #rtcreactorlimbo info matches 0 run scoreboard players set #rtc
 execute if score #rtcreactorlimbo info matches 1 run schedule function projektredstoneworld:rtcreac/checklimbocond 400t
 
 execute if score #rtcreactorlimbo info matches 2 run scoreboard players set #rtcreactorlimbo info 3
-execute if score #rtcreactorlimbo info matches 3 run function projektredstoneworld:rtcreac/limbo.mcfunction
+execute if score #rtcreactorlimbo info matches 3 run function projektredstoneworld:rtcreac/limbo
