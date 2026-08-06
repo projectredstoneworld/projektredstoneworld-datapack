@@ -226,6 +226,8 @@ execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp
 execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 unless score #rtcreactorrcbhpwarn info matches 2 run tellraw @a [{"text":"WARNING: RTC REACTOR MELTDOWN\n","color":"#FF0000","bold":true},{"text":"The RTC reactor has melted down. As a result, a 5 Sv/h spike in radiation has been observed in the reactor complex. Reports from RID suggest that the mass of melted fuel rods is fairly contained within the reactor containment building, however it is still necessary to acquire a fuel rod repair kit to repair the rods. It will also be necessary to purge radioactive content into the atmosphere during the repair. Please be ready to go into a nearby bunker and stay tuned for updates.","bold":false}]
 execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 if score #rtcreactorrcbhpwarn info matches 2 run tellraw @a [{"text":"WARNING: RTC REACTOR MELTDOWN\n","color":"#FF0000","bold":true},{"text":"The RTC reactor has melted down. As a result, a 15 Sv/h spike in radiation has been observed in the reactor complex, partially caused by the already damaged RCB. Reports from RID suggest that the mass of melted fuel rods has slightly penetrated through the Reactor Containment Building, and that it is essential to repair the fuel rods ASAP. It will also be necessary to purge radioactive content into the atmosphere during the repair. Please be ready to go into a nearby bunker and stay tuned for updates.","bold":false}]
 execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 run advancement grant @a[tag=inrtcreactor] only redstoneworld:rtcmeltdown
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 run function projektredstoneworld:rtcreac/checkimmunity
+execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 if score #rtcreactorrcbhpwarn info matches 2 run function projektredstoneworld:rtcreac/checklimbocond
 execute if score #rtcreactorfuelhpwarn info matches 1 if score #rtcreactorfuelhp info matches ..0 run scoreboard players set #rtcreactorfuelhpwarn info 2
 execute if score #rtcreactorfuelhp info matches ..-1 run scoreboard players set #rtcreactorfuelhp info 0
 execute if score #rtcreactorfuelhp info matches 69421.. run scoreboard players set #rtcreactorfuelhpwarn info 0
@@ -269,6 +271,8 @@ execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp i
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorspewmode info 1
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactortitcover info matches 1 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtccoolantcover
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 as @a[tag=inrtcreactor] run damage @s 16 on_fire
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run function projektredstoneworld:rtcreac/checkimmunity
+execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 if score #rtcreactorfuelhpwarn info matches 2 run function projektredstoneworld:rtcreac/checklimbocond
 execute if score #rtcreactorrcbhpwarn info matches 1 if score #rtcreactorrcbhp info matches ..0 run scoreboard players set #rtcreactorrcbhpwarn info 2
 
 execute if score #rtcreactorspew info matches 20000000.. if score #rtcreactorfuelhpwarn info matches 2.. run scoreboard players set #rtcreactortitcover info 0
@@ -291,3 +295,15 @@ execute if score #rtcreactorforceload info matches 1 run forceload add 90 600
 
 # autoscram timer
 execute unless score #rtcreactorautoscramtimer info matches 1000 run scoreboard players add #rtcreactorautoscramtimer info 1
+
+# Immune player radiation clearing
+scoreboard players set @a[tag=rtcreacimmune] radiationdose 0
+scoreboard players set @a[tag=rtcreacimmune] partialradrtcreactor 0
+execute unless score #rtcreactorimmtime info matches 1.. run scoreboard players set #rtcrectorimmtime info 0
+execute unless score #rtcreactorimmtime info matches 0 run scoreboard players remove #rtcreactorimmtime info 1
+execute if score #rtcreactorimmtime info matches 0 run tag @a remove rtcreacimmune
+effect clear @a[tag=!inrtcreactor,tag=rtcreacimmune] glowing
+tag @a[tag=!inrtcreactor] remove rtcreacimmune
+
+# Limbo saved -- lines to be added here
+execute if score #rtcreactorlimbo info matches 2 run scoreboard players set #rtcreactorlimbo info 0
