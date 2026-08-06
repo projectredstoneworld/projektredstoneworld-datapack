@@ -2,10 +2,7 @@ execute if score #rtcreactorpumprate info matches 1.. run return fail
 execute if score #rtcreactorcoretemp info matches ..1500 run return fail
 execute if score #rtcreactorboric info matches 1.. run return fail
 execute if score #rtcreactorfuelmode info matches 0 run return fail
-execute if score #rtcreactorrodheight info matches 1.. run return fail
-execute if score #rtcreactortitcover info matches 0 run return fail
 execute if score #rtcreactorwatermode info matches 0 run return fail
-execute if score #rtcreactorscrammed info matches 1 run return fail
 
 # Do not rereun if this has already triggered
 execute unless score #rtcreactorimmtime info matches 0 run return fail
