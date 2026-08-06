@@ -299,7 +299,7 @@ execute unless score #rtcreactorautoscramtimer info matches 1000 run scoreboard 
 # Immune player radiation clearing
 scoreboard players set @a[tag=rtcreacimmune] radiationdose 0
 scoreboard players set @a[tag=rtcreacimmune] partialradrtcreactor 0
-execute unless score #rtcreactorimmtime info matches 1.. run scoreboard players set #rtcrectorimmtime info 0
+execute unless score #rtcreactorimmtime info matches 1.. run scoreboard players set #rtcreactorimmtime info 0
 execute unless score #rtcreactorimmtime info matches 0 run scoreboard players remove #rtcreactorimmtime info 1
 execute if score #rtcreactorimmtime info matches 0 run tag @a remove rtcreacimmune
 effect clear @a[tag=!inrtcreactor,tag=rtcreacimmune] glowing
