@@ -1,4 +1,7 @@
 # TODO: Make this fail when AI is in malware mode. NO POSITIVE SCRAM EFFECT THIS IS A PHWR
+execute if score #rtcreactorai info matches -1 run tellraw @a {"text":"WARNING: RTC reactor SCRAM has FAILED due to potential software issues. Be prepared to evacuate.","color":"#FF0000"}
+execute if score #rtcreactorai info matches -1 as @a[tag=inrtcreactor] at @s run playsound block.anvil.land master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactorai info matches -1 run return fail
 
 execute if score #rtcreactorrodheight info matches 100 if score #rtcreactorusepump info matches 1 if score #rtcreactorpumprate info matches 400.. if score #rtcreactorfuelmode info matches 0 run return fail
 execute if score #rtcreactorscrammed info matches 1 run return fail

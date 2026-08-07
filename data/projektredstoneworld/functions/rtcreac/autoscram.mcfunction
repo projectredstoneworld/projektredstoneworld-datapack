@@ -1,3 +1,5 @@
+execute if score #rtcreactorai info matches -1 run return fail
+
 execute if score #rtcreactorautoscramtimer info matches ..999 run return fail
 scoreboard players set #rtcreactorautoscramtimer info 0
 
