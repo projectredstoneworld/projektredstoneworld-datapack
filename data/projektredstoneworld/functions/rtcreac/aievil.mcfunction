@@ -18,3 +18,4 @@ execute unless score #rtcreactorfuelhpwarn info matches 2 run scoreboard players
 scoreboard players set #rtcreactorboric info 0
 scoreboard players set #rtcreactorwatermode info 1
 scoreboard players set #rtcreactorfuelmode info 1
+scoreboard players set #rtcreactortitcover info 1
