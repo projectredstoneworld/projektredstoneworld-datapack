@@ -310,9 +310,9 @@ execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info ma
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tag @a[tag=inrtcreactor] add rtcaiadv
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run scoreboard players set #rtcreactoraifail info 1801
 execute if score #rtcreactorai info matches 0 if score #rtcreactoraifail info matches 1.. run tellraw @a[tag=inrtcreactor] {"text":"AI malfunction crisis averted! Do not re-enable AI until xenon drops below 25000 mg.","color":"#FFFF00"}
-execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info matches 1 run tellraw @a {"text":"WARNING: EVACUATE THE REDSTONE TOWER COMPLEX IMMEDIATELY. MALICIOUS CODE HAS BEEN INJECTED INTO THE RTC-BLAKEWOOD NUCLEAR POWER PLANT WHICH WILL CAUSE AN IMMINENT MELTDOWN","color":"#FF0099","bold":true}
-execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info matches 1 as @a at @s run playsound block.end_portal.spawn master @s ~ ~ ~ 1 0 1
-execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info matches 1 run scoreboard players set #rtcreactorai info -1
+execute if score #rtcreactoraifail info matches 1 if score #rtcreactorai info matches 1 run tellraw @a {"text":"WARNING: EVACUATE THE REDSTONE TOWER COMPLEX IMMEDIATELY. MALICIOUS CODE HAS BEEN INJECTED INTO THE RTC-BLAKEWOOD NUCLEAR POWER PLANT WHICH WILL CAUSE AN IMMINENT MELTDOWN","color":"#FF0099","bold":true}
+execute if score #rtcreactoraifail info matches 1 if score #rtcreactorai info matches 1 as @a at @s run playsound block.end_portal.spawn master @s ~ ~ ~ 1 0 1
+execute if score #rtcreactoraifail info matches 1 if score #rtcreactorai info matches 1 run scoreboard players set #rtcreactorai info -1
 execute if score #rtcreactoraifail info matches 1.. run scoreboard players remove #rtcreactoraifail info 1
 execute if score #rtcreactorai info matches 0 if score #rtcreactoraifail info matches 1.. run scoreboard players set #rtcreactoraifail info 0
 
