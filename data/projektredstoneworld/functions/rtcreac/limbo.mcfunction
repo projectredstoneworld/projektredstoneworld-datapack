@@ -9,6 +9,7 @@ scoreboard players add #radrtcreactoraddmsv info 1000000
 
 # advancemente for ai failure
 advancement grant @a[tag=rtcaiadv] only redstoneworld:rtcaifailure
+tag @a remove rtcaiadv
 
 # tag admin temp for testing
 execute as @a[tag=inrtcreactor,tag=admin,gamemode=!spectator] run function projektredstoneworld:rtcreac/limboenter
