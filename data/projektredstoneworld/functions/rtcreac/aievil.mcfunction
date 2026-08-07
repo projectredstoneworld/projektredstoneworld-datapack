@@ -1,5 +1,6 @@
 # === CONTROL RODS ===
-execute if score #rtcreactorrodheight info matches 2.. run scoreboard players remove #rtcreactorrodheight info 2
+scoreboard players remove #rtcreactorrodheight info 20
+execute unless score #rtcreactorrodheight info matches 2.. run scoreboard players set #rtcreactorrodheight info 0
 # Update Physical Height
 scoreboard players operation #rtcreactoroldrodblocks info = #rtcreactorrodblocks info
 scoreboard players operation #rtcreactorrodblocks info = #rtcreactorrodheight info
