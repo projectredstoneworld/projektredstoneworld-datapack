@@ -306,7 +306,6 @@ effect clear @a[tag=!inrtcreactor,tag=rtcreacimmune] glowing
 tag @a[tag=!inrtcreactor] remove rtcreacimmune
 
 # Evil AI trigger
-execute if score #rtcreactorxenon info matches 25000.. run scoreboard players operation #rtcreactoraiprev info = #rtcreactorai info
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tellraw @a[tag=inrtcreactor] {"text":"WARNING: Reactor AI has been enabled in extreme xenon conditions. If the AI is not disabled within 90 seconds, there is a high likelyohood of catastrophic malfunction. Disable the AI as soon as possible.","color":"#FF0055"}
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tag @a add rtcaiadv
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run scoreboard players set #rtcreactoraifail info 1801
@@ -317,6 +316,8 @@ execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info ma
 execute if score #rtcreactoraifail info matches 1.. run scoreboard players remove #rtcreactoraifail info 1
 execute if score #rtcreactoraifail info matches 0 run tag @a remove rtcaiadv
 execute if score #rtcreactorai info matches 0 if score #rtcreactoraifail info matches 1.. run scoreboard players set #rtcreactoraifail info 0
+
+execute if score #rtcreactorxenon info matches 25000.. run scoreboard players operation #rtcreactoraiprev info = #rtcreactorai info
 
 # Limbo saved -- lines to be added here
 execute if score #rtcreactorlimbo info matches 2 run scoreboard players set #rtcreactorlimbo info 0
