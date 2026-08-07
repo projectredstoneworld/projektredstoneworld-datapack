@@ -314,7 +314,7 @@ execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info ma
 execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info matches 1 as @a at @s run playsound block.end_portal.spawn master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactoraifail info matches 0 if score #rtcreactorai info matches 1 run scoreboard players set #rtcreactorai info -1
 execute if score #rtcreactoraifail info matches 1.. run scoreboard players remove #rtcreactoraifail info 1
-execute if score #rtcreactoraifail info matches 0 unless score #rtcreactorai info matches -1 run tag @a remove rtcaiadv
+execute if score #rtcreactorlimbo info matches 0 if score #rtcreactorfuelhpwarn info matches 0 if score #rtcreactorrcbhpwarn info matches 0 unless score #rtcreactorai info matches -1 run tag @a remove rtcaiadv
 execute if score #rtcreactorai info matches 0 if score #rtcreactoraifail info matches 1.. run scoreboard players set #rtcreactoraifail info 0
 
 execute if score #rtcreactorxenon info matches 25000.. run scoreboard players operation #rtcreactoraiprev info = #rtcreactorai info

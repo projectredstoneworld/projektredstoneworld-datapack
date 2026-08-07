@@ -21,4 +21,4 @@ scoreboard players set #rtcreactorfuelmode info 1
 scoreboard players set #rtcreactortitcover info 1
 
 # Disable AI if both emergencies happened
-execute if score #rtcreactorfuelhpwarn info matches 2 if score #rtcreactorrcbhpwarn info matches 2 run scoreboard players set #rtcreactorai info 0
+execute if score #rtcreactorfuelhpwarn info matches 2 if score #rtcreactorrcbhpwarn info matches 2 if score #rtcreactorlimbo info matches 0 run scoreboard players set #rtcreactorai info 0
