@@ -2,6 +2,7 @@ execute if score #rtcreactorcoretemp info matches ..1500 run return fail
 execute if score #rtcreactorboric info matches 1.. run return fail
 execute if score #rtcreactorfuelmode info matches 0 run return fail
 execute if score #rtcreactorwatermode info matches 0 run return fail
+execute if score #rtcreactorai info matches -1 run return fail
 
 # Do not rereun if this has already triggered
 execute unless score #rtcreactorimmtime info matches 0 run return fail

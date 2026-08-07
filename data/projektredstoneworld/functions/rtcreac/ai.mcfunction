@@ -1,3 +1,6 @@
+execute if score #rtcreactorai info matches -1 run function projektredstoneworld:rtcreac/aievil
+execute if score #rtcreactorai info matches -1 run return fail
+
 # ==== CONTROL ROD CONTROL ====
 # control rods down by 2 percent if core temp is < 320 and xenon is < 6600
 execute if score #rtcreactorcoretemp info matches ..319 if score #rtcreactorxenon info matches ..6599 if score #rtcreactorrodheight info matches 2.. run scoreboard players remove #rtcreactorrodheight info 2
