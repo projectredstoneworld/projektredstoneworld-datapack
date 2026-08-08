@@ -17,7 +17,7 @@ scoreboard players operation #rtcreactorintermediate info -= #rtcreactorwaterpre
 scoreboard players operation #rtcreactorwaterpressurep info = #rtcreactorwaterpressure info
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players operation #rtcreactorintermediate info *= -1 CONSTANTS
 execute if score #rtcreactorintermediate info matches 0 run scoreboard players add #rtcreactorstability info 1
-scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
+scoreboard players operation #rtcreactorintermediate info /= 100 CONSTANTS
 execute if score #rtcreactorintermediate info matches ..-24 run scoreboard players set #rtcreactorintermediate info -24
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
 # xenon delta
@@ -36,9 +36,9 @@ execute if score #rtcreactorintermediate info matches ..0 run scoreboard players
 scoreboard players operation #rtcreactorintermediate info /= 40 CONSTANTS
 scoreboard players operation #rtcreactorstability info -= #rtcreactorintermediate info
 
-# if water pressure <14000 remove stability
+# if water pressure <13500 remove stability
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorwaterpressure info
-scoreboard players remove #rtcreactorintermediate info 14000
+scoreboard players remove #rtcreactorintermediate info 13500
 execute if score #rtcreactorintermediate info matches 0.. run scoreboard players set #rtcreactorintermediate info 0
 scoreboard players operation #rtcreactorintermediate info /= 24 CONSTANTS
 scoreboard players operation #rtcreactorstability info += #rtcreactorintermediate info
@@ -104,11 +104,6 @@ execute if score #radrtcreactor2 info matches 10000.. run advancement grant @a[t
 execute if score #rtcreactorturbinepower info matches 5000.. run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtcpowerspike
 execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoretemp info matches 280..370 if score #rtcreactorturbinepower info matches 1000..1500 if score #rtcreactorai info matches 0 if score #rtcreactorusedai info matches 0 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtcstable
 execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoretemp info matches 280..370 if score #rtcreactorturbinepower info matches 1000..1500 if score #rtcreactorai info matches 0 if score #rtcreactorusedai info matches 0 run scoreboard players set #rtcreactorusedai info 1
-# Missing
-# rtcaifailure - Lore meltdown, AI malicious code
-# rtccoolantcover - Extreme water pressure
-# rtclimboenter - Self explanatory
-# rtcmeltdown - General meltdown
 
 # ==== CALCULATE POWER DIST ====
 function projektredstoneworld:rtcreac/distributeturbine
