@@ -2,6 +2,7 @@ forceload add -34 622 -34 630
 summon marker -31 148 632 {Tags:["rtcdayskibidi"]}
 
 fill -31 150 610 -31 146 633 minecraft:black_concrete replace minecraft:redstone_block
+fill -32 150 610 -32 146 633 minecraft:redstone_lamp replace minecraft:redstone_lamp
 
 scoreboard players operation #ifeelsogay info = #ones info
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~2 ~-1 ~ ~2 ~1 redstone_block
@@ -136,4 +137,3 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 
 kill @e[type=marker,tag=rtcdayskibidi]
 forceload remove -34 622 -34 630
-scoreboard players set #rtcdaycountupdate info 0
