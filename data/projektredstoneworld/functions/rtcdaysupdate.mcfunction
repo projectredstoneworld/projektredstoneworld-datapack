@@ -18,6 +18,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
@@ -40,6 +41,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
@@ -62,6 +64,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
@@ -84,6 +87,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
@@ -106,6 +110,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
@@ -128,6 +133,7 @@ execute if score #ifeelsogay info matches 8..9 at @e[type=marker,tag=rtcdayskibi
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 2 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 6 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
+execute if score #ifeelsogay info matches 8 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~ ~-1 redstone_block
 execute if score #ifeelsogay info matches 0..1 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 3..9 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~1 ~ ~ ~1 redstone_block
 execute if score #ifeelsogay info matches 0 at @e[type=marker,tag=rtcdayskibidi] run fill ~ ~-2 ~-1 ~ ~-2 ~1 redstone_block
