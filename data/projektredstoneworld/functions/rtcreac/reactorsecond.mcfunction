@@ -120,6 +120,9 @@ execute if score #rtcreactorauxwattage info matches ..-1 if score #rtcreactoraux
 execute if score #rtcreactorauxwattage info matches 1.. run function projektredstoneworld:rtcreac/auxcharge
 execute if score #rtcreactorauxwattage info matches ..-1 run function projektredstoneworld:rtcreac/auxdischarge
 #execute if score #rtcreactorauxwattage info matches 0 run function projektredstoneworld:rtcreac/auxneutral
+# Calculate an absolute value for wattage (floor 12 admin controls)
+scoreboard players operation #rtcreactorauxwattageabs info = #rtcreactorauxwattageabs info
+execute if score #rtcreactorauxwattageabs info matches ..-1 run scoreboard players operation #rtcreactorauxwattageabs info *= -1 CONSTANTS
 
 # ==== AUTOSCRAM ====
 # process scrammed variable
