@@ -5,7 +5,8 @@ execute if score #rtcreactorpowered info matches 1 run return fail
 bossbar set minecraft:rtcdiesel players @a[tag=inrtcreactor]
 bossbar set minecraft:rtcdiesel visible true
 execute store result bossbar minecraft:rtcdiesel value run scoreboard players get #rtcreactordieseltime info
-bossbar set minecraft:rtcdiesel name [{"text":"Diesel fuel: ","color":"#e2fd00"},{"score":{"name":"#rtcreactordieseltime","objective":"info"}},{"text":"s (+"},{"score":{"name":"#rtcreactordiesel","objective":"info"}},{"text":" containers)"}]
+execute unless score #rtcreactordiesel info matches 1 run bossbar set minecraft:rtcdiesel name [{"text":"Diesel fuel: ","color":"#e2fd00"},{"score":{"name":"#rtcreactordieseltime","objective":"info"}},{"text":"s (+"},{"score":{"name":"#rtcreactordiesel","objective":"info"}},{"text":" containers)"}]
+execute if score #rtcreactordiesel info matches 1 run bossbar set minecraft:rtcdiesel name [{"text":"Diesel fuel: ","color":"#e2fd00"},{"score":{"name":"#rtcreactordieseltime","objective":"info"}},{"text":"s (+1 container)"}]
 
 # Let's Count Diesel!
 scoreboard players set #rtcreactordiesel info 0
