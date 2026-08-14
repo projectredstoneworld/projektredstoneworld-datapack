@@ -108,6 +108,7 @@ execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoret
 # ==== CALCULATE POWER DIST ====
 function projektredstoneworld:rtcreac/distributeturbine
 function projektredstoneworld:rtcreac/auxload
+execute if score #rtcreactorpowered info matches 0 run function projektredstoneworld:rtcreac/generators
 
 # ==== AUX POWER MANAGEMENT ====
 # #rtcreactorauxinput should be set from wherever turbine power is split up from, #rtcreactorauxload is the load on the aux battery. Both should be in megawatts
@@ -146,6 +147,7 @@ execute if score #rtcreactorspewmode info matches 2 run scoreboard players opera
 execute if score #rtcreactorspew info matches ..10000 run scoreboard players set #rtcreactorspewmode info 0
 execute if score #rtcreactorspewmode info matches 0 run scoreboard players set #rtcreactorspew info 0
 execute unless score #rtcreactorspew info matches 0 in overworld positioned 113.5 118 685.0 as @a[distance=..620] run function projektredstoneworld:rtcreac/spewradprocess
+execute unless score #rtcreactorspew info matches 0 in overworld positioned 113.5 118 685.0 as @a[distance=..620] at @s run playsound entity.elder_guardian.curse master @s ~ ~ ~ 1 0 1
 execute if score #rtcreactorspewtime info matches ..0 if score #rtcreactorspewmode info matches 1 run tellraw @a {"text":"The RTC reactor has stopped ejecting radioactive material. Radioactive material still remains in the atmosphere. Please proceed with caution","color":"#FF0000"}
 execute if score #rtcreactorspewtime info matches ..0 if score #rtcreactorspewmode info matches 1 run scoreboard players set #rtcreactorspewmode info 2
 execute if score #rtcreactorspewmode info matches 1 run scoreboard players remove #rtcreactorspewtime info 1
