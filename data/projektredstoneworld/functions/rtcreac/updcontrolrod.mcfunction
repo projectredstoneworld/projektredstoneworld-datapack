@@ -1,5 +1,7 @@
 # Please execute this as @e[tag=rtcreactorcrod] at @s positioned ~ ~1 ~
-fill ~ ~ ~ ~ ~-31 ~ light[level=15,waterlogged=true] replace andesite_wall
+fill ~ ~ ~ ~ ~-31 ~ light[level=15,waterlogged=true] replace andesite_wall[up=true,waterlogged=true]
+fill ~ ~ ~ ~ ~-31 ~ light[level=15,waterlogged=false] replace andesite_wall[up=true,waterlogged=false]
+
 scoreboard players operation @s rtcreactempcrod = #rtcreactorrodblocks info
 execute if score @s rtcreactempcrod matches ..0 run return fail
 execute as @s at @s positioned ~ ~1 ~ run function projektredstoneworld:rtcreac/controlrodrecursion

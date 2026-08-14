@@ -24,7 +24,7 @@ execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwate
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..-26 run fill 202 ~1 590 170 -25 622 polished_tuff_wall[up=true,waterlogged=false] replace polished_tuff_wall[up=true,waterlogged=true]
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..26 run fill 202 ~1 590 170 -25 622 deepslate_tile_wall[up=true,waterlogged=false] replace deepslate_tile_wall[up=true,waterlogged=true]
 
-
-
+# Set water level back to visual amount
+scoreboard players add #rtcreactorwaterlevel info 57
 
 gamerule commandModificationBlockLimit 32768
