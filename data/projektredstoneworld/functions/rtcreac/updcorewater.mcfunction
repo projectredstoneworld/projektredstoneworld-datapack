@@ -14,15 +14,15 @@ execute store result entity @e[tag=rtcwaterlevelset,type=marker,limit=1] Pos[1] 
 
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] run fill 202 -56 590 170 ~ 622 light[level=15,waterlogged=true] replace light[level=15,waterlogged=false]
 # Empty Water
-execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches 0..31 run fill 202 ~1 590 170 -25 622 light[level=15,waterlogged=false] replace light[level=15,waterlogged=true]
+execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..-26 run fill 202 ~1 590 170 -25 622 light[level=15,waterlogged=false] replace light[level=15,waterlogged=true]
 
 # Walls
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] run fill 202 -56 590 170 ~ 622 andesite_wall[waterlogged=true,up=true] replace andesite_wall[waterlogged=false,up=true]
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] run fill 202 -56 590 170 ~ 622 polished_tuff_wall[waterlogged=true,up=true] replace polished_tuff_wall[waterlogged=false,up=true]
 execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] run fill 202 -56 590 170 ~ 622 deepslate_tile_wall[waterlogged=true,up=true] replace deepslate_tile_wall[waterlogged=false,up=true]
-execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches 0..31 run fill 202 ~1 590 170 -25 622 andesite_wall[up=true,waterlogged=false] replace andesite_wall[up=true,waterlogged=true]
-execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches 0..31 run fill 202 ~1 590 170 -25 622 polished_tuff_wall[up=true,waterlogged=false] replace polished_tuff_wall[up=true,waterlogged=true]
-execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches 0..31 run fill 202 ~1 590 170 -25 622 deepslate_tile_wall[up=true,waterlogged=false] replace deepslate_tile_wall[up=true,waterlogged=true]
+execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..-26 run fill 202 ~1 590 170 -25 622 andesite_wall[up=true,waterlogged=false] replace andesite_wall[up=true,waterlogged=true]
+execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..-26 run fill 202 ~1 590 170 -25 622 polished_tuff_wall[up=true,waterlogged=false] replace polished_tuff_wall[up=true,waterlogged=true]
+execute at @e[tag=rtcwaterlevelset,type=marker,limit=1] if score #rtcreactorwaterlevel info matches -57..26 run fill 202 ~1 590 170 -25 622 deepslate_tile_wall[up=true,waterlogged=false] replace deepslate_tile_wall[up=true,waterlogged=true]
 
 
 
