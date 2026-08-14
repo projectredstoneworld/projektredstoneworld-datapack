@@ -13,6 +13,12 @@ scoreboard players set #rtcreactorrodheight info 100
 execute if score #rtcreactorpumprate info matches ..400 run scoreboard players set #rtcreactorpumprate info 500
 scoreboard players set #rtcreactorfuelmode info 0
 scoreboard players set #rtcreactorusepump info 1
+# Update Physical Height
+scoreboard players operation #rtcreactoroldrodblocks info = #rtcreactorrodblocks info
+scoreboard players operation #rtcreactorrodblocks info = #rtcreactorrodheight info
+scoreboard players operation #rtcreactorrodblocks info /= 3 CONSTANTS
+execute if score #rtcreactorrodblocks info matches 32.. run scoreboard players set #rtcreactorrodblocks info 32
+execute unless score #rtcreactoroldrodblocks info = #rtcreactorrodblocks info as @e[type=marker,tag=rtcreactorcrod] at @s positioned ~ ~1 ~ run function projektredstoneworld:rtcreac/updcontrolrod
 
 # issue message
 tellraw @a[tag=inrtcreactor] {"text":"The RTC-Blakewood Reactor Complex has issued a manual SCRAM.", "color":"#FF9900","bold":true}
