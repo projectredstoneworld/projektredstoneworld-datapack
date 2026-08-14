@@ -109,6 +109,7 @@ execute if score #rtcreactorstability info matches 100 if score #rtcreactorcoret
 function projektredstoneworld:rtcreac/distributeturbine
 function projektredstoneworld:rtcreac/auxload
 execute if score #rtcreactorpowered info matches 0 run function projektredstoneworld:rtcreac/generators
+execute if score #rtcreactorpowered info matches 1 run bossbar set minecraft:rtcdiesel visible false
 
 # ==== AUX POWER MANAGEMENT ====
 # #rtcreactorauxinput should be set from wherever turbine power is split up from, #rtcreactorauxload is the load on the aux battery. Both should be in megawatts

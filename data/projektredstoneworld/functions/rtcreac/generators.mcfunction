@@ -1,6 +1,12 @@
 # Are Generators needed?
 execute if score #rtcreactorpowered info matches 1 run return fail
 
+# Straight up bossbarring it
+bossbar set minecraft:rtcdiesel players @a[tag=inrtcreactor]
+bossbar set minecraft:rtcdiesel visible true
+execute store result bossbar minecraft:rtcdiesel value run scoreboard players get #rtcreactordieseltime info
+bossbar set minecraft:rtcdiesel name [{"text":"Diesel fuel: ","color":"#e2fd00"},{"score":{"name":"#rtcreactordieseltime","objective":"info"}},{"text":"s (+"},{"score":{"name":"#rtcreactordiesel","objective":"info"}},{"text":" containers)"}]
+
 # Let's Count Diesel!
 scoreboard players set #rtcreactordiesel info 0
 execute if data block 89 -13 620 Items[0].tag.diesel run scoreboard players add #rtcreactordiesel info 1
@@ -27,7 +33,7 @@ execute unless score #rtcreactordiesel info matches 1.. unless score #rtcreactor
 execute if score #rtcreactordiesel info matches 1.. if score #rtcreactordieseltime info matches 0 run playsound minecraft:block.brewing_stand.brew master @a[distance=..25] 90.00 -12.46 620.36 360 1 1
 execute if score #rtcreactordiesel info matches 1.. if score #rtcreactordieseltime info matches 0 run clone 89 -13 620 89 -13 620 83 -13 620
 execute if score #rtcreactordiesel info matches 1.. if score #rtcreactordieseltime info matches 0 run setblock 83 -15 617 minecraft:redstone_block
-execute if score #rtcreactordiesel info matches 1.. if score #rtcreactordieseltime info matches 0 run scoreboard players set #rtcreactordieseltime info 30
+execute if score #rtcreactordiesel info matches 1.. if score #rtcreactordieseltime info matches 0 run scoreboard players set #rtcreactordieseltime info 60
 
 
 execute positioned 89.60 -15.00 617.50 run playsound minecraft:entity.minecart.riding master @a[distance=..25] ~ ~ ~ 2 0 0.1
