@@ -1,4 +1,4 @@
-fill ~ ~ ~ ~ ~ ~ andesite_wall[waterlogged=true,up=true] replace water
+fill ~ ~ ~ ~ ~ ~ andesite_wall[waterlogged=true,up=true] replace light[level=15]
 scoreboard players remove @s rtcreactempcrod 1
 execute if score @s rtcreactempcrod matches 0 run return fail
 execute as @s positioned ~ ~-1 ~ run function projektredstoneworld:rtcreac/controlrodrecursion
