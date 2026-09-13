@@ -2,7 +2,7 @@ name: Discord Notify
 
 on:
   push:
-  pull_request:
+  pull_request_target:
     types: [opened, closed, reopened]
   issues:
     types: [opened, closed, reopened]
@@ -54,24 +54,50 @@ jobs:
           TITLE="GitHub Update"
           DESC=""
           URL="https://github.com/${REPO}"
-
           CONTENT=""
 
+          # Set defaults for potentially unset variables
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_URL="${{ github.event.pull_request.html_url }}"
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_URL="${{ github.event.issue.html_url }}"
+          COMMENT_URL="${{ github.event.comment.html_url }}"
+          RELEASE_NAME="${{ github.event.release.name }}"
+          RELEASE_URL="${{ github.event.release.html_url }}"
+          WORKFLOW_STATUS="${{ github.event.workflow_run.conclusion }}"
+          WORKFLOW_URL="${{ github.event.workflow_run.html_url }}"
+          ACTION="${{ github.event.action }}"
+          
+          if [ -n "$WEBHOOK" ]; then
+            echo "Webhook secret IS available"
+          else
+            echo "Webhook secret IS NOT available"
+          fi
+
+          # Debug
+          echo "Base repo: ${{ github.event.pull_request.base.repo.full_name }}"
+          echo "Head repo: ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "Base branch: ${{ github.event.pull_request.base.ref }}"
+          echo "Head branch: ${{ github.event.pull_request.head.ref }}"
+
           if [ "$EVENT" = "workflow_run" ]; then
-            STATUS="$WORKFLOW_STATUS"
+            STATUS="${WORKFLOW_STATUS:-unknown}"
             URL="${WORKFLOW_URL:-https://github.com/${REPO}}"
 
             if [ "$STATUS" = "success" ]; then
               COLOR=5763719
               TITLE="🚀 Datapack Deployment Succeeded"
               DESC=$'Run /minecraft:reload ingame to apply changes.'
-              CONTENT="<@&1507221840987426827>"
+              CONTENT="<@&1507221840987426827> Deployment success"
             else
               COLOR=15548997
               TITLE="🔥 Datapack Deployment Failed!"
               DESC=$'Status: '"$STATUS"$''
+              CONTENT="<@&1507221840987426827> Deployment failure! Laugh at this user! Pontoka in my boka!"
             fi
-          
+
           elif [ "$EVENT" = "push" ]; then
             BEFORE="${{ github.event.before }}"
             AFTER="${{ github.event.after }}"
@@ -88,65 +114,101 @@ jobs:
             FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 8 | awk -F/ '{print $NF}' | sed 's/^/> /')
 
             TITLE="📦 New Push"
-            DESC="$COMMIT_MESSAGE"
+            DESC="${COMMIT_MESSAGE:-Commit}"
             DESC+=$'\n> Files: +'"${ADDED}"' ~'"${MODIFIED}"' -'"${REMOVED}"
             DESC+=$'\n> Lines: +'"${ADDEDL}"' -'"${REMOVEDL}"
             DESC+=$'\n\nFiles changed:\n'"$FILE_LIST"
 
-            URL="$COMMIT_URL"
+            URL="${COMMIT_URL:-https://github.com/${REPO}}"
 
-          elif [ "$EVENT" = "pull_request" ]; then
-            TITLE="🔀 Pull Request $ACTION"
-            DESC="$PR_TITLE"
-            URL="$PR_URL"
+          elif [ "$EVENT" = "pull_request_target" ]; then
+            TITLE="🔀 Pull Request ${ACTION:-unknown}"
+            DESC="${PR_TITLE:-Pull Request}"
+            URL="${PR_URL:-https://github.com/${REPO}}"
+            CONTENT="<@&1507221840987426827> Datapack PR: ${ACTION:-unknown}"
 
           elif [ "$EVENT" = "issues" ]; then
-            TITLE="🐛 Issue $ACTION"
-            DESC="$ISSUE_TITLE"
-            URL="$ISSUE_URL"
+            TITLE="🐛 Issue ${ACTION:-unknown}"
+            DESC="${ISSUE_TITLE:-Issue}"
+            URL="${ISSUE_URL:-https://github.com/${REPO}}"
 
           elif [ "$EVENT" = "issue_comment" ]; then
             TITLE="💬 Comment Added"
             DESC="Comment on issue/PR"
-            URL="$COMMENT_URL"
+            URL="${COMMENT_URL:-https://github.com/${REPO}}"
 
           elif [ "$EVENT" = "pull_request_review" ]; then
-            TITLE="👀 PR Review $ACTION"
+            TITLE="👀 PR Review ${ACTION:-unknown}"
             DESC="Review submitted"
-            URL="$PR_URL"
+            URL="${PR_URL:-https://github.com/${REPO}}"
 
           elif [ "$EVENT" = "release" ]; then
             TITLE="🏷️ Release Published"
-            DESC="$RELEASE_NAME"
-            URL="$RELEASE_URL"
+            DESC="${RELEASE_NAME:-Release}"
+            URL="${RELEASE_URL:-https://github.com/${REPO}}"
           fi
 
-          jq -n \
-            --arg title "$TITLE" \
-            --arg desc "$DESC" \
-            --arg content "$CONTENT" \
-            --arg url "$URL" \
-            --arg actor "$ACTOR" \
-            --arg avatar "$AVATAR" \
-            --arg repo "$REPO" \
-            --arg time "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-            --argjson color "$COLOR" \
-            '{
-              content: $content,
-              allowed_mentions: {
-                roles: ["1507221840987426827"]
-              },
-              embeds: [{
-                title: $title,
-                description: $desc,
-                url: $url,
-                color: $color,
-                footer: { text: $repo },
-                author: { name: $actor, icon_url: $avatar },
-                timestamp: $time
-              }]
-            }' \
-          | curl \
-              -H "Content-Type: application/json" \
-              -d @- \
-              "$WEBHOOK"
+          # Debug output
+          echo "Event: $EVENT | Title: $TITLE | URL: $URL"
+
+          # Ensure webhook is set
+          if [ -z "$WEBHOOK" ]; then
+            echo "Warning: DISCORD_WEBHOOK_URL not configured"
+            exit 0
+          fi
+
+          # Send webhook with retry logic
+          MAX_RETRIES=3
+          RETRY_DELAY=2
+          
+          send_webhook() {
+            local attempt=1
+            while [ $attempt -le $MAX_RETRIES ]; do
+              if jq -n \
+                --arg title "$TITLE" \
+                --arg desc "$DESC" \
+                --arg content "$CONTENT" \
+                --arg url "$URL" \
+                --arg actor "$ACTOR" \
+                --arg avatar "$AVATAR" \
+                --arg repo "$REPO" \
+                --arg time "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+                --argjson color "$COLOR" \
+                '{
+                  content: $content,
+                  allowed_mentions: {
+                    roles: ["1507221840987426827"]
+                  },
+                  embeds: [{
+                    title: $title,
+                    description: $desc,
+                    url: $url,
+                    color: $color,
+                    footer: { text: $repo },
+                    author: { name: $actor, icon_url: $avatar },
+                    timestamp: $time
+                  }]
+                }' \
+              | curl \
+                  -H "Content-Type: application/json" \
+                  -d @- \
+                  --max-time 10 \
+                  --connect-timeout 5 \
+                  "$WEBHOOK"; then
+                echo "Webhook sent successfully"
+                return 0
+              fi
+              
+              if [ $attempt -lt $MAX_RETRIES ]; then
+                echo "Webhook send failed, retrying in ${RETRY_DELAY}s (attempt $attempt/$MAX_RETRIES)"
+                sleep $RETRY_DELAY
+              fi
+              
+              attempt=$((attempt + 1))
+            done
+            
+            echo "Failed to send webhook after $MAX_RETRIES attempts"
+            return 1
+          }
+          
+          send_webhook || true

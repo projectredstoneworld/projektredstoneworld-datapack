@@ -1,4 +1,4 @@
-Main datapack for Projekt Redstoneworld by Ijd
+# Main datapack for Projekt Redstoneworld by Ijd
 
 Managed by RW Technical Aspects Team (Director IJD, Deputy Director LLucas)
 
