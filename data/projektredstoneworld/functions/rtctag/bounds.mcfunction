@@ -54,8 +54,7 @@ execute if entity @s[x=-35,y=47,z=398,dx=23,dy=13,dz=22] run tag @s add tagrtcbo
 # Everything in RTC should be within RTC-2
 tag @s[tag=tagrtc2bound] add tagrtcbound
 # Forsaken quay
-# Needs to be added
-
+execute if entity @s[x=-69,y=50,z=687,dx=40,dy=600,dz=-70] run tag @s add tagrtcbound
 # === FI-RTC ===
 tag @s remove tagfirtcbound
 # Behemoth cuboid
