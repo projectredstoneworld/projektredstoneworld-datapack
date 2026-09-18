@@ -30,7 +30,7 @@ scoreboard players operation #rcrspeedspeedk info = #rcrspeedspeed info
 
 # Process km/h
 # For rounding to nearest rather than floor
-scoreboard players add #rcrspeedspeedk info 1333
+scoreboard players add #rcrspeedspeedk info 1389
 scoreboard players operation #rcrspeedspeedk info /= 2778 CONSTANTS
 # Decimals
 scoreboard players operation #rcrspeedspeedkmod info = #rcrspeedspeedk info
