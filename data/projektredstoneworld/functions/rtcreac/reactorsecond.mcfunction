@@ -152,3 +152,29 @@ execute if score #rtcreactorspewtime info matches 1.. if score #rtcreactorspewmo
 execute if score #rtcreactorspewtime info matches ..0 if score #rtcreactorspewmode info matches 1 run tellraw @a {"text":"The RTC reactor has stopped ejecting radioactive material. Radioactive material still remains in the atmosphere. Please proceed with caution","color":"#FF0000"}
 execute if score #rtcreactorspewtime info matches ..0 if score #rtcreactorspewmode info matches 1 run scoreboard players set #rtcreactorspewmode info 2
 execute if score #rtcreactorspewmode info matches 1 run scoreboard players remove #rtcreactorspewtime info 1
+
+### === LBS WATER LEVEL ===
+scoreboard players operation #rtcreactorwaterlevel info = #rtcreactorwaterpressure info
+scoreboard players operation #rtcreactorwaterlevel info /= 375 CONSTANTS
+execute if score #rtcreactorwaterlevel info matches 33.. run scoreboard players set #rtcreactorwaterlevel info 32
+# failsafe just in case something goes horribly wrong
+execute if score #rtcreactorwaterlevel info matches ..-1 run scoreboard players set #rtcreactorwaterlevel info 0
+
+### === LBS DAMAGE ===
+scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
+scoreboard players remove #rtcreactorcoretemp info 400
+
+scoreboard players operation #rtcreactorintermediate2 info = #rtcreactorwaterlevel info
+scoreboard players add #rtcreactorintermediate2 info 10
+scoreboard players operation #rtcreactorintermediate info /= #rtcreactorintermediate2 info
+
+# Multiply by 0.31 if within 36 blocks
+# Multiply by 0.19 if within 56 blocks
+
+summon marker 186.5 -56.0 606.5 {Tags:["skibidirizzlerenjoythisplaceholder"]}
+execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] dmg.far float 0.19 run scoreboard players get #rtcreactorintermediate info
+execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] dmg.near float 0.31 run scoreboard players get #rtcreactorintermediate info
+
+execute if score #rtcreactorintermediate info matches 2.. positioned 186.5 -56.0 606.5 as @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] at @s run function projektredstoneworld:rtcreac/lbsmacrodamage with entity @s dmg
+
+execute positioned 186.5 -56.0 606.5 run kill @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..3]
