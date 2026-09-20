@@ -172,9 +172,9 @@ scoreboard players operation #rtcreactorintermediate info /= #rtcreactorintermed
 # Multiply by 0.19 if within 56 blocks
 
 summon marker 186.5 -56.0 606.5 {Tags:["skibidirizzlerenjoythisplaceholder"]}
-execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] dmg.far float 0.19 run scoreboard players get #rtcreactorintermediate info
-execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] dmg.near float 0.31 run scoreboard players get #rtcreactorintermediate info
+execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] data.far float 0.19 run scoreboard players get #rtcreactorintermediate info
+execute store result entity @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] data.near float 0.31 run scoreboard players get #rtcreactorintermediate info
 
-execute if score #rtcreactorintermediate info matches 2.. positioned 186.5 -56.0 606.5 as @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] at @s run function projektredstoneworld:rtcreac/lbsmacrodamage with entity @s dmg
+execute if score #rtcreactorintermediate info matches 2.. positioned 186.5 -56.0 606.5 as @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] at @s run function projektredstoneworld:rtcreac/lbsmacrodamage with entity @s data
 
 execute positioned 186.5 -56.0 606.5 run kill @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..3]
