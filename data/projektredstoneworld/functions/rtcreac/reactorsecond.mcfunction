@@ -162,7 +162,7 @@ execute if score #rtcreactorwaterlevel info matches ..-1 run scoreboard players 
 
 ### === LBS DAMAGE ===
 scoreboard players operation #rtcreactorintermediate info = #rtcreactorcoretemp info
-scoreboard players remove #rtcreactorcoretemp info 400
+scoreboard players remove #rtcreactorintermediate info 400
 
 scoreboard players operation #rtcreactorintermediate2 info = #rtcreactorwaterlevel info
 scoreboard players add #rtcreactorintermediate2 info 10
