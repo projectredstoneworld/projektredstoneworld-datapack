@@ -10,7 +10,7 @@ clear @s
 
 execute as @e[type=marker,tag=limboinv_store] if score @s redstoneworldID = @a[tag=restoretargetlimbo,limit=1] redstoneworldID run function projektredstoneworld:rtcreac/inventoryrestorelimbo
 
-tag @s remove restoretargetrtcm
+tag @s remove restoretargetlimbo
 tag @s remove needlimborestore
 
-execute as @a[tag=needlimborestore,gamemode=!spectator,limit=1] at @s run function projektredstoneworld:initlimborestore
+execute as @a[tag=needlimborestore,gamemode=!spectator,limit=1] at @s run function projektredstoneworld:rtcreac/initlimborestore
