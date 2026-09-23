@@ -1,3 +1,5 @@
+# Execute as an entering player. (Only 1)
+
 # make sure we can access the markers
 forceload add -264 384 -264 364
 # summon dummy entity to store our data, this wont cause any lag cause it litteraly cant do shit
