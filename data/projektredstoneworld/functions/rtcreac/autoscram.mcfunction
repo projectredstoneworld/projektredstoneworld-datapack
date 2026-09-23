@@ -8,6 +8,7 @@ scoreboard players set #rtcreactorscrammed info 1
 scoreboard players set #rtcreactorai info 0
 scoreboard players set #rtcreactorrodheight info 100
 execute if score #rtcreactorpumprate info matches ..400 run scoreboard players set #rtcreactorpumprate info 500
+execute if score #rtcreactorfuelmode info matches 1 run function projektredstoneworld:rtcreac/lbsfuel_natural
 scoreboard players set #rtcreactorfuelmode info 0
 scoreboard players set #rtcreactorusepump info 1
 

@@ -28,6 +28,7 @@ execute if score #rtcreactorcoretemp info matches 390.. if score #rtcreactorpump
 # ==== OTHER ====
 scoreboard players set #rtcreactorboric info 1
 scoreboard players set #rtcreactorwatermode info 1
+execute if score #rtcreactorfuelmode info matches 1 run function projektredstoneworld:rtcreac/lbsfuel_natural
 scoreboard players set #rtcreactorfuelmode info 0
 scoreboard players set #rtcreactorusepump info 1
 

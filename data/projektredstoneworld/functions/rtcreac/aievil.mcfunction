@@ -17,6 +17,7 @@ execute unless score #rtcreactorfuelhpwarn info matches 2 run scoreboard players
 # ==== OTHER ====
 scoreboard players set #rtcreactorboric info 0
 scoreboard players set #rtcreactorwatermode info 1
+execute if score #rtcreactorfuelmode info matches 0 run function projektredstoneworld:rtcreac/lbsfuel_enriched
 scoreboard players set #rtcreactorfuelmode info 1
 scoreboard players set #rtcreactortitcover info 1
 
