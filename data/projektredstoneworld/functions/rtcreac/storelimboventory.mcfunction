@@ -12,3 +12,4 @@ data modify entity @e[tag=limboinv_new,limit=1] data.Inventory set from entity @
 # mark as finish copying
 tag @e[tag=limboinv_new] remove limboinv_new
 
+clear @s
