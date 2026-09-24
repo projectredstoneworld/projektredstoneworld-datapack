@@ -136,7 +136,7 @@ execute if score #rtcreactorcoretemp info matches 950.. if score #rtcreactorrodh
 
 # ==== HIGH XENON NOTIFICATION ====
 execute if score #rtcreactorxenon info matches ..24999 run scoreboard players set #rtcreactorxenonnotif info 0
-execute if score #rtcreactorxenon info matches 25000.. if score #rtcreactorxenonnotif info matches 0 run tellraw @a[tag=inrtcreactor] [{"text":"WARNING: ","color":"#ff0000","bold":true},{"text":"Xenon levels are exceptionally high. Do not atttempt to operate the reactor.","bold":false,"color":"#FF0000"}]
+execute if score #rtcreactorxenon info matches 25000.. if score #rtcreactorxenonnotif info matches 0 run tellraw @a[tag=inrtcreactor] [{"text":"WARNING: ","color":"#ff0000","bold":true},{"text":"Xenon levels are exceptionally high. Do not attempt to operate the reactor.","bold":false,"color":"#FF0000"}]
 execute if score #rtcreactorxenon info matches 25000.. if score #rtcreactorxenonnotif info matches 0 run advancement grant @a[x=97,y=-16,z=571,dx=26,dy=18,dz=31] only redstoneworld:rtcxenon
 execute if score #rtcreactorxenon info matches 25000.. run scoreboard players set #rtcreactorxenonnotif info 1
 

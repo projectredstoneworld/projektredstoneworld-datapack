@@ -306,7 +306,7 @@ effect clear @a[tag=!inrtcreactor,tag=rtcreacimmune] glowing
 tag @a[tag=!inrtcreactor] remove rtcreacimmune
 
 # Evil AI trigger
-execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tellraw @a[tag=inrtcreactor] {"text":"WARNING: Reactor AI has been enabled in extreme xenon conditions. If the AI is not disabled within 90 seconds, there is a high likelyohood of catastrophic malfunction. Disable the AI as soon as possible.","color":"#FF0055","bold":true}
+execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tellraw @a[tag=inrtcreactor] {"text":"WARNING: Reactor AI has been enabled under extreme xenon conditions. If the AI is not disabled within 90 seconds, there is a high likelyhood of catastrophic malfunction. Disable the AI as soon as possible.","color":"#FF0055","bold":true}
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run tag @a[tag=inrtcreactor] add rtcaiadv
 execute if score #rtcreactorai info matches 1 if score #rtcreactoraiprev info matches 0 if score #rtcreactorxenon info matches 25000.. run scoreboard players set #rtcreactoraifail info 1801
 execute if score #rtcreactorai info matches 0 if score #rtcreactoraifail info matches 1.. run tellraw @a[tag=inrtcreactor] {"text":"AI malfunction crisis averted! Do not re-enable AI until xenon drops below 25000 mg.","color":"#FFFF00"}
