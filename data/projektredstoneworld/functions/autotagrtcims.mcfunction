@@ -11,7 +11,8 @@ execute if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,predicate=projekt
 execute if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,predicate=projektredstoneworld:is_rtcredstone] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"","extra":["rtcredstone"]}'}}}}
 execute if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,predicate=projektredstoneworld:is_rtctools] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"","extra":["rtctool"]}'}}}}
 
-execute if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,nbt={HandItems:[{id: "minecraft:paper", tag: {display: {Name: '{"text":"","extra":["shulkerbox"]}'}}}]}] at @s run summon item ~ ~ ~ {Item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"","extra":["rtccolor"]}'}}}}
+execute if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,nbt={HandItems:[{id: "minecraft:paper", tag: {display: {Name: '{"text":"","extra":["shulkerbox"]}'}}}]}] at @s[type=hopper_minecart] run summon item ~ ~ ~ {Item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"","extra":["rtccolor"]}'}}}}
+execute if entity @s[type=chest_minecart] if entity @e[type=armor_stand,tag=rtcimstagger,limit=1,nbt={HandItems:[{id: "minecraft:paper", tag: {display: {Name: '{"text":"","extra":["shulkerbox"]}'}}}]}] at @s run item replace entity @s container.2 with paper{display:{Name:'{"text":"","extra":["rtccolor"]}'}} 1
 
 
 execute as @e[type=armor_stand,tag=rtcimstagger,limit=1] run kill @s
