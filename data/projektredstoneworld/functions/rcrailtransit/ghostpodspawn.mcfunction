@@ -1,12 +1,12 @@
 execute in overworld run tag @e[tag=rcsmanager,x=0,tag=chosenRCS] remove chosenRCS
 
 # Fail if no loaded stations, first statement there may be a bit redundant or useless
-execute in overworld as @e[type=marker,tag=rcsmanager,x=0,limit=1,sort=random] at @s unless loaded ~ ~ ~ run return fail
-execute in overworld unless entity @e[type=marker,tag=rcsmanager,x=0] run return fail
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,limit=1,sort=random,tag=!rcrailunderground] at @s unless loaded ~ ~ ~ run return fail
+execute in overworld unless entity @e[type=marker,tag=rcsmanager,x=0,tag=!rcrailunderground] run return fail
 
 
 # Pick random loaded station to depart from
-execute in overworld as @e[type=marker,tag=rcsmanager,x=0,limit=1,sort=random] at @s if loaded ~ ~ ~ run tag @s add chosenRCS
+execute in overworld as @e[type=marker,tag=rcsmanager,x=0,limit=1,sort=random,tag=!rcrailunderground] at @s if loaded ~ ~ ~ run tag @s add chosenRCS
 
 # Choose a side
 execute store result score #rcrailghostpodside info run random value 0..1
