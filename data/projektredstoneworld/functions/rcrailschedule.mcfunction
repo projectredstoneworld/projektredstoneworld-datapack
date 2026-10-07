@@ -1,3 +1,5 @@
+# Runs every 10 ticks, generally used most for RCorp Rail but also some recent RTC Projects
+
 schedule function projektredstoneworld:rcrailschedule 10t
 
 #speedometer and dest messaging
@@ -70,3 +72,5 @@ execute in overworld as @a[scores={rtcreconnect=1..}] at @s run function projekt
 
 # Sorry i keep putting things completley unrelated in here but I love my 10 tick schedule, give RTC minigames center users saturation!
 effect give @a[tag=rtcm] saturation 15 255 true
+
+execute as @a unless entity @s[tag=!rtcfoodaddiction,tag=!radcancer] run function projektredstoneworld:rtcfoodeffects

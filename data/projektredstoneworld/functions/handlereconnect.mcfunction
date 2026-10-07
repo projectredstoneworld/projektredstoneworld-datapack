@@ -2,6 +2,7 @@
 # Handle reconnect for reborn museum lock
 tag @s remove rebornxfragwatcher
 tag @s remove rebornxfoundfrag
+tag @s remove mcdonaldsjob
 
 # Minigame Center / Tag down below
 # Keep things like usual if tag is going on

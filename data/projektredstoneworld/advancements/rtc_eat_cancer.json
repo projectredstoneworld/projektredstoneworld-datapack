@@ -1,0 +1,15 @@
+{
+  "criteria": {
+    "consumed_tagged_food": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "nbt": "{rtchealthy:0b}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "projektredstoneworld:rtceatcancer"
+  }
+}
