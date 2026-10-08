@@ -10,8 +10,8 @@ execute if score #foodrisk info matches 1..25 run effect give @s minecraft:speed
 execute if score #foodrisk info matches 26..50 run tellraw @s {"text":"I'm feeling a bit sick... that tasted good but it is a good thing the hospital is across the bridge...","color":"red","bold":true}
 execute if score #foodrisk info matches 26..50 run scoreboard players add @s radiationdose 100
 execute if score #foodrisk info matches 26..50 run scoreboard players add @s rtcfoodtimesmsv 1
-execute if score #rtcfoodtimesmsv info matches 30.. run tag @s add radcancer
-execute if score #rtcfoodtimesmsv info matches 30.. run scoreboard players reset @s rtcfoodtimesmsv
+execute if score @s rtcfoodtimesmsv matches 30.. run tag @s add radcancer
+execute if score @s rtcfoodtimesmsv matches 30.. run scoreboard players reset @s rtcfoodtimesmsv
 
 execute if score #foodrisk info matches 51..100 run tellraw @s {"text":"That was delicious but probably not the best for me...","color":"yellow","bold":true}
 
