@@ -16,4 +16,4 @@ tellraw @a {"text":"There are 30 seconds until the repair kit becomes effective.
 scoreboard players set #rtcreactorrepairkit info 1
 scoreboard players set #rtcralarm info 2
 
-schedule function projektredstoneworld:rtcreac/repairkitfuelstart 600t
+schedule function projektredstoneworld:rtcreac/repairkitrcbstart 600t
