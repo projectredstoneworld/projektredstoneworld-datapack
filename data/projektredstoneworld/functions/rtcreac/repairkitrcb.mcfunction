@@ -9,4 +9,11 @@ execute if score #rtcreactorrcbhp info matches 1.. run return fail
 scoreboard players set #rtcreactorrcbhp info 696969
 scoreboard players set #rtcreactortitcover info 0
 function projektredstoneworld:rtcreac/autoscram
-tellraw @a {"text":"Hello! RTC reactor RCB HE IS REPARO!!!!! Please skibidi rizzler enjoy this placeholder! PONTOKAAAAAAA IN MY BOKAAAA"}
+
+tellraw @a [{"text":"IMMINENT RADIOACTIVE DANGER\n","color":"#FF0000","bold":true},{"text":"A reactor containment building (RCB) repair kit has been inserted into the RTC reactor. Everybody in the FI-RTC complex is advised to evacuate immediately or find the nearest bunker. A radiation spike in the reactor complex is imminent. The purge of radioactive material will also cause high technogenic doses to everyone who is unprotected.","bold":false}]
+tellraw @a {"text":"There are 30 seconds until the repair kit becomes effective.","color":"#FF00FF"}
+
+scoreboard players set #rtcreactorrepairkit info 1
+scoreboard players set #rtcralarm info 2
+
+schedule function projektredstoneworld:rtcreac/repairkitfuelstart 600t
