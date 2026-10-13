@@ -6,7 +6,6 @@ execute if score #rtcreactorrcbhp info matches 1.. run tellraw @a {"text":"The R
 execute if score #rtcreactorrcbhp info matches 1.. run scoreboard players set #rtcreactorfuelhp info 696969
 execute if score #rtcreactorrcbhp info matches 1.. run return fail
 
-scoreboard players set #rtcreactorrcbhp info 696969
 scoreboard players set #rtcreactortitcover info 0
 function projektredstoneworld:rtcreac/autoscram
 

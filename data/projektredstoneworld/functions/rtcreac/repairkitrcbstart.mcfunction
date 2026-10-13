@@ -10,3 +10,5 @@ scoreboard players set #rtcreactorrepairkit info 0
 scoreboard players set #rtcreactorspewmode info 1
 scoreboard players add #rtcreactorspew info 100000000
 scoreboard players set #rtcreactorspewtime info 40
+
+scoreboard players set #rtcreactorrcbhp info 696969
