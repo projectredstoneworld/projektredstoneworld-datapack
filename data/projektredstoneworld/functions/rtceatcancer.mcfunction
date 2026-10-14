@@ -1,6 +1,8 @@
 advancement revoke @s only projektredstoneworld:rtc_eat_cancer
 execute store result score #foodrisk info run random value 1..100
 
+execute if entity @s[x=-23,y=173,z=578,dx=32,dy=9,dz=36] run scoreboard players add #rtccourtcancer info 1
+
 # 25% chance of no cancer but actual boost in strength and speed
 execute if score #foodrisk info matches 1..25 run tellraw @s {"text":"Wow, that tasted REALLY good! I feel a rush of energy!","color":"green","bold":true}
 execute if score #foodrisk info matches 1..25 run effect give @s minecraft:strength 180 1 true

@@ -3,6 +3,7 @@
 tag @s remove rebornxfragwatcher
 tag @s remove rebornxfoundfrag
 tag @s remove mcdonaldsjob
+tag @s remove janitorjob
 
 # Minigame Center / Tag down below
 # Keep things like usual if tag is going on
