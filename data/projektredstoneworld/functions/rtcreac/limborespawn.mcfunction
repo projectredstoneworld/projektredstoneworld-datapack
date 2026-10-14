@@ -1,6 +1,11 @@
 # Execute as dying player
 
 clear @s
+scoreboard players set @s radiationdose 0
+tag @s remove radiations4
+tag @s remove radiations3
+tag @s remove radiations2
+tag @s remove radiations1
 
 execute if score @s limbolvl matches 1 run tp @s 164.5 -40.0 510.0 0 0
 execute if score @s limbolvl matches 2 run tp @s 134.0 -50.0 581.3 -180 0
