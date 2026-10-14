@@ -73,4 +73,4 @@ execute in overworld as @a[scores={rtcreconnect=1..}] at @s run function projekt
 # Sorry i keep putting things completley unrelated in here but I love my 10 tick schedule, give RTC minigames center users saturation!
 effect give @a[tag=rtcm] saturation 15 255 true
 
-execute as @a unless entity @s[tag=!rtcfoodaddiction,tag=!radcancer] run function projektredstoneworld:rtcfoodeffects
+execute as @a run function projektredstoneworld:rtcfoodeffects
