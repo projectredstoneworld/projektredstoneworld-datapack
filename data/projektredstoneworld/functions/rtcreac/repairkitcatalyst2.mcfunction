@@ -1,4 +1,4 @@
-execute if score #rtccatrepair info matches 0 run tellraw @a {"text":"[Project 159-TCI Comms] Power surge detected around RTC reactor. Charging aux battery and enabling anti-catalyst elimination protocol.","color":"red"}
+execute if score #rtccatrepair info matches 0 run tellraw @a {"text":"[Project 159-TCI Comms] Power surge detected around RTC reactor. Charging aux battery and enabling anti-catalyst elimination protocol.","color":"red","bold":true}
 
 execute in overworld run summon lightning_bolt 186.5 53.5 606.5
 execute as @a at @s run playsound entity.lightning_bolt.thunder master @s ~ ~ ~ 1 0 1
