@@ -1,4 +1,9 @@
-# Runs every tick that the reactor is loaded
+# Runs every tick that the reactor is loaded now done from tick.mcfunction rather than commands because of weird instability with control rooms further away
+
+# Reactor second increment and run, now from datapack
+scoreboard players add #rtcreactorseconds info 1
+execute if score #rtcreactorseconds info matches 20.. run function projektredstoneworld:rtcreac/reactorsecond
+execute if score #rtcreactorseconds info matches 20.. run scoreboard players set #rtcreactorseconds info 0
 
 # ==== XENON AND IODINE ====
 # Iodine production
