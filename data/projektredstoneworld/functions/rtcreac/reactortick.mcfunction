@@ -285,13 +285,15 @@ execute if score #rtcreactorspewmode info matches 1 run particle end_rod 113.5 1
 # Forceload conditions
 scoreboard players set #rtcreactorforceload info 0
 execute unless score #rtcreactorspewmode info matches 0 run scoreboard players set #rtcreactorforceload info 1
-
+# Specifically for the side admin rooms and control rooms for RTC Reactor, we want to have the reactor operating if someone is trying to remotely control it.
+execute if score #rtcreactorloadctrl info matches 1 run scoreboard players set #rtcreactorforceload info 1
 
 # Forceload itself if the reactor is in critical state, core temp >500 or radiation > 1 Sv/h or forceload variable on
 forceload remove 90 600
 execute if score #rtcreactorcoretemp info matches 501.. run forceload add 90 600
 execute if score #radrtcreactor2 info matches 1001.. run forceload add 90 600
 execute if score #rtcreactorforceload info matches 1 run forceload add 90 600
+
 
 # autoscram timer
 execute unless score #rtcreactorautoscramtimer info matches 1000 run scoreboard players add #rtcreactorautoscramtimer info 1
