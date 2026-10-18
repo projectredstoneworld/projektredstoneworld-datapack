@@ -29,9 +29,9 @@ execute if score #fibunkersurge info matches 1 if score #fibunkertemp info match
 execute if score #rtcreactorauxlevel info matches ..299999 unless score #rtcprobeburst info matches 1.. run return fail
 
 # FI Bunker can turn on with the jump start button which is accessible with level 3 keycard from rtc or fi control so we dont need to worry about that, only explosion state
-execute unless score #fibunkersurge info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
-execute if score #fibunkertemp info matches 8.. run scoreboard players add #fibunkerpower info 1210
-execute if score #fibunkertemp info matches 8.. unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge
+execute if score #fibunkersurgenow info matches 1 unless score #fibunkersurge info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
+execute if score #fibunkersurgenow info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #fibunkerpower info 1210
+execute if score #fibunkersurgenow info matches 1 if score #fibunkertemp info matches 8.. unless score #fibunkersurge info matches 1 run function projektredstoneworld:rtcreac/fibunkersurge
 
 # Probes
 execute if score #rtcprobes info matches 0 run return fail

@@ -3,3 +3,4 @@ tellraw @a {"text":"[RW MILITARY MESSAGING SYSTEM] RTC Reactor Aux Battery is re
 
 # Temp forceload FI Bunker! TPS LAG INCOMING!!
 forceload add -198 552 -316 654
+scoreboard players set #fibunkersurgenow info 0
