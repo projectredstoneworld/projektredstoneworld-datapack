@@ -1,3 +1,6 @@
+# Distance failsafe
+execute positioned 113.5 118 685 unless entity @s[distance=..23000] run return fail
+
 # Distance squared in intermediate
 execute store result score #rtcreactorintermediate info run data get entity @s Pos[0] 2
 scoreboard players remove #rtcreactorintermediate info 227
