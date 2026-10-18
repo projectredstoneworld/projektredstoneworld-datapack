@@ -178,3 +178,7 @@ execute positioned 186.5 -56.0 606.5 store result entity @e[type=marker,tag=skib
 execute if score #rtcreactorintermediate info matches 2.. positioned 186.5 -56.0 606.5 as @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..1,limit=1] at @s run function projektredstoneworld:rtcreac/lbsmacrodamage with entity @s data
 
 execute positioned 186.5 -56.0 606.5 run kill @e[type=marker,tag=skibidirizzlerenjoythisplaceholder,distance=..3]
+
+### === LIMBO EFFECTS ===
+effect give @a[tag=limbo] saturation 15 0 true
+scoreboard players set @a[tag=limbo] radiationdose 0
