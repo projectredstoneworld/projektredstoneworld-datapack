@@ -4,7 +4,6 @@ forceload add 186 606 187 607
 execute in overworld run summon lightning_bolt 186.5 53.5 606.5
 execute as @a at @s run playsound entity.lightning_bolt.thunder master @s ~ ~ ~ 1 0 1
 
-# Hopefully this is correct, review needed by Ij maybe? to determine if this actually sets charge to 100%
 scoreboard players set #rtcreactorauxvoltpercent info 10000
 function projektredstoneworld:rtcreac/auxupdvoltenergy
 

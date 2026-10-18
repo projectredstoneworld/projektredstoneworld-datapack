@@ -22,7 +22,7 @@ execute as @a at @s run playsound music.doomsday master @s ~ ~ ~ 360 0.8 1
 
 tellraw @a [{"text":"CRITICAL EVACUATION ALERT\n","color":"#FF00FF","bold":true},{"text":"A catalytic repair kit has been inserted into the RTC Reactor. There is an imminent risk of death to all exposed Redstoneworld citizens wiehin the FI-RTC complex. Immediate evacuation is necessary. The RTC-micro bunker WILL NOT BE SUFFICIENT to fully protect you from the dangers of the catalytic repair kit. This emergency alert is applicable until further notice. Radiation levels are expected to spike in approximately 2-3 minutes.","bold":false}]
 tellraw @a {"text":"[Project 159-TCI Comms] Incoming power surge within the next 10-15 seconds.","color":"red","bold":true}
-tellraw @a {"text":"Everything is covered by the catalyst initiative.","color":"#FF0000"}
+tellraw @a {"text":"Everything is covered by The Catalyst Initiative.","color":"#FF0000"}
 
 scoreboard players set #rtccatrepair info 0
 schedule function projektredstoneworld:rtcreac/repairkitcatalyst2 220t
