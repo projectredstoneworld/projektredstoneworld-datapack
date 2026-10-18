@@ -13,4 +13,4 @@ tellraw @a {"text":"I'll show them. I'll show them that The Catalyst Initiative 
 tellraw @a {"text":"[EMERGENCY ALERT] Death can occur rapidly to anybody inside of the RTC complex. If you are anywhere near the FI-RTC complex, seek shelter IMMEDIATELY. This is NOT a drill. Radiation will begin in approximately 5 seconds.","color":"dark_red","bold":true}
 execute as @a run function chasemusic:play
 
-schedule function projektredstoneworld:rtcreac/repairkitcatalyst4.mcfunction 100t
+schedule function projektredstoneworld:rtcreac/repairkitcatalyst4 100t
