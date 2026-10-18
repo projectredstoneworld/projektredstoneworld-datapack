@@ -30,7 +30,7 @@ execute if score #rtcreactorintermediate info matches 61.. run scoreboard player
 scoreboard players operation #rtcpower info = #rtcreactorpowerdist info
 scoreboard players operation #rtcpower info *= #rtcreactorintermediate info
 scoreboard players operation #rtcpower info /= 100 CONSTANTS
-
+execute if score #rtcpoweron info matches 0 run scoreboard players set #rtcpower info 0
 scoreboard players operation #rtcreactorpowerdist info -= #rtcpower info
 scoreboard players operation #rtcreactorauxinput info = #rtcreactorpowerdist info
 
@@ -50,6 +50,7 @@ scoreboard players operation #rtcreactorintermediate info = #rtcplayercount info
 scoreboard players operation #rtcreactorintermediate info *= 7 CONSTANTS
 scoreboard players operation #rtcpower info += #rtcreactorintermediate info
 execute if score #rtcpower info matches 161.. run scoreboard players set #rtcpower info 160
+execute if score #rtcpoweron info matches 0 run scoreboard players set #rtcpower info 0
 # This should never make it negative
 scoreboard players operation #rtcpower info < #rtcreactorpowerdist info
 scoreboard players operation #rtcreactorpowerdist info -= #rtcpower info
@@ -67,6 +68,7 @@ scoreboard players operation #rtcreactorintermediate info = #fiplayercount info
 scoreboard players operation #rtcreactorintermediate info *= 4 CONSTANTS
 scoreboard players operation #fipower info += #rtcreactorintermediate info
 execute if score #fipower info matches 101.. run scoreboard players set #fipower info 100
+execute if score #fipoweron info matches 0 run scoreboard players set #fipower info 0
 # This should never make it negative
 scoreboard players operation #fipower info < #rtcreactorpowerdist info
 scoreboard players operation #rtcreactorpowerdist info -= #fipower info
@@ -86,16 +88,17 @@ execute if score #time info matches 18000..22999 run scoreboard players set #dos
 scoreboard players operation #blakewoodpower info = #rtcreactorpowerdist info
 scoreboard players operation #blakewoodpower info *= #blakewoodpowerpercent info
 scoreboard players operation #blakewoodpower info /= 100 CONSTANTS
-
+execute if score #blakewoodpoweron info matches 0 run scoreboard players set #blakewoodpower info 0
 scoreboard players operation #blakewoodpower info < #rtcreactorpowerdist info
 scoreboard players operation #rtcreactorpowerdist info -= #blakewoodpower info
 
 scoreboard players set #dosbackuppower info 0
 # Theme Park Reactor active if reactortemp info >= 300
-execute unless score #reactortemp info matches 300.. run scoreboard players operation #dosbackuppower info = #rtcreactorpowerdist info
-execute unless score #reactortemp info matches 300.. run scoreboard players operation #dosbackuppower info *= #dosbackuppowerpercent info
-execute unless score #reactortemp info matches 300.. run scoreboard players operation #dosbackuppower info /= 100 CONSTANTS
+execute unless score #reactortemp info matches 300..1400 run scoreboard players operation #dosbackuppower info = #rtcreactorpowerdist info
+execute unless score #reactortemp info matches 300..1400 run scoreboard players operation #dosbackuppower info *= #dosbackuppowerpercent info
+execute unless score #reactortemp info matches 300..1400 run scoreboard players operation #dosbackuppower info /= 100 CONSTANTS
 
+execute if score #dosbackuppoweron info matches 0 run scoreboard players set #dosbackuppower info 0
 scoreboard players operation #dosbackuppower info < #rtcreactorpowerdist info
 scoreboard players operation #rtcreactorpowerdist info -= #dosbackuppower info
 

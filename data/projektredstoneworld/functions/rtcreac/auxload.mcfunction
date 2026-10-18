@@ -19,6 +19,7 @@ execute if score #rtcpower info matches 0 run scoreboard players operation #rtcr
 execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorintermediate info *= 7 CONSTANTS
 execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorintermediate2 info += #rtcreactorintermediate info
 execute if score #rtcpower info matches 0 run execute if score #rtcreactorintermediate2 info matches 161.. run scoreboard players set #rtcreactorintermediate2 info 160
+execute if score #rtcpower info matches 0 run execute if score #rtcpoweron info matches 0 run scoreboard players set #rtcreactorintermediate2 info 0
 execute if score #rtcpower info matches 0 run scoreboard players operation #rtcreactorauxload info += #rtcreactorintermediate2 info
 execute if score #rtcpower info matches 0 run scoreboard players operation #rtcpower info += #rtcreactorintermediate2 info
 execute if score #fibunkersurge info matches 1 if score #fibunkertemp info matches 8.. run scoreboard players add #rtcreactorauxload info 1210
