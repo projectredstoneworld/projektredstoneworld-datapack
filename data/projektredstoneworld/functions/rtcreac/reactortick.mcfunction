@@ -196,9 +196,8 @@ execute if score #rtcreactorwatermode info matches 0 run scoreboard players oper
 
 scoreboard players operation #radrtcreactoraddfrac info += #rtcreactorintermediate info
 
-# Should have less radiation in meltdown if we need a player to enter for repair kit
-execute if score #rtcreactorlimbo info matches 1.. run scoreboard players operation #radrtcreactoraddfrac info /= 30 CONSTANTS
-execute if score #rtcreactorlimbo info matches 0 if score #rtcreactorfuelhp info matches ..0 run scoreboard players operation #radrtcreactoraddfrac info /= 3 CONSTANTS
+# Cap value instead of checking for limbo meltdown (~1.5 Sv/h asymptote)
+execute if score #rtcreactoraddfrac info matches 79366.. run scoreboard players set #rtcreactoraddfrac info 79365
 
 execute if score #radrtcreactoraddfrac info matches ..-1 run scoreboard players set #radrtcreactoraddfrac info 0
 
