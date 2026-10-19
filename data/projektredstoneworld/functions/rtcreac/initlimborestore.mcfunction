@@ -1,6 +1,8 @@
 # run as a random player exiting limbo, should have tag needlimborestore
 # Make sure no one else is currently getting restored
 execute if entity @a[tag=restoretargetlimbo] run return fail
+
+advancement grant @s only redstoneworld:limboisland
 # make sure we can access the markers
 forceload add -264 384 -264 364
 
