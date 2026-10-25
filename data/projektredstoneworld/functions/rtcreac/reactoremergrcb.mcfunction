@@ -20,11 +20,8 @@ execute if score #rtcreactorfuelhpwarn info matches 2 run function projektredsto
 execute as @a[x=117,y=-41,z=720,dx=64,dy=24,dz=213] run damage @s 69420 explosion
 # For good measure
 kill @a[x=117,y=-41,z=720,dx=64,dy=24,dz=213]
-# Clone bottom turbine hall to top
+# Clone bottom turbine hall to top (ingame)
 forceload add 117 720 181 933
-gamerule commandModificationBlockLimit 500000
-execute in overworld run clone 117 -41 720 181 -17 933 117 12 720
-forceload remove 117 720 181 933
-gamerule commandModificationBlockLimit 32768
+setblock 154 42 809 redstone_block
 
 scoreboard players set #rtcreactorrcbhpwarn info 2
