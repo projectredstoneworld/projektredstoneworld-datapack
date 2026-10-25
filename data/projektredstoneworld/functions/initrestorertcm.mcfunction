@@ -5,6 +5,10 @@ execute if entity @a[tag=restoretargetrtcm] run return fail
 forceload add -264 384 -264 364
 
 tag @s add restoretargetrtcm
+# Restore radiationdose
+execute if score @s radiationdose_save matches 1.. run scoreboard players operation @s radiationdose = @s radiationdose_save
+scoreboard players reset @s radiationdose_save
+
 tag @s remove rtcm
 clear @s
 
