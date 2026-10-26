@@ -12,4 +12,4 @@ scoreboard players set @s limbolvl 1
 function projektredstoneworld:rtcreac/storelimboventory
 tag @s add limbo
 scoreboard players set #limboactive info 1
-execute store result score @s limboeffecttime run random value 600..1200
+execute store result score @s limboeffecttime run random value 400..700
