@@ -4,6 +4,5 @@ playsound minecraft:ambient.basalt_deltas.mood master @s ~ ~ ~ 1 0 1
 playsound minecraft:ambient.basalt_deltas.mood master @s ~ ~ ~ 1 0 1
 effect give @s slowness 2 0 true
 
-tag @a remove limbosteps1
-schedule function projektredstoneworld:rtcreac/limboeffects/footsteps1 120t
+execute unless score #limbosteptimer info matches 1..89 run scoreboard players set #limbosteptimer info 120
 tag @s add limbosteps1
