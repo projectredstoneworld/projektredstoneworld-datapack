@@ -1,3 +1,5 @@
+execute unless entity @a[tag=limbo,limit=1] run scoreboard players set #limboactive info 0
+
 execute as @a[tag=limbo] run scoreboard players remove @s limboeffecttime 1
 
 execute as @a[tag=limbo,scores={limbolvl=1,limboeffecttime=0}] run function projektredstoneworld:rtcreac/limboeffects/sporadic1
