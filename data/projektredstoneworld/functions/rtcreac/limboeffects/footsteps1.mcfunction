@@ -1,4 +1,4 @@
-tellraw @s {"text":"Footsteps"}
+tellraw @a[tag=limbosteps1] {"text":"Footsteps"}
 execute as @a[tag=limbosteps1] at @s run playsound block.stone.step master @s 0 0 0 0.5 1.4 0.5
 tag @a[tag=limbosteps1] add limbosteps2
 tag @a[tag=limbosteps1,tag=limbosteps2] remove limbosteps1
