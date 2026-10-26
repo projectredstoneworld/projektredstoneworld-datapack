@@ -1,0 +1,1 @@
+tellraw @s {"text":"Sporadic effect (lv 3 rooms)"}

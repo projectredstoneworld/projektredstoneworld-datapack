@@ -8,3 +8,6 @@ execute if score #tagstatus info matches 1..3 run function projektredstoneworld:
 execute in minecraft:overworld as @a[x=0] run scoreboard players add @s mainworldplaytime 1
 
 #execute in overworld if loaded 90 100 600 run function projektredstoneworld:rtcreac/reactortick
+
+# Run limbo's tick only if needed
+execute unless score #limboactive info matches 0 run function projektredstoneworld:rtcreac/limboeffects/tick

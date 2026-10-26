@@ -7,6 +7,7 @@ advancement grant @s only redstoneworld:limboisland
 forceload add -264 384 -264 364
 
 tag @s add restoretargetlimbo
+scoreboard players reset @s limboeffecttime
 tag @s remove limbo
 clear @s
 
