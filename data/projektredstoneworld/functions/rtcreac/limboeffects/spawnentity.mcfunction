@@ -2,7 +2,7 @@
 kill @e[type=marker,tag=limboentitytest]
 execute at @s run summon marker ~ ~ ~ {Tags:["limboentitytest"]}
 # Get player rotation to nearest 90 degrees
-execute store result score #rtcreactorintermediate info run data get entity @s Rotation[0]
+execute store result score #rtcreactorintermediate info run data get entity @s Rotation[0] 0.022222222222
 scoreboard players add #rtcreactorintermediate info 1
 scoreboard players operation #rtcreactorintermediate info /= 2 CONSTANTS
 scoreboard players operation #rtcreactorintermediate info *= 90 CONSTANTS
