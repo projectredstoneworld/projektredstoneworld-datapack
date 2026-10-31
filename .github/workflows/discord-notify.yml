@@ -111,7 +111,7 @@ jobs:
             ADDEDL=$(echo "$DATA" | jq '.files[].additions' | awk '{sum+=$1} END {print sum+0}')
             REMOVEDL=$(echo "$DATA" | jq '.files[].deletions' | awk '{sum+=$1} END {print sum+0}')
 
-            FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 8 | awk -F/ '{print $NF}' | sed 's/^/> /')
+            FILE_LIST=$(echo "$DATA" | jq -r '.files[]?.filename' | head -n 16 | awk -F/ '{print $NF}' | sed 's/^/> /')
 
             TITLE="📦 New Push"
             DESC="${COMMIT_MESSAGE:-Commit}"

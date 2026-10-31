@@ -1,4 +1,3 @@
-tellraw @s {"text":"Sporadic effect (lv 2)"}
 playsound minecraft:ambient.underwater.loop.additions.ultra_rare master @s ~ ~ ~ 1 0.5 1
 playsound minecraft:ambient.basalt_deltas.mood master @s ~ ~ ~ 1 0 1
 playsound minecraft:ambient.basalt_deltas.mood master @s ~ ~ ~ 1 0 1
