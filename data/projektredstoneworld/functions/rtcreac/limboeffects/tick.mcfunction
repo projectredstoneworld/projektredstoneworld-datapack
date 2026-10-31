@@ -11,3 +11,7 @@ execute as @a[tag=limbo,scores={limboeffecttime=0}] store result score @s limboe
 
 execute if score #limbosteptimer info matches 1.. run scoreboard players remove #limbosteptimer info 1
 execute if score #limbosteptimer info matches 0 run function projektredstoneworld:rtcreac/limboeffects/footsteps1
+
+# Limbo entity code
+execute as @a[tag=limbo,scores={limbolvl=3}] at @s if predicate projektredstoneworld:is_seeing_limbo_entity on target if entity @s[tag=limboentityunseen] if score @s redstoneworldID = @p redstoneworldID run function projektredstoneworld:rtcreac/limboeffects/spottedlimboentity
+execute if entity @e[tag=limboentity,type=armor_stand,limit=1] as @e[tag=limboentity,type=armor_stand] run function projektredstoneworld:rtcreac/limboeffects/ticklimboentity
