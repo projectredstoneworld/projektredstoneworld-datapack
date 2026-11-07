@@ -1,3 +1,6 @@
+execute if entity @s[tag=pontokanoleave] run tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"selector":"@s","color":"#FF0055","bold":false},{"text":" tried to leave the game but failed miserably! Haha! Get pontoka cooked","color":"#FF0055","bold":false}]
+execute if entity @s[tag=pontokanoleave] run return fail
+
 tag @s remove pontoka
 execute store result score #tagpcount info if entity @a[tag=pontoka]
 tellraw @a [{"text":"[Tag] ","color":"#FF0055","bold":true},{"selector":"@s","color":"#FF0055","bold":false},{"text":" has left the game! (","color":"#FF0055","bold":false},{"score": {"name":"#tagpcount","objective":"info"},"color":"#FF0055","bold":false},{"text":" player(s))","color":"#FF0055","bold":false}]
