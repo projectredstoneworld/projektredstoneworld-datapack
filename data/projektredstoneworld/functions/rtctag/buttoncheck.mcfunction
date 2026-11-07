@@ -29,13 +29,13 @@ execute if block 289 5 666 stone_button[powered=true] run function projektredsto
 
 # Left side
 # Head starts
-execute if block 283 5 662 stone_button[powered=true] run scoreboard players set #taghead info 30
+execute if block 283 5 662 stone_button[powered=true] run scoreboard players set #taghead info 7
 execute if block 283 5 662 stone_button[powered=true] run function projektredstoneworld:rtctag/updateheadlight
-execute if block 283 5 661 stone_button[powered=true] run scoreboard players set #taghead info 1
+execute if block 283 5 661 stone_button[powered=true] run scoreboard players set #taghead info 30
 execute if block 283 5 661 stone_button[powered=true] run function projektredstoneworld:rtctag/updateheadlight
-execute if block 283 5 660 stone_button[powered=true] run scoreboard players set #taghead info 2
+execute if block 283 5 660 stone_button[powered=true] run scoreboard players set #taghead info 1
 execute if block 283 5 660 stone_button[powered=true] run function projektredstoneworld:rtctag/updateheadlight
-execute if block 283 5 659 stone_button[powered=true] run scoreboard players set #taghead info 3
+execute if block 283 5 659 stone_button[powered=true] run scoreboard players set #taghead info 2
 execute if block 283 5 659 stone_button[powered=true] run function projektredstoneworld:rtctag/updateheadlight
 # Time limit
 execute if block 283 5 657 stone_button[powered=true] run scoreboard players set #tagtime info 10
