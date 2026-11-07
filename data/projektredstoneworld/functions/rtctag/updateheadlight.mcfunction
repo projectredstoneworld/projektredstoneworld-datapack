@@ -1,5 +1,5 @@
-execute if score #taghead info matches ..9 run tellraw @a[x=281,y=2,z=649,dx=11,dy=8,dz=21] [{"text":"Head start has been set to the value of "},{"score":{"name":"#taghead","objective":"info"}},{"text":" minute(s)."}]
-execute if score #taghead info matches 10.. run tellraw @a[x=281,y=2,z=649,dx=11,dy=8,dz=21] [{"text":"Head start has been set to the value of "},{"score":{"name":"#taghead","objective":"info"}},{"text":" seconds."}]
+execute if score #taghead info matches ..4 run tellraw @a[x=281,y=2,z=649,dx=11,dy=8,dz=21] [{"text":"Head start has been set to the value of "},{"score":{"name":"#taghead","objective":"info"}},{"text":" minute(s)."}]
+execute if score #taghead info matches 5.. run tellraw @a[x=281,y=2,z=649,dx=11,dy=8,dz=21] [{"text":"Head start has been set to the value of "},{"score":{"name":"#taghead","objective":"info"}},{"text":" seconds."}]
 
 fill 283 5 662 283 5 659 minecraft:stone_button[powered=false,facing=east,face=wall]
 
