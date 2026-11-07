@@ -5,7 +5,7 @@ fill 283 5 662 283 5 659 minecraft:stone_button[powered=false,facing=east,face=w
 
 fill 281 6 659 281 6 662 minecraft:pink_stained_glass
 
-execute if score #taghead info matches 30 run setblock 281 6 662 minecraft:redstone_block
-execute if score #taghead info matches 1 run setblock 281 6 661 minecraft:redstone_block
-execute if score #taghead info matches 2 run setblock 281 6 660 minecraft:redstone_block
-execute if score #taghead info matches 3 run setblock 281 6 659 minecraft:redstone_block
+execute if score #taghead info matches 7 run setblock 281 6 662 minecraft:redstone_block
+execute if score #taghead info matches 30 run setblock 281 6 661 minecraft:redstone_block
+execute if score #taghead info matches 1 run setblock 281 6 660 minecraft:redstone_block
+execute if score #taghead info matches 2 run setblock 281 6 659 minecraft:redstone_block

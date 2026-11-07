@@ -7,8 +7,8 @@ execute unless score #tagstatus info matches 1 run return fail
 
 scoreboard players set #tagstatus info 2
 scoreboard players operation #tagtimer info = #taghead info
-execute if score #taghead info matches 10.. run scoreboard players operation #tagtimer info *= 1000 CONSTANTS
-execute if score #taghead info matches ..9 run scoreboard players operation #tagtimer info *= 60000 CONSTANTS
+execute if score #taghead info matches 5.. run scoreboard players operation #tagtimer info *= 1000 CONSTANTS
+execute if score #taghead info matches ..4 run scoreboard players operation #tagtimer info *= 60000 CONSTANTS
 scoreboard players set #tagchasecmax info 0
 bossbar set tagtimer visible true
 bossbar set tagtimer players @a[tag=pontoka]
