@@ -15,3 +15,6 @@ clear @a[tag=pontokachase]
 
 setblock 286 6 669 pink_stained_glass
 setblock 285 6 669 redstone_block
+
+# If possible, call elevator to roof
+scoreboard players set #fe se5pos 1520000
