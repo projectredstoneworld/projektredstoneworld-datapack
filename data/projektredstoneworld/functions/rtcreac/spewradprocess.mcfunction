@@ -20,6 +20,8 @@ scoreboard players operation #rtcreactorintermediate2 info /= #rtcreactorinterme
 
 # Radiation suits
 # 1 spew/sec = 0.01 mSv/s = 0.50 mSv/h
+# Protect lovely new players <3
+execute if entity @s[scores={mainworldplaytime=..24000}] run scoreboard players set #rtcreactorintermediate2 info 0
 execute if entity @s[tag=radiationproof5] if score #rtcreactorintermediate2 info matches ..100 run scoreboard players set #rtcreactorintermediate2 info 0
 execute if entity @s[tag=radiationproof6] if score #rtcreactorintermediate2 info matches ..120 run scoreboard players set #rtcreactorintermediate2 info 0
 execute if entity @s[tag=radiationproof7] if score #rtcreactorintermediate2 info matches ..140 run scoreboard players set #rtcreactorintermediate2 info 0
